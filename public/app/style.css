@@ -1,0 +1,2719 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  background: #f4f4f6;
+  color: #111;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.page-title {
+  margin: 0 0 20px;
+  font-size: 30px;
+}
+
+.section {
+  margin-top: 28px;
+}
+
+.section-title {
+  margin: 0 0 14px;
+  font-size: 22px;
+}
+
+.toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.toolbar input {
+  flex: 1;
+  min-width: 0;
+}
+
+input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #cfcfd4;
+  border-radius: 12px;
+  background: white;
+  font-size: 18px;
+}
+
+.primary-button,
+.secondary-button,
+.danger-button {
+  border: 0;
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.primary-button {
+  background: #111;
+  color: white;
+}
+
+.secondary-button {
+  background: white;
+  color: #111;
+  border: 1px solid #d5d5da;
+}
+
+.danger-button {
+  background: #fff;
+  color: #c00;
+  border: 1px solid #e0bcbc;
+}
+
+.primary-button:disabled {
+  opacity: .35;
+  cursor: default;
+}
+
+.party-list {
+  display: grid;
+  gap: 14px;
+}
+
+.party-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 16px;
+  background: white;
+  border: 1px solid #dedee3;
+}
+
+.party-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.party-name {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.party-icons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.party-icons img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+}
+
+.empty {
+  padding: 28px;
+  background: white;
+  border: 1px dashed #cfcfd4;
+  border-radius: 16px;
+  color: #666;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.card {
+  position: relative;
+  min-height: 132px;
+  border: 1px solid #d8d8dd;
+  border-radius: 14px;
+  background: white;
+  padding: 10px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.card.selected {
+  outline: 3px solid #111;
+}
+
+.card img {
+  display: block;
+  width: 78px;
+  height: 78px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.card-name {
+  margin-top: 6px;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.selected-area {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.selected-slot {
+  min-height: 118px;
+  border-radius: 14px;
+  border: 1px dashed #cfcfd4;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.selected-slot.filled {
+  border-style: solid;
+  background: white;
+}
+
+.selected-slot img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.selected-slot .slot-name {
+  font-size: 13px;
+  text-align: center;
+  margin-top: 4px;
+}
+
+.slot-inner {
+  text-align: center;
+}
+
+.counter {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.actions > * {
+  flex: 1;
+}
+
+@media (max-width: 760px) {
+  main {
+    padding: 16px;
+  }
+
+  .toolbar {
+    flex-direction: column;
+  }
+
+  .selected-area {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .card {
+    min-height: 112px;
+    padding: 8px 4px;
+  }
+
+  .card img {
+    width: 62px;
+    height: 62px;
+  }
+
+  .card-name {
+    font-size: 12px;
+  }
+
+  .party-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .party-row .secondary-button {
+    width: 100%;
+  }
+}
+
+/* =========================
+   Match input
+========================= */
+
+.party-record {
+  margin-top: 9px;
+  font-size: 14px;
+  color: #666;
+}
+
+.record-summary {
+  background: white;
+  border: 1px solid #dedee3;
+  border-radius: 14px;
+  padding: 15px 17px;
+  margin-bottom: 14px;
+}
+
+.match-list {
+  display: grid;
+  gap: 10px;
+}
+
+.match-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: white;
+  border: 1px solid #dedee3;
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.match-result {
+  width: 64px;
+  min-width: 64px;
+  height: 64px;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.match-result.win {
+  background: #eaf8ee;
+}
+
+.match-result.loss {
+  background: #faecec;
+}
+
+.match-main {
+  min-width: 0;
+}
+
+.match-date {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.party-icons.small img {
+  width: 38px;
+  height: 38px;
+}
+
+.match-search {
+  margin-top: 14px;
+}
+
+.compact-grid {
+  grid-template-columns:
+    repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.compact-card {
+  min-height: 108px;
+}
+
+.compact-card img {
+  width: 62px;
+  height: 62px;
+}
+
+.selection-guide {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.battle-team-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.battle-card {
+  position: relative;
+  min-height: 128px;
+
+  border: 2px solid #dedee3;
+  border-radius: 14px;
+
+  background: white;
+  padding: 13px 6px 8px;
+
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.battle-card img {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+}
+
+.battle-card.lead {
+  border-color: #111;
+}
+
+.battle-card.back {
+  border-color: #777;
+}
+
+.role-label {
+  position: absolute;
+  top: 5px;
+  left: 7px;
+
+  padding: 3px 6px;
+  border-radius: 6px;
+
+  background: #111;
+  color: white;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.battle-card.back .role-label {
+  background: #777;
+}
+
+.result-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.result-button {
+  height: 72px;
+
+  border: 2px solid #ddd;
+  border-radius: 14px;
+
+  background: white;
+
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.result-button.win.active {
+  background: #e8f8ed;
+  border-color: #278445;
+}
+
+.result-button.loss.active {
+  background: #f9eaea;
+  border-color: #ad3636;
+}
+
+.save-match-area {
+  margin-top: 30px;
+}
+
+.save-match-area .primary-button {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.autosave-label {
+  text-align: center;
+  color: #777;
+  font-size: 13px;
+}
+
+@media (max-width: 760px) {
+
+  .battle-team-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .battle-card {
+    min-height: 110px;
+  }
+
+  .battle-card img {
+    width: 62px;
+    height: 62px;
+  }
+
+  .compact-grid {
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr));
+  }
+}
+
+.match-versus {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.match-four {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.match-four img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.vs-label {
+  font-size: 13px;
+  font-weight: 800;
+  color: #777;
+}
+
+.export-panel {
+  margin-top: 28px;
+}
+
+.export-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.export-buttons button {
+  width: 100%;
+}
+
+@media (max-width: 760px) {
+  .export-buttons {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   Species / Form Picker
+========================= */
+
+.species-card {
+  position: relative;
+}
+
+.form-count {
+  margin-top: 4px;
+  font-size: 11px;
+  color: #888;
+}
+
+.form-picker-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(0, 0, 0, .35);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.form-picker-panel {
+  width: min(760px, 100%);
+  max-height: 85vh;
+
+  overflow: auto;
+
+  background: #f5f5f7;
+  border-radius: 22px;
+  padding: 22px;
+
+  box-shadow:
+    0 18px 60px
+    rgba(0, 0, 0, .20);
+}
+
+.form-picker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.form-picker-subtitle {
+  font-size: 13px;
+  color: #777;
+}
+
+.form-picker-title {
+  margin-top: 2px;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.form-picker-close {
+  width: 42px;
+  height: 42px;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: #e5e5e7;
+
+  font-size: 25px;
+  line-height: 1;
+}
+
+.form-picker-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.form-picker-card {
+  border: 1px solid #ddd;
+  border-radius: 16px;
+
+  padding: 14px 8px;
+
+  background: white;
+  color: #111;
+
+  text-align: center;
+}
+
+.form-picker-card img {
+  display: block;
+
+  width: 92px;
+  height: 92px;
+
+  margin: 0 auto 7px;
+
+  object-fit: contain;
+}
+
+.form-picker-form-name {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.form-picker-full-name {
+  margin-top: 3px;
+  font-size: 11px;
+  color: #777;
+}
+
+@media (max-width: 760px) {
+
+  .form-picker-overlay {
+    padding: 14px;
+  }
+
+  .form-picker-panel {
+    padding: 16px;
+  }
+
+  .form-picker-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .form-picker-card img {
+    width: 74px;
+    height: 74px;
+  }
+}
+
+/* =========================
+   iPad compact match UI
+========================= */
+
+@media (min-width: 768px) and (max-width: 1400px) {
+
+  main {
+    max-width: 1180px;
+    padding: 18px 22px;
+  }
+
+  .page-title {
+    font-size: 26px;
+    margin-bottom: 14px;
+  }
+
+  .section {
+    margin-top: 18px;
+  }
+
+  .section-title {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .toolbar {
+    margin-bottom: 12px;
+    gap: 8px;
+  }
+
+  input {
+    padding: 10px 14px;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+
+  .selected-area {
+    gap: 7px;
+  }
+
+  .selected-slot {
+    min-height: 88px;
+    border-radius: 12px;
+  }
+
+  .selected-slot img {
+    width: 54px;
+    height: 54px;
+  }
+
+  .selected-slot .slot-name {
+    font-size: 11px;
+    line-height: 1.1;
+  }
+
+  .counter {
+    margin-bottom: 6px;
+    font-size: 14px;
+  }
+
+  .selection-guide {
+    margin-bottom: 7px;
+    font-size: 12px;
+  }
+
+  .battle-team-grid {
+    gap: 7px;
+  }
+
+  .battle-card {
+    min-height: 96px;
+    padding: 10px 4px 5px;
+    border-radius: 12px;
+  }
+
+  .battle-card img {
+    width: 58px;
+    height: 58px;
+  }
+
+  .battle-card .card-name {
+    font-size: 11px;
+    line-height: 1.1;
+    margin-top: 2px;
+  }
+
+  .role-label {
+    top: 4px;
+    left: 5px;
+    padding: 2px 5px;
+    font-size: 9px;
+  }
+
+  .result-buttons {
+    gap: 8px;
+  }
+
+  .result-button {
+    height: 56px;
+    font-size: 18px;
+    border-radius: 12px;
+  }
+
+  .save-match-area {
+    margin-top: 18px;
+  }
+
+  .primary-button,
+  .secondary-button,
+  .danger-button {
+    padding: 11px 14px;
+    font-size: 15px;
+    border-radius: 10px;
+  }
+}
+
+/* =========================================
+   iPad Match Layout
+========================================= */
+
+.match-page {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.match-topbar {
+  display: grid;
+  grid-template-columns: 110px 1fr 110px;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 14px;
+}
+
+.match-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 800;
+}
+
+.compact-action {
+  padding: 9px 10px;
+  font-size: 14px;
+}
+
+.match-section {
+  margin-top: 13px;
+
+  padding: 12px 14px;
+
+  background: white;
+
+  border: 1px solid #dedee3;
+  border-radius: 15px;
+}
+
+.match-section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-bottom: 8px;
+}
+
+.match-section-head h2 {
+  margin: 0;
+
+  font-size: 18px;
+  line-height: 1.1;
+}
+
+.match-count {
+  font-size: 13px;
+  font-weight: 700;
+  color: #777;
+}
+
+.match-hint {
+  font-size: 12px;
+  color: #777;
+}
+
+.match-six-grid {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.compact-battle-grid {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.match-section .selected-slot {
+  min-height: 78px;
+}
+
+.match-section .selected-slot img {
+  width: 48px;
+  height: 48px;
+}
+
+.match-section .selected-slot .slot-name {
+  font-size: 10px;
+}
+
+.match-section .battle-card {
+  min-height: 88px;
+  padding: 8px 4px 5px;
+}
+
+.match-section .battle-card img {
+  width: 52px;
+  height: 52px;
+}
+
+.match-section .battle-card .card-name {
+  font-size: 10px;
+}
+
+.match-section .role-label {
+  top: 3px;
+  left: 4px;
+
+  padding: 2px 4px;
+
+  font-size: 8px;
+}
+
+.match-search {
+  margin-top: 9px;
+  margin-bottom: 6px;
+}
+
+.match-search input {
+  padding: 9px 12px;
+  font-size: 15px;
+}
+
+.compact-result-buttons {
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.compact-result-buttons .result-button {
+  height: 48px;
+  font-size: 17px;
+}
+
+.match-save-bar {
+  position: sticky;
+  bottom: 0;
+
+  margin-top: 14px;
+  padding-top: 8px;
+  padding-bottom: max(8px, env(safe-area-inset-bottom));
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(244,244,246,0),
+      rgba(244,244,246,.96) 20%
+    );
+}
+
+.save-match-button {
+  width: 100%;
+}
+
+.match-save-bar .autosave-label {
+  margin-bottom: 5px;
+  font-size: 11px;
+}
+
+
+/* iPad 横向き寄り */
+@media (min-width: 900px) {
+
+  .match-page {
+    max-width: 1120px;
+  }
+
+  .match-section {
+    padding: 10px 12px;
+  }
+
+  .match-section .selected-slot {
+    min-height: 72px;
+  }
+
+  .match-section .battle-card {
+    min-height: 82px;
+  }
+
+  .match-section .battle-card img {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+
+/* iPad 縦向き */
+@media (min-width: 768px) and (max-width: 899px) {
+
+  .match-topbar {
+    grid-template-columns: 90px 1fr 90px;
+  }
+
+  .match-title {
+    font-size: 22px;
+  }
+
+  .match-section {
+    margin-top: 10px;
+  }
+
+  .match-six-grid,
+  .compact-battle-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .match-section .battle-card img {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* =========================
+   Match history detail
+========================= */
+
+.match-row-detail {
+  align-items: flex-start;
+}
+
+.match-row-detail .match-main {
+  flex: 1;
+}
+
+.match-history-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 14px;
+}
+
+.history-side {
+  min-width: 0;
+}
+
+.history-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #666;
+  margin-bottom: 3px;
+}
+
+.history-label.sub {
+  margin-top: 7px;
+}
+
+.history-icons {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  flex-wrap: wrap;
+}
+
+.history-icons img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.history-icons.four img {
+  width: 42px;
+  height: 42px;
+}
+
+.history-vs {
+  font-size: 13px;
+  font-weight: 800;
+  color: #777;
+}
+
+@media (max-width: 760px) {
+  .match-history-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .history-vs {
+    text-align: center;
+  }
+}
+
+/* =========================
+   Match memo
+========================= */
+
+.match-content-row {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 3fr)
+    minmax(210px, 1fr);
+  gap: 18px;
+  align-items: stretch;
+}
+
+.match-battle-info {
+  min-width: 0;
+}
+
+.match-memo-area {
+  min-width: 210px;
+  border-left: 1px solid #ddd;
+  padding-left: 14px;
+}
+
+.match-memo {
+  display: block;
+  width: 100%;
+  height: 92px;
+  box-sizing: border-box;
+
+  resize: none;
+  overflow-y: auto;
+
+  padding: 8px 10px;
+
+  border: 1px solid #d8d8dc;
+  border-radius: 8px;
+
+  background: #fff;
+
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.match-memo:focus {
+  outline: 2px solid rgba(0, 0, 0, 0.12);
+  outline-offset: 1px;
+}
+
+@media (max-width: 900px) {
+  .match-content-row {
+    grid-template-columns:
+      minmax(0, 2.5fr)
+      minmax(190px, 1fr);
+    gap: 12px;
+  }
+
+  .match-memo-area {
+    min-width: 190px;
+    padding-left: 10px;
+  }
+}
+
+/* =========================
+   Match draft memo
+========================= */
+
+.match-draft-memo {
+  display: block;
+  width: 100%;
+  height: 105px;
+  box-sizing: border-box;
+
+  resize: none;
+  overflow-y: auto;
+
+  padding: 12px 14px;
+
+  border: 1px solid #d8d8dc;
+  border-radius: 10px;
+
+  background: #fff;
+
+  font: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* =========================
+   Match history memo
+========================= */
+
+.match-memo-display {
+  height: 92px;
+  overflow-y: auto;
+
+  padding: 8px 10px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #e2e2e6;
+  border-radius: 8px;
+
+  background: #fafafa;
+
+  font-size: 13px;
+  line-height: 1.45;
+
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.match-memo-empty {
+  color: #aaa;
+}
+
+.match-row-clickable {
+  cursor: pointer;
+}
+
+.match-row-clickable:hover {
+  background: rgba(0, 0, 0, 0.015);
+}
+
+/* =========================
+   Match play layout
+========================= */
+
+.match-play-layout {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 3fr)
+    minmax(240px, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+.match-play-main {
+  min-width: 0;
+}
+
+.match-play-memo {
+  min-width: 240px;
+  border-left: 1px solid #e0e0e4;
+  padding-left: 18px;
+}
+
+.match-play-memo .match-draft-memo {
+  height: 100%;
+  min-height: 260px;
+  max-height: 420px;
+}
+
+@media (max-width: 900px) {
+  .match-play-layout {
+    grid-template-columns:
+      minmax(0, 2.5fr)
+      minmax(210px, 1fr);
+    gap: 14px;
+  }
+
+  .match-play-memo {
+    min-width: 210px;
+    padding-left: 12px;
+  }
+}
+
+/* =========================================================
+   Match Editor - final 2 column layout
+========================================================= */
+
+.match-editor-columns {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 2fr)
+    minmax(300px, 1fr);
+
+  gap: 18px;
+  align-items: stretch;
+}
+
+.match-editor-left {
+  min-width: 0;
+}
+
+.match-editor-memo {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 16px;
+
+  border: 1px solid #dedee3;
+  border-radius: 12px;
+
+  background: #fafafa;
+}
+
+.match-editor-memo .match-section-head {
+  flex: 0 0 auto;
+  margin-bottom: 10px;
+}
+
+.match-editor-memo .match-draft-memo {
+  flex: 1 1 auto;
+
+  width: 100%;
+  height: auto;
+  min-height: 420px;
+
+  box-sizing: border-box;
+
+  resize: none;
+  overflow-y: auto;
+
+  padding: 14px;
+
+  border: 1px solid #d7d7dc;
+  border-radius: 10px;
+
+  background: #fff;
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* iPad横向きを想定 */
+@media (max-width: 1100px) {
+  .match-editor-columns {
+    grid-template-columns:
+      minmax(0, 1.9fr)
+      minmax(270px, 1fr);
+
+    gap: 14px;
+  }
+
+  .match-editor-memo {
+    padding: 12px;
+  }
+}
+
+
+
+/* =========================================================
+   Match Editor - final layout
+========================================================= */
+
+.match-page {
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.match-editor-columns {
+  width: 100% !important;
+
+  display: grid !important;
+  grid-template-columns:
+    minmax(0, 1fr)
+    260px !important;
+
+  gap: 14px !important;
+  align-items: stretch;
+}
+
+.match-editor-left {
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+.match-editor-memo {
+  min-width: 0 !important;
+  width: auto !important;
+
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+}
+
+.match-editor-memo .match-draft-memo {
+  min-height: 420px;
+}
+
+
+
+
+/* Match editor - equal column height */
+
+.match-editor-columns {
+  align-items: stretch !important;
+}
+
+.match-editor-memo {
+  align-self: stretch !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-sizing: border-box;
+}
+
+.match-editor-memo .match-section-head {
+  flex: 0 0 auto;
+}
+
+.match-editor-memo .match-draft-memo {
+  flex: 1 1 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  box-sizing: border-box;
+  resize: none;
+}
+
+
+
+
+/* Match editor - memo vertical alignment */
+.match-editor-memo {
+  align-self: start !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-sizing: border-box;
+}
+
+.match-editor-memo .match-draft-memo {
+  flex: 1 1 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+  box-sizing: border-box;
+  resize: none;
+}
+
+
+/* ===== Party action menu ===== */
+
+.party-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.party-menu-wrap {
+  position: relative;
+}
+
+.party-menu-button {
+  min-width: 44px;
+  padding-left: 12px;
+  padding-right: 12px;
+  font-size: 22px;
+  line-height: 1;
+}
+
+.party-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 100;
+
+  min-width: 220px;
+  padding: 6px;
+
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.16);
+}
+
+.party-menu[hidden] {
+  display: none;
+}
+
+.party-menu-item {
+  display: block;
+  width: 100%;
+
+  padding: 12px 14px;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: transparent;
+
+  text-align: left;
+  font: inherit;
+
+  cursor: pointer;
+}
+
+.party-menu-item:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.party-menu-divider {
+  height: 1px;
+  margin: 5px 8px;
+
+  background: rgba(0, 0, 0, 0.10);
+}
+
+.party-menu-danger {
+  color: #c62828;
+}
+
+/* ===== Party toolbar actions ===== */
+
+.party-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===== Opponent revealed info ===== */
+
+.selected-slot.filled {
+  position: relative;
+}
+
+.slot-remove {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  z-index: 2;
+
+  width: 24px;
+  height: 24px;
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.08);
+
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+
+  cursor: pointer;
+}
+
+.slot-revealed {
+  margin-top: 3px;
+  font-size: 11px;
+  line-height: 1.2;
+  opacity: 0.7;
+}
+
+/* ===== Revealed info editor ===== */
+
+.revealed-editor-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.42);
+}
+
+.revealed-editor {
+  width: min(560px, 100%);
+  max-height: 85vh;
+  overflow-y: auto;
+
+  padding: 18px;
+
+  background: #fff;
+  border-radius: 16px;
+
+  box-shadow:
+    0 16px 50px rgba(0, 0, 0, 0.25);
+}
+
+.revealed-editor-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+  font-size: 20px;
+}
+
+.revealed-editor-close {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.07);
+
+  font-size: 22px;
+}
+
+.revealed-editor-section {
+  margin-top: 18px;
+}
+
+.revealed-editor-label {
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.revealed-form-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.revealed-form-option,
+.revealed-item-option {
+  padding: 9px 12px;
+
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: 9px;
+
+  background: #fff;
+  font: inherit;
+}
+
+.revealed-form-option.selected {
+  border-color: currentColor;
+  font-weight: 700;
+}
+
+.revealed-item-search {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 11px 12px;
+
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-radius: 9px;
+
+  font: inherit;
+}
+
+.revealed-current-item {
+  margin-top: 8px;
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.revealed-item-results {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  margin-top: 8px;
+}
+
+.revealed-item-option {
+  width: 100%;
+  text-align: left;
+}
+
+.revealed-editor-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+
+  margin-top: 24px;
+}
+
+
+/* ===== Revealed item icons ===== */
+
+.history-pokemon-icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.history-pokemon-image {
+  display: block;
+}
+
+.history-item-icon,
+.slot-item-icon,
+.battle-item-icon {
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+
+  width: 22px !important;
+  height: 22px !important;
+
+  object-fit: contain;
+
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+
+  box-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.22);
+
+  z-index: 3;
+}
+
+.selected-slot.filled .slot-inner,
+.battle-card {
+  position: relative;
+}
+
+.battle-item-icon {
+  right: 4px;
+  bottom: 4px;
+}
+
+/* ===== Revealed item picker v2 ===== */
+
+.revealed-current-item {
+  margin-top: 10px;
+}
+
+.revealed-item-empty {
+  padding: 10px 12px;
+
+  border: 1px dashed rgba(0, 0, 0, 0.18);
+  border-radius: 9px;
+
+  font-size: 13px;
+  opacity: 0.65;
+}
+
+.revealed-selected-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 9px 10px;
+
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+
+  background: rgba(0, 0, 0, 0.025);
+}
+
+.revealed-selected-item > img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.revealed-selected-item-name {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  flex: 1;
+}
+
+.revealed-selected-item-name span {
+  font-size: 11px;
+  opacity: 0.55;
+}
+
+.revealed-selected-item-name strong {
+  margin-top: 2px;
+}
+
+.revealed-item-clear {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.07);
+
+  font-size: 18px;
+}
+
+.revealed-item-results {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.revealed-item-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  min-height: 46px;
+}
+
+.revealed-item-option > img,
+.revealed-item-placeholder {
+  width: 30px;
+  height: 30px;
+
+  object-fit: contain;
+  flex: 0 0 30px;
+}
+
+.revealed-item-option.selected {
+  font-weight: 700;
+}
+
+.revealed-item-check {
+  margin-left: auto;
+}
+
+.revealed-item-no-results {
+  padding: 12px;
+
+  text-align: center;
+  font-size: 13px;
+  opacity: 0.55;
+}
+
+/* ===== Opponent frequent suggestions ===== */
+
+.opponent-suggestion-label {
+  width: 100%;
+  margin: 4px 0 6px;
+
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0.55;
+}
+
+/* ===== Compact frequent Pokémon suggestions ===== */
+
+#opponentResults:has(.opponent-frequent-card) {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+#opponentResults .opponent-suggestion-label {
+  flex: 0 0 100%;
+}
+
+/*
+ * 「よく出る」だけ小型チップ化。
+ * 通常の検索結果カードには影響しない。
+ */
+#opponentResults .opponent-frequent-card {
+  width: auto;
+  min-width: 0;
+  min-height: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  box-sizing: border-box;
+  padding: 4px 9px 4px 5px;
+
+  border-radius: 10px;
+}
+
+#opponentResults .opponent-frequent-card img {
+  width: 32px !important;
+  height: 32px !important;
+
+  flex: 0 0 32px;
+  object-fit: contain;
+}
+
+#opponentResults .opponent-frequent-card .species-name,
+#opponentResults .opponent-frequent-card .card-name {
+  margin: 0;
+
+  font-size: 13px;
+  line-height: 1.15;
+
+  white-space: nowrap;
+}
+
+/* 頻出チップ内ではフォーム等の補助表示をコンパクトに */
+#opponentResults .opponent-frequent-card .species-forms,
+#opponentResults .opponent-frequent-card .form-list {
+  display: none;
+}
+
+/* ===== Party editor v2 ===== */
+
+.pokepaste-input {
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  min-height: 150px;
+  margin-top: 8px;
+}
+
+.pokepaste-message {
+  margin-top: 8px;
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.section-help {
+  margin: 4px 0;
+  font-size: 13px;
+  opacity: 0.65;
+}
+
+.party-selected-card {
+  box-sizing: border-box;
+}
+
+.party-selected-main {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  position: relative;
+}
+
+.party-selected-pokemon {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  flex: 0 0 58px;
+}
+
+.party-selected-info {
+  min-width: 0;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.party-item-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  width: fit-content;
+  max-width: 100%;
+
+  padding: 4px 7px;
+
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 8px;
+
+  background: rgba(0,0,0,.03);
+
+  font-size: 12px;
+}
+
+.party-item-button img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.party-remove-button {
+  flex: 0 0 30px;
+
+  width: 30px;
+  height: 30px;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: rgba(0,0,0,.07);
+
+  font-size: 18px;
+}
+
+.party-item-picker {
+  max-width: 520px;
+}
+
+.party-item-results {
+  margin-top: 8px;
+
+  max-height: 330px;
+  overflow-y: auto;
+}
+
+.party-item-option {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  min-height: 46px;
+
+  box-sizing: border-box;
+}
+
+.party-item-option img {
+  width: 30px;
+  height: 30px;
+
+  object-fit: contain;
+  flex: 0 0 30px;
+}
+
+.party-item-option strong {
+  margin-left: auto;
+}
+
+/* ===== Party held item UI v3 ===== */
+
+.party-detail-item {
+  margin-top: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+
+  min-width: 0;
+
+  font-size: 11px;
+  line-height: 1.15;
+}
+
+.party-detail-item img {
+  width: 20px !important;
+  height: 20px !important;
+
+  object-fit: contain;
+  flex: 0 0 20px;
+}
+
+.party-detail-item span {
+  min-width: 0;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.party-detail-item-empty {
+  opacity: .35;
+}
+
+/*
+ * revealed-editor-overlayを使うことで
+ * 対戦中の判明情報Editorと同じ中央表示にする。
+ */
+.revealed-editor-panel.party-item-picker {
+  width: min(520px, calc(100vw - 32px));
+  max-height: min(650px, calc(100vh - 40px));
+
+  box-sizing: border-box;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.party-item-picker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.party-item-picker-header h2 {
+  margin: 2px 0 0;
+}
+
+.party-item-close-top {
+  width: 34px;
+  height: 34px;
+
+  flex: 0 0 34px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  font-size: 20px;
+
+  background: rgba(0,0,0,.07);
+}
+
+.party-item-picker .party-item-search {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.party-item-picker .party-item-results {
+  flex: 1;
+
+  margin-top: 10px;
+
+  max-height: none;
+  min-height: 0;
+
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.party-item-picker .party-item-option {
+  flex-shrink: 0;
+}
+
+.party-item-picker .actions {
+  flex: 0 0 auto;
+
+  margin-top: 10px;
+  padding-top: 10px;
+
+  border-top: 1px solid rgba(0,0,0,.08);
+}
+
+@media (max-width: 760px) {
+  .revealed-editor-panel.party-item-picker {
+    width: calc(100vw - 24px);
+    max-height: calc(100vh - 28px);
+  }
+}
+
+/* ===== Party Pokemon Detail ===== */
+
+.party-pokemon-detail-button {
+  cursor: pointer;
+}
+
+.party-pokemon-detail-button:active {
+  transform: scale(.98);
+}
+
+.revealed-editor-panel.party-pokemon-detail {
+  width: min(560px, calc(100vw - 28px));
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+}
+
+.party-pokemon-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.party-pokemon-detail-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.party-pokemon-detail-title > img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  flex: 0 0 72px;
+}
+
+.party-pokemon-detail-title h2 {
+  margin: 0 0 5px;
+}
+
+.party-pokemon-detail-item-line {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+}
+
+.party-pokemon-detail-item-line img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.party-pokemon-detail-close {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  flex: 0 0 34px;
+  font-size: 20px;
+  background: rgba(0,0,0,.07);
+}
+
+.party-pokemon-detail-basic {
+  display: grid;
+  grid-template-columns: 1fr 1fr 70px;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.party-pokemon-detail-basic > div,
+.party-pokemon-stat-grid > div {
+  padding: 9px;
+  border-radius: 10px;
+  background: rgba(0,0,0,.04);
+}
+
+.party-pokemon-detail-basic span,
+.party-pokemon-stat-grid span {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 10px;
+  opacity: .55;
+}
+
+.party-pokemon-detail-section {
+  margin-top: 18px;
+}
+
+.party-pokemon-detail-section h3 {
+  margin: 0 0 8px;
+  font-size: 13px;
+}
+
+.party-pokemon-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 5px;
+}
+
+.party-pokemon-stat-grid > div {
+  text-align: center;
+  padding: 7px 3px;
+}
+
+.party-pokemon-moves {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.party-pokemon-moves > div {
+  padding: 10px;
+  border-radius: 9px;
+  background: rgba(0,0,0,.04);
+  font-size: 12px;
+}
+
+.party-pokemon-detail-empty {
+  opacity: .45;
+}
+
+@media (max-width: 600px) {
+  .party-pokemon-stat-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .party-pokemon-detail-title > img {
+    width: 58px;
+    height: 58px;
+    flex-basis: 58px;
+  }
+}
+
+/* ===== Party Pokemon Detail / iPad visibility fix ===== */
+
+.revealed-editor-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 32px;
+
+  background: rgba(0, 0, 0, .48);
+}
+
+.revealed-editor-panel.party-pokemon-detail {
+  box-sizing: border-box;
+
+  width: min(620px, calc(100vw - 64px));
+  max-height: calc(100vh - 64px);
+
+  padding: 24px;
+
+  overflow-y: auto;
+
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, .12);
+  border-radius: 18px;
+
+  box-shadow:
+    0 18px 60px rgba(0, 0, 0, .28);
+
+  color: #111;
+}
+
+.party-pokemon-detail-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+
+  border-bottom: 1px solid rgba(0, 0, 0, .10);
+}
+
+.party-pokemon-detail-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.party-pokemon-detail-title > img {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+}
+
+.party-pokemon-detail-title h2 {
+  margin: 0 0 8px;
+
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.party-pokemon-detail-item-line {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  font-size: 14px;
+  color: #555;
+}
+
+.party-pokemon-detail-close {
+  width: 40px;
+  height: 40px;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: #eee;
+
+  color: #111;
+  font-size: 24px;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+.party-pokemon-detail-basic {
+  display: grid;
+  grid-template-columns: 1fr 1fr 80px;
+  gap: 10px;
+
+  margin: 0;
+}
+
+.party-pokemon-detail-basic > div {
+  padding: 12px;
+
+  background: #f4f4f4;
+  border-radius: 10px;
+}
+
+.party-pokemon-detail-basic span,
+.party-pokemon-stat-grid span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #777;
+  font-size: 11px;
+}
+
+.party-pokemon-detail-basic strong,
+.party-pokemon-stat-grid strong {
+  color: #111;
+  font-size: 15px;
+}
+
+.party-pokemon-detail-section {
+  margin-top: 22px;
+}
+
+.party-pokemon-detail-section h3 {
+  margin: 0 0 9px;
+
+  color: #333;
+  font-size: 14px;
+}
+
+.party-pokemon-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.party-pokemon-stat-grid > div {
+  box-sizing: border-box;
+
+  padding: 10px 12px;
+
+  background: #f4f4f4;
+  border-radius: 9px;
+
+  text-align: left;
+}
+
+.party-pokemon-moves {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.party-pokemon-moves > div {
+  padding: 12px 14px;
+
+  background: #f4f4f4;
+  border-radius: 9px;
+
+  color: #111;
+  font-size: 14px;
+}
+
+@media (max-width: 700px) {
+  .revealed-editor-overlay {
+    padding: 16px;
+  }
+
+  .revealed-editor-panel.party-pokemon-detail {
+    width: 100%;
+    max-height: calc(100vh - 32px);
+
+    padding: 18px;
+  }
+
+  .party-pokemon-detail-title > img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .party-pokemon-detail-title h2 {
+    font-size: 20px;
+  }
+}
+
+
+/* ===== Party Pokemon Paste Editor ===== */
+
+.party-pokemon-paste-section {
+  padding-top: 20px;
+  margin-top: 24px;
+  border-top: 1px solid rgba(0, 0, 0, .10);
+}
+
+.party-pokemon-paste-help {
+  margin: -3px 0 9px;
+  font-size: 12px;
+  color: #777;
+}
+
+.party-pokemon-paste-input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  min-height: 170px;
+  padding: 12px 14px;
+
+  resize: vertical;
+
+  border: 1px solid #d5d5d5;
+  border-radius: 10px;
+
+  background: #fafafa;
+  color: #111;
+
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    monospace;
+
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.party-pokemon-paste-input:focus {
+  outline: 2px solid rgba(0, 0, 0, .15);
+  outline-offset: 1px;
+}
+
+.party-pokemon-paste-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-top: 10px;
+}
+
+.party-pokemon-paste-message {
+  min-height: 18px;
+
+  font-size: 12px;
+  color: #b3261e;
+}
+
+.party-pokemon-paste-apply {
+  flex: 0 0 auto;
+}
+
+
+/* ===== Party Pokemon Direct Editor ===== */
+
+.party-pokemon-edit-basic {
+  display: grid;
+  grid-template-columns: 1fr 1fr 90px;
+  gap: 9px;
+}
+
+.party-pokemon-edit-basic label,
+.party-pokemon-edit-stat-grid label {
+  display: block;
+}
+
+.party-pokemon-edit-basic span,
+.party-pokemon-edit-stat-grid span {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 11px;
+  color: #777;
+}
+
+.party-pokemon-edit-basic input,
+.party-pokemon-edit-stat-grid input,
+.party-pokemon-edit-moves input,
+.party-pokemon-preset-section input,
+.party-pokemon-preset-section select {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 40px;
+  padding: 8px 10px;
+
+  border: 1px solid #d5d5d5;
+  border-radius: 9px;
+
+  background: #fafafa;
+  color: #111;
+
+  font-size: 14px;
+}
+
+.party-pokemon-edit-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.party-pokemon-edit-moves {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.party-pokemon-main-save {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.party-pokemon-save-message,
+.party-pokemon-preset-message {
+  font-size: 12px;
+  color: #b3261e;
+}
+
+.party-pokemon-preset-section {
+  padding-top: 20px;
+  margin-top: 24px;
+  border-top: 1px solid rgba(0,0,0,.10);
+}
+
+.party-pokemon-preset-load,
+.party-pokemon-preset-save {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.party-pokemon-preset-load button,
+.party-pokemon-preset-save button {
+  min-height: 40px;
+}
+
+.party-pokemon-preset-empty {
+  padding: 10px 0;
+  color: #777;
+  font-size: 12px;
+}
+
+.party-pokemon-preset-message {
+  margin-top: 7px;
+}
+
+@media (max-width: 600px) {
+  .party-pokemon-edit-basic {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .party-pokemon-edit-basic label:last-child {
+    grid-column: span 2;
+  }
+
+  .party-pokemon-edit-moves {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Detail Pokemon / Item Picker ===== */
+
+.party-pokemon-change-button,
+.party-pokemon-item-change-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.party-pokemon-change-button {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.party-pokemon-change-button > img {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+}
+
+.party-pokemon-change-button h2 {
+  margin: 0;
+}
+
+.party-pokemon-item-change-button {
+  margin-top: 5px;
+}
+
+.party-edit-chevron {
+  margin-left: 4px;
+  opacity: .45;
+}
+
+.detail-picker-panel {
+  width: min(620px, calc(100vw - 40px));
+  max-height: calc(100vh - 40px);
+  padding: 20px;
+  overflow: hidden;
+  background: #fff;
+  color: #111;
+}
+
+.detail-picker-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.detail-picker-header h2 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.detail-picker-close {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: #eee;
+  font-size: 20px;
+}
+
+.detail-picker-search {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 44px;
+  padding: 9px 12px;
+  border: 1px solid #d5d5d5;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.detail-picker-results {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+
+  max-height: calc(100vh - 170px);
+  margin-top: 12px;
+  overflow-y: auto;
+}
+
+.detail-picker-pokemon,
+.detail-picker-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  min-width: 0;
+  padding: 9px;
+
+  border: 1px solid #e2e2e2;
+  border-radius: 10px;
+
+  background: #fafafa;
+  color: #111;
+
+  text-align: left;
+  cursor: pointer;
+}
+
+.detail-picker-pokemon img,
+.detail-picker-item img {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  object-fit: contain;
+}
+
+.detail-picker-pokemon span,
+.detail-picker-item span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+@media (max-width: 700px) {
+  .detail-picker-results {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .party-pokemon-change-button > img {
+    width: 60px;
+    height: 60px;
+  }
+}
+

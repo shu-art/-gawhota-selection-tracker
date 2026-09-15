@@ -1,0 +1,9 @@
+{
+  "name": "gawhota Selection Tracker",
+  "short_name": "Selection",
+  "start_url": "./app/",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f4f6",
+  "theme_color": "#f4f4f6"
+}

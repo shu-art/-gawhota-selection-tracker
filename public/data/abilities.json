@@ -1,0 +1,2986 @@
+[
+  {
+    "id": "stench",
+    "name": {
+      "ja": "あくしゅう",
+      "en": "Stench"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "drizzle",
+    "name": {
+      "ja": "あめふらし",
+      "en": "Drizzle"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "speed-boost",
+    "name": {
+      "ja": "かそく",
+      "en": "Speed Boost"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "battle-armor",
+    "name": {
+      "ja": "カブトアーマー",
+      "en": "Battle Armor"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "sturdy",
+    "name": {
+      "ja": "がんじょう",
+      "en": "Sturdy"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "damp",
+    "name": {
+      "ja": "しめりけ",
+      "en": "Damp"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "limber",
+    "name": {
+      "ja": "じゅうなん",
+      "en": "Limber"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "sand-veil",
+    "name": {
+      "ja": "すながくれ",
+      "en": "Sand Veil"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "static",
+    "name": {
+      "ja": "せいでんき",
+      "en": "Static"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "volt-absorb",
+    "name": {
+      "ja": "ちくでん",
+      "en": "Volt Absorb"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "water-absorb",
+    "name": {
+      "ja": "ちょすい",
+      "en": "Water Absorb"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "oblivious",
+    "name": {
+      "ja": "どんかん",
+      "en": "Oblivious"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "cloud-nine",
+    "name": {
+      "ja": "ノーてんき",
+      "en": "Cloud Nine"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "compound-eyes",
+    "name": {
+      "ja": "ふくがん",
+      "en": "Compound Eyes"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "insomnia",
+    "name": {
+      "ja": "ふみん",
+      "en": "Insomnia"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "color-change",
+    "name": {
+      "ja": "へんしょく",
+      "en": "Color Change"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "immunity",
+    "name": {
+      "ja": "めんえき",
+      "en": "Immunity"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "flash-fire",
+    "name": {
+      "ja": "もらいび",
+      "en": "Flash Fire"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "shield-dust",
+    "name": {
+      "ja": "りんぷん",
+      "en": "Shield Dust"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "own-tempo",
+    "name": {
+      "ja": "マイペース",
+      "en": "Own Tempo"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "suction-cups",
+    "name": {
+      "ja": "きゅうばん",
+      "en": "Suction Cups"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "intimidate",
+    "name": {
+      "ja": "いかく",
+      "en": "Intimidate"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "shadow-tag",
+    "name": {
+      "ja": "かげふみ",
+      "en": "Shadow Tag"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "rough-skin",
+    "name": {
+      "ja": "さめはだ",
+      "en": "Rough Skin"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "wonder-guard",
+    "name": {
+      "ja": "ふしぎなまもり",
+      "en": "Wonder Guard"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "levitate",
+    "name": {
+      "ja": "ふゆう",
+      "en": "Levitate"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "effect-spore",
+    "name": {
+      "ja": "ほうし",
+      "en": "Effect Spore"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "synchronize",
+    "name": {
+      "ja": "シンクロ",
+      "en": "Synchronize"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "clear-body",
+    "name": {
+      "ja": "クリアボディ",
+      "en": "Clear Body"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "natural-cure",
+    "name": {
+      "ja": "しぜんかいふく",
+      "en": "Natural Cure"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "lightning-rod",
+    "name": {
+      "ja": "ひらいしん",
+      "en": "Lightning Rod"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "serene-grace",
+    "name": {
+      "ja": "てんのめぐみ",
+      "en": "Serene Grace"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "swift-swim",
+    "name": {
+      "ja": "すいすい",
+      "en": "Swift Swim"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "chlorophyll",
+    "name": {
+      "ja": "ようりょくそ",
+      "en": "Chlorophyll"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "illuminate",
+    "name": {
+      "ja": "はっこう",
+      "en": "Illuminate"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "trace",
+    "name": {
+      "ja": "トレース",
+      "en": "Trace"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "huge-power",
+    "name": {
+      "ja": "ちからもち",
+      "en": "Huge Power"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "poison-point",
+    "name": {
+      "ja": "どくのトゲ",
+      "en": "Poison Point"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "inner-focus",
+    "name": {
+      "ja": "せいしんりょく",
+      "en": "Inner Focus"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "magma-armor",
+    "name": {
+      "ja": "マグマのよろい",
+      "en": "Magma Armor"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "water-veil",
+    "name": {
+      "ja": "みずのベール",
+      "en": "Water Veil"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "magnet-pull",
+    "name": {
+      "ja": "じりょく",
+      "en": "Magnet Pull"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "soundproof",
+    "name": {
+      "ja": "ぼうおん",
+      "en": "Soundproof"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "rain-dish",
+    "name": {
+      "ja": "あめうけざら",
+      "en": "Rain Dish"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "sand-stream",
+    "name": {
+      "ja": "すなおこし",
+      "en": "Sand Stream"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "pressure",
+    "name": {
+      "ja": "プレッシャー",
+      "en": "Pressure"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "thick-fat",
+    "name": {
+      "ja": "あついしぼう",
+      "en": "Thick Fat"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "early-bird",
+    "name": {
+      "ja": "はやおき",
+      "en": "Early Bird"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "flame-body",
+    "name": {
+      "ja": "ほのおのからだ",
+      "en": "Flame Body"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "run-away",
+    "name": {
+      "ja": "にげあし",
+      "en": "Run Away"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "keen-eye",
+    "name": {
+      "ja": "するどいめ",
+      "en": "Keen Eye"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "hyper-cutter",
+    "name": {
+      "ja": "かいりきバサミ",
+      "en": "Hyper Cutter"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "pickup",
+    "name": {
+      "ja": "ものひろい",
+      "en": "Pickup"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "truant",
+    "name": {
+      "ja": "なまけ",
+      "en": "Truant"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "hustle",
+    "name": {
+      "ja": "はりきり",
+      "en": "Hustle"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "cute-charm",
+    "name": {
+      "ja": "メロメロボディ",
+      "en": "Cute Charm"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "plus",
+    "name": {
+      "ja": "プラス",
+      "en": "Plus"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "minus",
+    "name": {
+      "ja": "マイナス",
+      "en": "Minus"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "forecast",
+    "name": {
+      "ja": "てんきや",
+      "en": "Forecast"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "sticky-hold",
+    "name": {
+      "ja": "ねんちゃく",
+      "en": "Sticky Hold"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "shed-skin",
+    "name": {
+      "ja": "だっぴ",
+      "en": "Shed Skin"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "guts",
+    "name": {
+      "ja": "こんじょう",
+      "en": "Guts"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "marvel-scale",
+    "name": {
+      "ja": "ふしぎなうろこ",
+      "en": "Marvel Scale"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "liquid-ooze",
+    "name": {
+      "ja": "ヘドロえき",
+      "en": "Liquid Ooze"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "overgrow",
+    "name": {
+      "ja": "しんりょく",
+      "en": "Overgrow"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "blaze",
+    "name": {
+      "ja": "もうか",
+      "en": "Blaze"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "torrent",
+    "name": {
+      "ja": "げきりゅう",
+      "en": "Torrent"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "swarm",
+    "name": {
+      "ja": "むしのしらせ",
+      "en": "Swarm"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "rock-head",
+    "name": {
+      "ja": "いしあたま",
+      "en": "Rock Head"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "drought",
+    "name": {
+      "ja": "ひでり",
+      "en": "Drought"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "arena-trap",
+    "name": {
+      "ja": "ありじごく",
+      "en": "Arena Trap"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "vital-spirit",
+    "name": {
+      "ja": "やるき",
+      "en": "Vital Spirit"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "white-smoke",
+    "name": {
+      "ja": "しろいけむり",
+      "en": "White Smoke"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "pure-power",
+    "name": {
+      "ja": "ヨガパワー",
+      "en": "Pure Power"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "shell-armor",
+    "name": {
+      "ja": "シェルアーマー",
+      "en": "Shell Armor"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "air-lock",
+    "name": {
+      "ja": "エアロック",
+      "en": "Air Lock"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "tangled-feet",
+    "name": {
+      "ja": "ちどりあし",
+      "en": "Tangled Feet"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "motor-drive",
+    "name": {
+      "ja": "でんきエンジン",
+      "en": "Motor Drive"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "rivalry",
+    "name": {
+      "ja": "とうそうしん",
+      "en": "Rivalry"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "steadfast",
+    "name": {
+      "ja": "ふくつのこころ",
+      "en": "Steadfast"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "snow-cloak",
+    "name": {
+      "ja": "ゆきがくれ",
+      "en": "Snow Cloak"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "gluttony",
+    "name": {
+      "ja": "くいしんぼう",
+      "en": "Gluttony"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "anger-point",
+    "name": {
+      "ja": "いかりのつぼ",
+      "en": "Anger Point"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "unburden",
+    "name": {
+      "ja": "かるわざ",
+      "en": "Unburden"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "heatproof",
+    "name": {
+      "ja": "たいねつ",
+      "en": "Heatproof"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "simple",
+    "name": {
+      "ja": "たんじゅん",
+      "en": "Simple"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "dry-skin",
+    "name": {
+      "ja": "かんそうはだ",
+      "en": "Dry Skin"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "download",
+    "name": {
+      "ja": "ダウンロード",
+      "en": "Download"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "iron-fist",
+    "name": {
+      "ja": "てつのこぶし",
+      "en": "Iron Fist"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "poison-heal",
+    "name": {
+      "ja": "ポイズンヒール",
+      "en": "Poison Heal"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "adaptability",
+    "name": {
+      "ja": "てきおうりょく",
+      "en": "Adaptability"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "skill-link",
+    "name": {
+      "ja": "スキルリンク",
+      "en": "Skill Link"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "hydration",
+    "name": {
+      "ja": "うるおいボディ",
+      "en": "Hydration"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "solar-power",
+    "name": {
+      "ja": "サンパワー",
+      "en": "Solar Power"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "quick-feet",
+    "name": {
+      "ja": "はやあし",
+      "en": "Quick Feet"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "normalize",
+    "name": {
+      "ja": "ノーマルスキン",
+      "en": "Normalize"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "sniper",
+    "name": {
+      "ja": "スナイパー",
+      "en": "Sniper"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "magic-guard",
+    "name": {
+      "ja": "マジックガード",
+      "en": "Magic Guard"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "no-guard",
+    "name": {
+      "ja": "ノーガード",
+      "en": "No Guard"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "stall",
+    "name": {
+      "ja": "あとだし",
+      "en": "Stall"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "technician",
+    "name": {
+      "ja": "テクニシャン",
+      "en": "Technician"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "leaf-guard",
+    "name": {
+      "ja": "リーフガード",
+      "en": "Leaf Guard"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "klutz",
+    "name": {
+      "ja": "ぶきよう",
+      "en": "Klutz"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "mold-breaker",
+    "name": {
+      "ja": "かたやぶり",
+      "en": "Mold Breaker"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "super-luck",
+    "name": {
+      "ja": "きょううん",
+      "en": "Super Luck"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "aftermath",
+    "name": {
+      "ja": "ゆうばく",
+      "en": "Aftermath"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "anticipation",
+    "name": {
+      "ja": "きけんよち",
+      "en": "Anticipation"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "forewarn",
+    "name": {
+      "ja": "よちむ",
+      "en": "Forewarn"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "unaware",
+    "name": {
+      "ja": "てんねん",
+      "en": "Unaware"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "tinted-lens",
+    "name": {
+      "ja": "いろめがね",
+      "en": "Tinted Lens"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "filter",
+    "name": {
+      "ja": "フィルター",
+      "en": "Filter"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "slow-start",
+    "name": {
+      "ja": "スロースタート",
+      "en": "Slow Start"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "scrappy",
+    "name": {
+      "ja": "きもったま",
+      "en": "Scrappy"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "storm-drain",
+    "name": {
+      "ja": "よびみず",
+      "en": "Storm Drain"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "ice-body",
+    "name": {
+      "ja": "アイスボディ",
+      "en": "Ice Body"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "solid-rock",
+    "name": {
+      "ja": "ハードロック",
+      "en": "Solid Rock"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "snow-warning",
+    "name": {
+      "ja": "ゆきふらし",
+      "en": "Snow Warning"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "honey-gather",
+    "name": {
+      "ja": "みつあつめ",
+      "en": "Honey Gather"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "frisk",
+    "name": {
+      "ja": "おみとおし",
+      "en": "Frisk"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "reckless",
+    "name": {
+      "ja": "すてみ",
+      "en": "Reckless"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "multitype",
+    "name": {
+      "ja": "マルチタイプ",
+      "en": "Multitype"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "flower-gift",
+    "name": {
+      "ja": "フラワーギフト",
+      "en": "Flower Gift"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "bad-dreams",
+    "name": {
+      "ja": "ナイトメア",
+      "en": "Bad Dreams"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "pickpocket",
+    "name": {
+      "ja": "わるいてぐせ",
+      "en": "Pickpocket"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "sheer-force",
+    "name": {
+      "ja": "ちからずく",
+      "en": "Sheer Force"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "contrary",
+    "name": {
+      "ja": "あまのじゃく",
+      "en": "Contrary"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "unnerve",
+    "name": {
+      "ja": "きんちょうかん",
+      "en": "Unnerve"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "defiant",
+    "name": {
+      "ja": "まけんき",
+      "en": "Defiant"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "defeatist",
+    "name": {
+      "ja": "よわき",
+      "en": "Defeatist"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "cursed-body",
+    "name": {
+      "ja": "のろわれボディ",
+      "en": "Cursed Body"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "healer",
+    "name": {
+      "ja": "いやしのこころ",
+      "en": "Healer"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "friend-guard",
+    "name": {
+      "ja": "フレンドガード",
+      "en": "Friend Guard"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "weak-armor",
+    "name": {
+      "ja": "くだけるよろい",
+      "en": "Weak Armor"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "heavy-metal",
+    "name": {
+      "ja": "ヘヴィメタル",
+      "en": "Heavy Metal"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "light-metal",
+    "name": {
+      "ja": "ライトメタル",
+      "en": "Light Metal"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "multiscale",
+    "name": {
+      "ja": "マルチスケイル",
+      "en": "Multiscale"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "toxic-boost",
+    "name": {
+      "ja": "どくぼうそう",
+      "en": "Toxic Boost"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "flare-boost",
+    "name": {
+      "ja": "ねつぼうそう",
+      "en": "Flare Boost"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "harvest",
+    "name": {
+      "ja": "しゅうかく",
+      "en": "Harvest"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "telepathy",
+    "name": {
+      "ja": "テレパシー",
+      "en": "Telepathy"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "moody",
+    "name": {
+      "ja": "ムラっけ",
+      "en": "Moody"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "overcoat",
+    "name": {
+      "ja": "ぼうじん",
+      "en": "Overcoat"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "poison-touch",
+    "name": {
+      "ja": "どくしゅ",
+      "en": "Poison Touch"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "regenerator",
+    "name": {
+      "ja": "さいせいりょく",
+      "en": "Regenerator"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "big-pecks",
+    "name": {
+      "ja": "はとむね",
+      "en": "Big Pecks"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "sand-rush",
+    "name": {
+      "ja": "すなかき",
+      "en": "Sand Rush"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "wonder-skin",
+    "name": {
+      "ja": "ミラクルスキン",
+      "en": "Wonder Skin"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "analytic",
+    "name": {
+      "ja": "アナライズ",
+      "en": "Analytic"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "illusion",
+    "name": {
+      "ja": "イリュージョン",
+      "en": "Illusion"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "imposter",
+    "name": {
+      "ja": "かわりもの",
+      "en": "Imposter"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "infiltrator",
+    "name": {
+      "ja": "すりぬけ",
+      "en": "Infiltrator"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "mummy",
+    "name": {
+      "ja": "ミイラ",
+      "en": "Mummy"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "moxie",
+    "name": {
+      "ja": "じしんかじょう",
+      "en": "Moxie"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "justified",
+    "name": {
+      "ja": "せいぎのこころ",
+      "en": "Justified"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "rattled",
+    "name": {
+      "ja": "びびり",
+      "en": "Rattled"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "magic-bounce",
+    "name": {
+      "ja": "マジックミラー",
+      "en": "Magic Bounce"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "sap-sipper",
+    "name": {
+      "ja": "そうしょく",
+      "en": "Sap Sipper"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "prankster",
+    "name": {
+      "ja": "いたずらごころ",
+      "en": "Prankster"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "sand-force",
+    "name": {
+      "ja": "すなのちから",
+      "en": "Sand Force"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "iron-barbs",
+    "name": {
+      "ja": "てつのトゲ",
+      "en": "Iron Barbs"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "zen-mode",
+    "name": {
+      "ja": "ダルマモード",
+      "en": "Zen Mode"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "victory-star",
+    "name": {
+      "ja": "しょうりのほし",
+      "en": "Victory Star"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "turboblaze",
+    "name": {
+      "ja": "ターボブレイズ",
+      "en": "Turboblaze"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "teravolt",
+    "name": {
+      "ja": "テラボルテージ",
+      "en": "Teravolt"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "aroma-veil",
+    "name": {
+      "ja": "アロマベール",
+      "en": "Aroma Veil"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "flower-veil",
+    "name": {
+      "ja": "フラワーベール",
+      "en": "Flower Veil"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "cheek-pouch",
+    "name": {
+      "ja": "ほおぶくろ",
+      "en": "Cheek Pouch"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "protean",
+    "name": {
+      "ja": "へんげんじざい",
+      "en": "Protean"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "fur-coat",
+    "name": {
+      "ja": "ファーコート",
+      "en": "Fur Coat"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "magician",
+    "name": {
+      "ja": "マジシャン",
+      "en": "Magician"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "bulletproof",
+    "name": {
+      "ja": "ぼうだん",
+      "en": "Bulletproof"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "competitive",
+    "name": {
+      "ja": "かちき",
+      "en": "Competitive"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "strong-jaw",
+    "name": {
+      "ja": "がんじょうあご",
+      "en": "Strong Jaw"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "refrigerate",
+    "name": {
+      "ja": "フリーズスキン",
+      "en": "Refrigerate"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "sweet-veil",
+    "name": {
+      "ja": "スイートベール",
+      "en": "Sweet Veil"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "stance-change",
+    "name": {
+      "ja": "バトルスイッチ",
+      "en": "Stance Change"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "gale-wings",
+    "name": {
+      "ja": "はやてのつばさ",
+      "en": "Gale Wings"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "mega-launcher",
+    "name": {
+      "ja": "メガランチャー",
+      "en": "Mega Launcher"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "grass-pelt",
+    "name": {
+      "ja": "くさのけがわ",
+      "en": "Grass Pelt"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "symbiosis",
+    "name": {
+      "ja": "きょうせい",
+      "en": "Symbiosis"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "tough-claws",
+    "name": {
+      "ja": "かたいツメ",
+      "en": "Tough Claws"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "pixilate",
+    "name": {
+      "ja": "フェアリースキン",
+      "en": "Pixilate"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "gooey",
+    "name": {
+      "ja": "ぬめぬめ",
+      "en": "Gooey"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "aerilate",
+    "name": {
+      "ja": "スカイスキン",
+      "en": "Aerilate"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "parental-bond",
+    "name": {
+      "ja": "おやこあい",
+      "en": "Parental Bond"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "dark-aura",
+    "name": {
+      "ja": "ダークオーラ",
+      "en": "Dark Aura"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "fairy-aura",
+    "name": {
+      "ja": "フェアリーオーラ",
+      "en": "Fairy Aura"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "aura-break",
+    "name": {
+      "ja": "オーラブレイク",
+      "en": "Aura Break"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "primordial-sea",
+    "name": {
+      "ja": "はじまりのうみ",
+      "en": "Primordial Sea"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "desolate-land",
+    "name": {
+      "ja": "おわりのだいち",
+      "en": "Desolate Land"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "delta-stream",
+    "name": {
+      "ja": "デルタストリーム",
+      "en": "Delta Stream"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "stamina",
+    "name": {
+      "ja": "じきゅうりょく",
+      "en": "Stamina"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "wimp-out",
+    "name": {
+      "ja": "にげごし",
+      "en": "Wimp Out"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "emergency-exit",
+    "name": {
+      "ja": "ききかいひ",
+      "en": "Emergency Exit"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "water-compaction",
+    "name": {
+      "ja": "みずがため",
+      "en": "Water Compaction"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "merciless",
+    "name": {
+      "ja": "ひとでなし",
+      "en": "Merciless"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "shields-down",
+    "name": {
+      "ja": "リミットシールド",
+      "en": "Shields Down"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "stakeout",
+    "name": {
+      "ja": "はりこみ",
+      "en": "Stakeout"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "water-bubble",
+    "name": {
+      "ja": "すいほう",
+      "en": "Water Bubble"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "steelworker",
+    "name": {
+      "ja": "はがねつかい",
+      "en": "Steelworker"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "berserk",
+    "name": {
+      "ja": "ぎゃくじょう",
+      "en": "Berserk"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "slush-rush",
+    "name": {
+      "ja": "ゆきかき",
+      "en": "Slush Rush"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "long-reach",
+    "name": {
+      "ja": "えんかく",
+      "en": "Long Reach"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "liquid-voice",
+    "name": {
+      "ja": "うるおいボイス",
+      "en": "Liquid Voice"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "triage",
+    "name": {
+      "ja": "ヒーリングシフト",
+      "en": "Triage"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "galvanize",
+    "name": {
+      "ja": "エレキスキン",
+      "en": "Galvanize"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "surge-surfer",
+    "name": {
+      "ja": "サーフテール",
+      "en": "Surge Surfer"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "schooling",
+    "name": {
+      "ja": "ぎょぐん",
+      "en": "Schooling"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "disguise",
+    "name": {
+      "ja": "ばけのかわ",
+      "en": "Disguise"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "battle-bond",
+    "name": {
+      "ja": "きずなへんげ",
+      "en": "Battle Bond"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "power-construct",
+    "name": {
+      "ja": "スワームチェンジ",
+      "en": "Power Construct"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "corrosion",
+    "name": {
+      "ja": "ふしょく",
+      "en": "Corrosion"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "comatose",
+    "name": {
+      "ja": "ぜったいねむり",
+      "en": "Comatose"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "queenly-majesty",
+    "name": {
+      "ja": "じょおうのいげん",
+      "en": "Queenly Majesty"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "innards-out",
+    "name": {
+      "ja": "とびだすなかみ",
+      "en": "Innards Out"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "dancer",
+    "name": {
+      "ja": "おどりこ",
+      "en": "Dancer"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "battery",
+    "name": {
+      "ja": "バッテリー",
+      "en": "Battery"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "fluffy",
+    "name": {
+      "ja": "もふもふ",
+      "en": "Fluffy"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "dazzling",
+    "name": {
+      "ja": "ビビッドボディ",
+      "en": "Dazzling"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "soul-heart",
+    "name": {
+      "ja": "ソウルハート",
+      "en": "Soul-Heart"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "tangling-hair",
+    "name": {
+      "ja": "カーリーヘアー",
+      "en": "Tangling Hair"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "receiver",
+    "name": {
+      "ja": "レシーバー",
+      "en": "Receiver"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "power-of-alchemy",
+    "name": {
+      "ja": "かがくのちから",
+      "en": "Power of Alchemy"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "beast-boost",
+    "name": {
+      "ja": "ビーストブースト",
+      "en": "Beast Boost"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "rks-system",
+    "name": {
+      "ja": "ＡＲシステム",
+      "en": "RKS System"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "electric-surge",
+    "name": {
+      "ja": "エレキメイカー",
+      "en": "Electric Surge"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "psychic-surge",
+    "name": {
+      "ja": "サイコメイカー",
+      "en": "Psychic Surge"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "misty-surge",
+    "name": {
+      "ja": "ミストメイカー",
+      "en": "Misty Surge"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "grassy-surge",
+    "name": {
+      "ja": "グラスメイカー",
+      "en": "Grassy Surge"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "full-metal-body",
+    "name": {
+      "ja": "メタルプロテクト",
+      "en": "Full Metal Body"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "shadow-shield",
+    "name": {
+      "ja": "ファントムガード",
+      "en": "Shadow Shield"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "prism-armor",
+    "name": {
+      "ja": "プリズムアーマー",
+      "en": "Prism Armor"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "neuroforce",
+    "name": {
+      "ja": "ブレインフォース",
+      "en": "Neuroforce"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "intrepid-sword",
+    "name": {
+      "ja": "ふとうのけん",
+      "en": "Intrepid Sword"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "dauntless-shield",
+    "name": {
+      "ja": "ふくつのたて",
+      "en": "Dauntless Shield"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "libero",
+    "name": {
+      "ja": "リベロ",
+      "en": "Libero"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "ball-fetch",
+    "name": {
+      "ja": "たまひろい",
+      "en": "Ball Fetch"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "cotton-down",
+    "name": {
+      "ja": "わたげ",
+      "en": "Cotton Down"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "propeller-tail",
+    "name": {
+      "ja": "スクリューおびれ",
+      "en": "Propeller Tail"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "mirror-armor",
+    "name": {
+      "ja": "ミラーアーマー",
+      "en": "Mirror Armor"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "gulp-missile",
+    "name": {
+      "ja": "うのミサイル",
+      "en": "Gulp Missile"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "stalwart",
+    "name": {
+      "ja": "すじがねいり",
+      "en": "Stalwart"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "steam-engine",
+    "name": {
+      "ja": "じょうききかん",
+      "en": "Steam Engine"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "punk-rock",
+    "name": {
+      "ja": "パンクロック",
+      "en": "Punk Rock"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "sand-spit",
+    "name": {
+      "ja": "すなはき",
+      "en": "Sand Spit"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "ice-scales",
+    "name": {
+      "ja": "こおりのりんぷん",
+      "en": "Ice Scales"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "ripen",
+    "name": {
+      "ja": "じゅくせい",
+      "en": "Ripen"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "ice-face",
+    "name": {
+      "ja": "アイスフェイス",
+      "en": "Ice Face"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "power-spot",
+    "name": {
+      "ja": "パワースポット",
+      "en": "Power Spot"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "mimicry",
+    "name": {
+      "ja": "ぎたい",
+      "en": "Mimicry"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "screen-cleaner",
+    "name": {
+      "ja": "バリアフリー",
+      "en": "Screen Cleaner"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "steely-spirit",
+    "name": {
+      "ja": "はがねのせいしん",
+      "en": "Steely Spirit"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "perish-body",
+    "name": {
+      "ja": "ほろびのボディ",
+      "en": "Perish Body"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "wandering-spirit",
+    "name": {
+      "ja": "さまようたましい",
+      "en": "Wandering Spirit"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "gorilla-tactics",
+    "name": {
+      "ja": "ごりむちゅう",
+      "en": "Gorilla Tactics"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "neutralizing-gas",
+    "name": {
+      "ja": "かがくへんかガス",
+      "en": "Neutralizing Gas"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "pastel-veil",
+    "name": {
+      "ja": "パステルベール",
+      "en": "Pastel Veil"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "hunger-switch",
+    "name": {
+      "ja": "はらぺこスイッチ",
+      "en": "Hunger Switch"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "quick-draw",
+    "name": {
+      "ja": "クイックドロウ",
+      "en": "Quick Draw"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "unseen-fist",
+    "name": {
+      "ja": "ふかしのこぶし",
+      "en": "Unseen Fist"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "curious-medicine",
+    "name": {
+      "ja": "きみょうなくすり",
+      "en": "Curious Medicine"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "transistor",
+    "name": {
+      "ja": "トランジスタ",
+      "en": "Transistor"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "dragons-maw",
+    "name": {
+      "ja": "りゅうのあぎと",
+      "en": "Dragon’s Maw"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "chilling-neigh",
+    "name": {
+      "ja": "しろのいななき",
+      "en": "Chilling Neigh"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "grim-neigh",
+    "name": {
+      "ja": "くろのいななき",
+      "en": "Grim Neigh"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "as-one-glastrier",
+    "name": {
+      "ja": "じんばいったい",
+      "en": "As One"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "as-one-spectrier",
+    "name": {
+      "ja": "じんばいったい",
+      "en": "As One"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "lingering-aroma",
+    "name": {
+      "ja": "とれないにおい",
+      "en": "Lingering Aroma"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "seed-sower",
+    "name": {
+      "ja": "こぼれダネ",
+      "en": "Seed Sower"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "thermal-exchange",
+    "name": {
+      "ja": "ねつこうかん",
+      "en": "Thermal Exchange"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "anger-shell",
+    "name": {
+      "ja": "いかりのこうら",
+      "en": "Anger Shell"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "purifying-salt",
+    "name": {
+      "ja": "きよめのしお",
+      "en": "Purifying Salt"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "well-baked-body",
+    "name": {
+      "ja": "こんがりボディ",
+      "en": "Well-Baked Body"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "wind-rider",
+    "name": {
+      "ja": "かぜのり",
+      "en": "Wind Rider"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "guard-dog",
+    "name": {
+      "ja": "ばんけん",
+      "en": "Guard Dog"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "rocky-payload",
+    "name": {
+      "ja": "いわはこび",
+      "en": "Rocky Payload"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "wind-power",
+    "name": {
+      "ja": "ふうりょくでんき",
+      "en": "Wind Power"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "zero-to-hero",
+    "name": {
+      "ja": "マイティチェンジ",
+      "en": "Zero to Hero"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "commander",
+    "name": {
+      "ja": "しれいとう",
+      "en": "Commander"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "electromorphosis",
+    "name": {
+      "ja": "でんきにかえる",
+      "en": "Electromorphosis"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "protosynthesis",
+    "name": {
+      "ja": "こだいかっせい",
+      "en": "Protosynthesis"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "quark-drive",
+    "name": {
+      "ja": "クォークチャージ",
+      "en": "Quark Drive"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "good-as-gold",
+    "name": {
+      "ja": "おうごんのからだ",
+      "en": "Good as Gold"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "vessel-of-ruin",
+    "name": {
+      "ja": "わざわいのうつわ",
+      "en": "Vessel of Ruin"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "sword-of-ruin",
+    "name": {
+      "ja": "わざわいのつるぎ",
+      "en": "Sword of Ruin"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "tablets-of-ruin",
+    "name": {
+      "ja": "わざわいのおふだ",
+      "en": "Tablets of Ruin"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "beads-of-ruin",
+    "name": {
+      "ja": "わざわいのたま",
+      "en": "Beads of Ruin"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "orichalcum-pulse",
+    "name": {
+      "ja": "ひひいろのこどう",
+      "en": "Orichalcum Pulse"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "hadron-engine",
+    "name": {
+      "ja": "ハドロンエンジン",
+      "en": "Hadron Engine"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "opportunist",
+    "name": {
+      "ja": "びんじょう",
+      "en": "Opportunist"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "cud-chew",
+    "name": {
+      "ja": "はんすう",
+      "en": "Cud Chew"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "sharpness",
+    "name": {
+      "ja": "きれあじ",
+      "en": "Sharpness"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "supreme-overlord",
+    "name": {
+      "ja": "そうだいしょう",
+      "en": "Supreme Overlord"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "costar",
+    "name": {
+      "ja": "きょうえん",
+      "en": "Costar"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "toxic-debris",
+    "name": {
+      "ja": "どくげしょう",
+      "en": "Toxic Debris"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "armor-tail",
+    "name": {
+      "ja": "テイルアーマー",
+      "en": "Armor Tail"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "earth-eater",
+    "name": {
+      "ja": "どしょく",
+      "en": "Earth Eater"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "mycelium-might",
+    "name": {
+      "ja": "きんしのちから",
+      "en": "Mycelium Might"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "minds-eye",
+    "name": {
+      "ja": "しんがん",
+      "en": "Mind’s Eye"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "supersweet-syrup",
+    "name": {
+      "ja": "かんろなミツ",
+      "en": "Supersweet Syrup"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "hospitality",
+    "name": {
+      "ja": "おもてなし",
+      "en": "Hospitality"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "toxic-chain",
+    "name": {
+      "ja": "どくのくさり",
+      "en": "Toxic Chain"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "embody-aspect",
+    "name": {
+      "ja": "おもかげやどし",
+      "en": "Embody Aspect"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "tera-shift",
+    "name": {
+      "ja": "テラスチェンジ",
+      "en": "Tera Shift"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "tera-shell",
+    "name": {
+      "ja": "テラスシェル",
+      "en": "Tera Shell"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "teraform-zero",
+    "name": {
+      "ja": "ゼロフォーミング",
+      "en": "Teraform Zero"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "poison-puppeteer",
+    "name": {
+      "ja": "どくくぐつ",
+      "en": "Poison Puppeteer"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "piercing-drill",
+    "name": {
+      "ja": "かんつうドリル",
+      "en": "Piercing Drill"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "dragonize",
+    "name": {
+      "ja": "ドラゴンスキン",
+      "en": "Dragonize"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "mega-sol",
+    "name": {
+      "ja": "メガソーラー",
+      "en": "Mega Sol"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "spicy-spray",
+    "name": {
+      "ja": "とびだすハバネロ",
+      "en": "Spicy Spray"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "eelevate",
+    "name": {
+      "ja": null,
+      "en": "Eelevate"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "fire-mane",
+    "name": {
+      "ja": "ほのおのたてがみ",
+      "en": "Fire Mane"
+    },
+    "source": "override"
+  },
+  {
+    "id": "mountaineer",
+    "name": {
+      "ja": null,
+      "en": "Mountaineer"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "wave-rider",
+    "name": {
+      "ja": null,
+      "en": "Wave Rider"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "skater",
+    "name": {
+      "ja": null,
+      "en": "Skater"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "thrust",
+    "name": {
+      "ja": null,
+      "en": "Thrust"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "perception",
+    "name": {
+      "ja": null,
+      "en": "Perception"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "parry",
+    "name": {
+      "ja": null,
+      "en": "Parry"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "instinct",
+    "name": {
+      "ja": null,
+      "en": "Instinct"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "dodge",
+    "name": {
+      "ja": null,
+      "en": "Dodge"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "jagged-edge",
+    "name": {
+      "ja": null,
+      "en": "Jagged Edge"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "frostbite",
+    "name": {
+      "ja": null,
+      "en": "Frostbite"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "tenacity",
+    "name": {
+      "ja": null,
+      "en": "Tenacity"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "pride",
+    "name": {
+      "ja": null,
+      "en": "Pride"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "deep-sleep",
+    "name": {
+      "ja": null,
+      "en": "Deep Sleep"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "power-nap",
+    "name": {
+      "ja": null,
+      "en": "Power Nap"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "spirit",
+    "name": {
+      "ja": null,
+      "en": "Spirit"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "warm-blanket",
+    "name": {
+      "ja": null,
+      "en": "Warm Blanket"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "gulp",
+    "name": {
+      "ja": null,
+      "en": "Gulp"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "herbivore",
+    "name": {
+      "ja": null,
+      "en": "Herbivore"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "sandpit",
+    "name": {
+      "ja": null,
+      "en": "Sandpit"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "hot-blooded",
+    "name": {
+      "ja": null,
+      "en": "Hot Blooded"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "medic",
+    "name": {
+      "ja": null,
+      "en": "Medic"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "life-force",
+    "name": {
+      "ja": null,
+      "en": "Life Force"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "lunchbox",
+    "name": {
+      "ja": null,
+      "en": "Lunchbox"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "nurse",
+    "name": {
+      "ja": null,
+      "en": "Nurse"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "melee",
+    "name": {
+      "ja": null,
+      "en": "Melee"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "sponge",
+    "name": {
+      "ja": null,
+      "en": "Sponge"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "bodyguard",
+    "name": {
+      "ja": null,
+      "en": "Bodyguard"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "hero",
+    "name": {
+      "ja": null,
+      "en": "Hero"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "last-bastion",
+    "name": {
+      "ja": null,
+      "en": "Last Bastion"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "stealth",
+    "name": {
+      "ja": null,
+      "en": "Stealth"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "vanguard",
+    "name": {
+      "ja": null,
+      "en": "Vanguard"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "nomad",
+    "name": {
+      "ja": null,
+      "en": "Nomad"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "sequence",
+    "name": {
+      "ja": null,
+      "en": "Sequence"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "grass-cloak",
+    "name": {
+      "ja": null,
+      "en": "Grass Cloak"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "celebrate",
+    "name": {
+      "ja": null,
+      "en": "Celebrate"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "lullaby",
+    "name": {
+      "ja": null,
+      "en": "Lullaby"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "calming",
+    "name": {
+      "ja": null,
+      "en": "Calming"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "daze",
+    "name": {
+      "ja": null,
+      "en": "Daze"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "frighten",
+    "name": {
+      "ja": null,
+      "en": "Frighten"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "interference",
+    "name": {
+      "ja": null,
+      "en": "Interference"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "mood-maker",
+    "name": {
+      "ja": null,
+      "en": "Mood Maker"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "confidence",
+    "name": {
+      "ja": null,
+      "en": "Confidence"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "fortune",
+    "name": {
+      "ja": null,
+      "en": "Fortune"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "bonanza",
+    "name": {
+      "ja": null,
+      "en": "Bonanza"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "explode",
+    "name": {
+      "ja": null,
+      "en": "Explode"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "omnipotent",
+    "name": {
+      "ja": null,
+      "en": "Omnipotent"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "share",
+    "name": {
+      "ja": null,
+      "en": "Share"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "black-hole",
+    "name": {
+      "ja": null,
+      "en": "Black Hole"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "shadow-dash",
+    "name": {
+      "ja": null,
+      "en": "Shadow Dash"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "sprint",
+    "name": {
+      "ja": null,
+      "en": "Sprint"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "disgust",
+    "name": {
+      "ja": null,
+      "en": "Disgust"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "high-rise",
+    "name": {
+      "ja": null,
+      "en": "High-rise"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "climber",
+    "name": {
+      "ja": null,
+      "en": "Climber"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "flame-boost",
+    "name": {
+      "ja": null,
+      "en": "Flame Boost"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "aqua-boost",
+    "name": {
+      "ja": null,
+      "en": "Aqua Boost"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "run-up",
+    "name": {
+      "ja": null,
+      "en": "Run Up"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "conqueror",
+    "name": {
+      "ja": null,
+      "en": "Conqueror"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "shackle",
+    "name": {
+      "ja": null,
+      "en": "Shackle"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "decoy",
+    "name": {
+      "ja": null,
+      "en": "Decoy"
+    },
+    "source": "pokeapi"
+  },
+  {
+    "id": "shield",
+    "name": {
+      "ja": null,
+      "en": "Shield"
+    },
+    "source": "pokeapi"
+  }
+]

@@ -1,0 +1,3092 @@
+{
+  "ability-shield": {
+    "asset": "とくせいガード.webp",
+    "category": "held-items",
+    "id": "ability-shield",
+    "name": {
+      "en": "ability-shield",
+      "ja": "とくせいガード"
+    },
+    "source": "pokeapi"
+  },
+  "abomasite": {
+    "asset": "ユキノオナイト.webp",
+    "category": "mega-stones",
+    "id": "abomasite",
+    "name": {
+      "en": "abomasite",
+      "ja": "ユキノオナイト"
+    },
+    "source": "pokeapi"
+  },
+  "absolite": {
+    "asset": "アブソルナイト.webp",
+    "category": "mega-stones",
+    "id": "absolite",
+    "name": {
+      "en": "absolite",
+      "ja": "アブソルナイト"
+    },
+    "source": "pokeapi"
+  },
+  "absolite-z": {
+    "asset": "アブソルナイトZ.webp",
+    "category": "mega-stones",
+    "id": "absolite-z",
+    "name": {
+      "en": "absolite-z",
+      "ja": "アブソルナイトZ"
+    },
+    "source": "pokeapi"
+  },
+  "absorb-bulb": {
+    "asset": "きゅうこん.webp",
+    "category": "held-items",
+    "id": "absorb-bulb",
+    "name": {
+      "en": "absorb-bulb",
+      "ja": "きゅうこん"
+    },
+    "source": "pokeapi"
+  },
+  "adamant-orb": {
+    "asset": "こんごうだま.webp",
+    "category": "species-specific",
+    "id": "adamant-orb",
+    "name": {
+      "en": "adamant-orb",
+      "ja": "こんごうだま"
+    },
+    "source": "pokeapi"
+  },
+  "adrenaline-orb": {
+    "asset": "ビビリだま.webp",
+    "category": "held-items",
+    "id": "adrenaline-orb",
+    "name": {
+      "en": "adrenaline-orb",
+      "ja": "ビビリだま"
+    },
+    "source": "pokeapi"
+  },
+  "aerodactylite": {
+    "asset": "プテラナイト.webp",
+    "category": "mega-stones",
+    "id": "aerodactylite",
+    "name": {
+      "en": "aerodactylite",
+      "ja": "プテラナイト"
+    },
+    "source": "pokeapi"
+  },
+  "aggronite": {
+    "asset": "ボスゴドラナイト.webp",
+    "category": "mega-stones",
+    "id": "aggronite",
+    "name": {
+      "en": "aggronite",
+      "ja": "ボスゴドラナイト"
+    },
+    "source": "pokeapi"
+  },
+  "aguav-berry": {
+    "asset": "バンジのみ.webp",
+    "category": "picky-healing",
+    "id": "aguav-berry",
+    "name": {
+      "en": "aguav-berry",
+      "ja": "バンジのみ"
+    },
+    "source": "pokeapi"
+  },
+  "air-balloon": {
+    "asset": "ふうせん.webp",
+    "category": "held-items",
+    "id": "air-balloon",
+    "name": {
+      "en": "air-balloon",
+      "ja": "ふうせん"
+    },
+    "source": "pokeapi"
+  },
+  "alakazite": {
+    "asset": "フーディナイト.webp",
+    "category": "mega-stones",
+    "id": "alakazite",
+    "name": {
+      "en": "alakazite",
+      "ja": "フーディナイト"
+    },
+    "source": "pokeapi"
+  },
+  "altarianite": {
+    "asset": "チルタリスナイト.webp",
+    "category": "mega-stones",
+    "id": "altarianite",
+    "name": {
+      "en": "altarianite",
+      "ja": "チルタリスナイト"
+    },
+    "source": "pokeapi"
+  },
+  "ampharosite": {
+    "asset": "デンリュウナイト.webp",
+    "category": "mega-stones",
+    "id": "ampharosite",
+    "name": {
+      "en": "ampharosite",
+      "ja": "デンリュウナイト"
+    },
+    "source": "pokeapi"
+  },
+  "amulet-coin": {
+    "asset": "おまもりこばん.webp",
+    "category": "training",
+    "id": "amulet-coin",
+    "name": {
+      "en": "amulet-coin",
+      "ja": "おまもりこばん"
+    },
+    "source": "pokeapi"
+  },
+  "apicot-berry": {
+    "asset": "ズアのみ.webp",
+    "category": "in-a-pinch",
+    "id": "apicot-berry",
+    "name": {
+      "en": "apicot-berry",
+      "ja": "ズアのみ"
+    },
+    "source": "pokeapi"
+  },
+  "aspear-berry": {
+    "asset": "ナナシのみ.webp",
+    "category": "medicine",
+    "id": "aspear-berry",
+    "name": {
+      "en": "aspear-berry",
+      "ja": "ナナシのみ"
+    },
+    "source": "pokeapi"
+  },
+  "assault-vest": {
+    "asset": "とつげきチョッキ.webp",
+    "category": "held-items",
+    "id": "assault-vest",
+    "name": {
+      "en": "assault-vest",
+      "ja": "とつげきチョッキ"
+    },
+    "source": "pokeapi"
+  },
+  "audinite": {
+    "asset": "タブンネナイト.webp",
+    "category": "mega-stones",
+    "id": "audinite",
+    "name": {
+      "en": "audinite",
+      "ja": "タブンネナイト"
+    },
+    "source": "pokeapi"
+  },
+  "babiri-berry": {
+    "asset": "リリバのみ.webp",
+    "category": "type-protection",
+    "id": "babiri-berry",
+    "name": {
+      "en": "babiri-berry",
+      "ja": "リリバのみ"
+    },
+    "source": "pokeapi"
+  },
+  "banettite": {
+    "asset": "ジュペッタナイト.webp",
+    "category": "mega-stones",
+    "id": "banettite",
+    "name": {
+      "en": "banettite",
+      "ja": "ジュペッタナイト"
+    },
+    "source": "pokeapi"
+  },
+  "barbaracite": {
+    "asset": "ガメノデスナイト.webp",
+    "category": "mega-stones",
+    "id": "barbaracite",
+    "name": {
+      "en": "barbaracite",
+      "ja": "ガメノデスナイト"
+    },
+    "source": "pokeapi"
+  },
+  "baxcalibrite": {
+    "asset": "セグレイブナイト.webp",
+    "category": "mega-stones",
+    "id": "baxcalibrite",
+    "name": {
+      "en": "baxcalibrite",
+      "ja": "セグレイブナイト"
+    },
+    "source": "pokeapi"
+  },
+  "beedrillite": {
+    "asset": "スピアナイト.webp",
+    "category": "mega-stones",
+    "id": "beedrillite",
+    "name": {
+      "en": "beedrillite",
+      "ja": "スピアナイト"
+    },
+    "source": "pokeapi"
+  },
+  "big-root": {
+    "asset": "おおきなねっこ.webp",
+    "category": "held-items",
+    "id": "big-root",
+    "name": {
+      "en": "big-root",
+      "ja": "おおきなねっこ"
+    },
+    "source": "pokeapi"
+  },
+  "binding-band": {
+    "asset": "しめつけバンド.webp",
+    "category": "held-items",
+    "id": "binding-band",
+    "name": {
+      "en": "binding-band",
+      "ja": "しめつけバンド"
+    },
+    "source": "pokeapi"
+  },
+  "black-belt": {
+    "asset": "くろおび.webp",
+    "category": "type-enhancement",
+    "id": "black-belt",
+    "name": {
+      "en": "black-belt",
+      "ja": "くろおび"
+    },
+    "source": "pokeapi"
+  },
+  "black-glasses": {
+    "asset": "くろいメガネ.webp",
+    "category": "type-enhancement",
+    "id": "black-glasses",
+    "name": {
+      "en": "black-glasses",
+      "ja": "くろいメガネ"
+    },
+    "source": "pokeapi"
+  },
+  "black-sludge": {
+    "asset": "くろいヘドロ.webp",
+    "category": "held-items",
+    "id": "black-sludge",
+    "name": {
+      "en": "black-sludge",
+      "ja": "くろいヘドロ"
+    },
+    "source": "pokeapi"
+  },
+  "blank-plate": {
+    "asset": "まっさらプレート.webp",
+    "category": "plates",
+    "id": "blank-plate",
+    "name": {
+      "en": "blank-plate",
+      "ja": "まっさらプレート"
+    },
+    "source": "pokeapi"
+  },
+  "blastoisinite": {
+    "asset": "カメックスナイト.webp",
+    "category": "mega-stones",
+    "id": "blastoisinite",
+    "name": {
+      "en": "blastoisinite",
+      "ja": "カメックスナイト"
+    },
+    "source": "pokeapi"
+  },
+  "blazikenite": {
+    "asset": "バシャーモナイト.webp",
+    "category": "mega-stones",
+    "id": "blazikenite",
+    "name": {
+      "en": "blazikenite",
+      "ja": "バシャーモナイト"
+    },
+    "source": "pokeapi"
+  },
+  "blunder-policy": {
+    "asset": "からぶりほけん.webp",
+    "category": "held-items",
+    "id": "blunder-policy",
+    "name": {
+      "en": "blunder-policy",
+      "ja": "からぶりほけん"
+    },
+    "source": "pokeapi"
+  },
+  "booster-energy": {
+    "asset": "ブーストエナジー.webp",
+    "category": "held-items",
+    "id": "booster-energy",
+    "name": {
+      "en": "booster-energy",
+      "ja": "ブーストエナジー"
+    },
+    "source": "pokeapi"
+  },
+  "bright-powder": {
+    "asset": "ひかりのこな.webp",
+    "category": "held-items",
+    "id": "bright-powder",
+    "name": {
+      "en": "bright-powder",
+      "ja": "ひかりのこな"
+    },
+    "source": "pokeapi"
+  },
+  "bug-memory": {
+    "asset": null,
+    "category": "memories",
+    "id": "bug-memory",
+    "name": {
+      "en": "bug-memory",
+      "ja": "バグメモリ"
+    },
+    "source": "pokeapi"
+  },
+  "burn-drive": {
+    "asset": null,
+    "category": "species-specific",
+    "id": "burn-drive",
+    "name": {
+      "en": "burn-drive",
+      "ja": "ブレイズカセット"
+    },
+    "source": "pokeapi"
+  },
+  "cameruptite": {
+    "asset": "バクーダナイト.webp",
+    "category": "mega-stones",
+    "id": "cameruptite",
+    "name": {
+      "en": "cameruptite",
+      "ja": "バクーダナイト"
+    },
+    "source": "pokeapi"
+  },
+  "cell-battery": {
+    "asset": "じゅうでんち.webp",
+    "category": "held-items",
+    "id": "cell-battery",
+    "name": {
+      "en": "cell-battery",
+      "ja": "じゅうでんち"
+    },
+    "source": "pokeapi"
+  },
+  "chandelurite": {
+    "asset": "シャンデラナイト.webp",
+    "category": "mega-stones",
+    "id": "chandelurite",
+    "name": {
+      "en": "chandelurite",
+      "ja": "シャンデラナイト"
+    },
+    "source": "pokeapi"
+  },
+  "charcoal": {
+    "asset": "もくたん.webp",
+    "category": "type-enhancement",
+    "id": "charcoal",
+    "name": {
+      "en": "charcoal",
+      "ja": "もくたん"
+    },
+    "source": "pokeapi"
+  },
+  "charizardite-x": {
+    "asset": "リザードナイトX.webp",
+    "category": "mega-stones",
+    "id": "charizardite-x",
+    "name": {
+      "en": "charizardite-x",
+      "ja": "リザードナイトＸ"
+    },
+    "source": "pokeapi"
+  },
+  "charizardite-y": {
+    "asset": "リザードナイトY.webp",
+    "category": "mega-stones",
+    "id": "charizardite-y",
+    "name": {
+      "en": "charizardite-y",
+      "ja": "リザードナイトＹ"
+    },
+    "source": "pokeapi"
+  },
+  "charti-berry": {
+    "asset": "ヨロギのみ.webp",
+    "category": "type-protection",
+    "id": "charti-berry",
+    "name": {
+      "en": "charti-berry",
+      "ja": "ヨロギのみ"
+    },
+    "source": "pokeapi"
+  },
+  "cheri-berry": {
+    "asset": "クラボのみ.webp",
+    "category": "medicine",
+    "id": "cheri-berry",
+    "name": {
+      "en": "cheri-berry",
+      "ja": "クラボのみ"
+    },
+    "source": "pokeapi"
+  },
+  "chesnaughtite": {
+    "asset": "ブリガロナイト.webp",
+    "category": "mega-stones",
+    "id": "chesnaughtite",
+    "name": {
+      "en": "chesnaughtite",
+      "ja": "ブリガロナイト"
+    },
+    "source": "pokeapi"
+  },
+  "chesto-berry": {
+    "asset": "カゴのみ.webp",
+    "category": "medicine",
+    "id": "chesto-berry",
+    "name": {
+      "en": "chesto-berry",
+      "ja": "カゴのみ"
+    },
+    "source": "pokeapi"
+  },
+  "chilan-berry": {
+    "asset": "ホズのみ.webp",
+    "category": "type-protection",
+    "id": "chilan-berry",
+    "name": {
+      "en": "chilan-berry",
+      "ja": "ホズのみ"
+    },
+    "source": "pokeapi"
+  },
+  "chill-drive": {
+    "asset": null,
+    "category": "species-specific",
+    "id": "chill-drive",
+    "name": {
+      "en": "chill-drive",
+      "ja": "フリーズカセット"
+    },
+    "source": "pokeapi"
+  },
+  "chimechite": {
+    "asset": "チリーンナイト.webp",
+    "category": "mega-stones",
+    "id": "chimechite",
+    "name": {
+      "en": "chimechite",
+      "ja": "チリーンナイト"
+    },
+    "source": "pokeapi"
+  },
+  "choice-band": {
+    "asset": "こだわりハチマキ.webp",
+    "category": "choice",
+    "id": "choice-band",
+    "name": {
+      "en": "choice-band",
+      "ja": "こだわりハチマキ"
+    },
+    "source": "pokeapi"
+  },
+  "choice-scarf": {
+    "asset": "こだわりスカーフ.webp",
+    "category": "choice",
+    "id": "choice-scarf",
+    "name": {
+      "en": "choice-scarf",
+      "ja": "こだわりスカーフ"
+    },
+    "source": "pokeapi"
+  },
+  "choice-specs": {
+    "asset": "こだわりメガネ.webp",
+    "category": "choice",
+    "id": "choice-specs",
+    "name": {
+      "en": "choice-specs",
+      "ja": "こだわりメガネ"
+    },
+    "source": "pokeapi"
+  },
+  "chople-berry": {
+    "asset": "ヨプのみ.webp",
+    "category": "type-protection",
+    "id": "chople-berry",
+    "name": {
+      "en": "chople-berry",
+      "ja": "ヨプのみ"
+    },
+    "source": "pokeapi"
+  },
+  "cleanse-tag": {
+    "asset": null,
+    "category": "training",
+    "id": "cleanse-tag",
+    "name": {
+      "en": "cleanse-tag",
+      "ja": "きよめのおふだ"
+    },
+    "source": "pokeapi"
+  },
+  "clear-amulet": {
+    "asset": "クリアチャーム.webp",
+    "category": "held-items",
+    "id": "clear-amulet",
+    "name": {
+      "en": "clear-amulet",
+      "ja": "クリアチャーム"
+    },
+    "source": "pokeapi"
+  },
+  "clefablite": {
+    "asset": "ピクシナイト.webp",
+    "category": "mega-stones",
+    "id": "clefablite",
+    "name": {
+      "en": "clefablite",
+      "ja": "ピクシナイト"
+    },
+    "source": "pokeapi"
+  },
+  "coba-berry": {
+    "asset": "バコウのみ.webp",
+    "category": "type-protection",
+    "id": "coba-berry",
+    "name": {
+      "en": "coba-berry",
+      "ja": "バコウのみ"
+    },
+    "source": "pokeapi"
+  },
+  "colbur-berry": {
+    "asset": "ナモのみ.webp",
+    "category": "type-protection",
+    "id": "colbur-berry",
+    "name": {
+      "en": "colbur-berry",
+      "ja": "ナモのみ"
+    },
+    "source": "pokeapi"
+  },
+  "cornerstone-mask": {
+    "asset": "いしずえのめん.webp",
+    "category": "held-items",
+    "id": "cornerstone-mask",
+    "name": {
+      "en": "cornerstone-mask",
+      "ja": "いしずえのめん"
+    },
+    "source": "pokeapi"
+  },
+  "covert-cloak": {
+    "asset": "おんみつマント.webp",
+    "category": "held-items",
+    "id": "covert-cloak",
+    "name": {
+      "en": "covert-cloak",
+      "ja": "おんみつマント"
+    },
+    "source": "pokeapi"
+  },
+  "crabominite": {
+    "asset": "ケケンカニナイト.webp",
+    "category": "mega-stones",
+    "id": "crabominite",
+    "name": {
+      "en": "crabominite",
+      "ja": "ケケンカニナイト"
+    },
+    "source": "pokeapi"
+  },
+  "crucibellite": {
+    "asset": null,
+    "category": "mega-stones",
+    "id": "crucibellite",
+    "name": {
+      "en": "Crucibellite",
+      "ja": null
+    },
+    "source": "showdown-champions"
+  },
+  "custap-berry": {
+    "asset": "イバンのみ.webp",
+    "category": "in-a-pinch",
+    "id": "custap-berry",
+    "name": {
+      "en": "custap-berry",
+      "ja": "イバンのみ"
+    },
+    "source": "pokeapi"
+  },
+  "damp-rock": {
+    "asset": "しめったいわ.webp",
+    "category": "held-items",
+    "id": "damp-rock",
+    "name": {
+      "en": "damp-rock",
+      "ja": "しめったいわ"
+    },
+    "source": "pokeapi"
+  },
+  "dark-memory": {
+    "asset": null,
+    "category": "memories",
+    "id": "dark-memory",
+    "name": {
+      "en": "dark-memory",
+      "ja": "ダークメモリ"
+    },
+    "source": "pokeapi"
+  },
+  "darkranite": {
+    "asset": "ダークライナイト.webp",
+    "category": "mega-stones",
+    "id": "darkranite",
+    "name": {
+      "en": "darkranite",
+      "ja": "ダークライナイト"
+    },
+    "source": "pokeapi"
+  },
+  "deep-sea-scale": {
+    "asset": "しんかいのウロコ.webp",
+    "category": "species-specific",
+    "id": "deep-sea-scale",
+    "name": {
+      "en": "deep-sea-scale",
+      "ja": "しんかいのウロコ"
+    },
+    "source": "pokeapi"
+  },
+  "deep-sea-tooth": {
+    "asset": "しんかいのキバ.webp",
+    "category": "species-specific",
+    "id": "deep-sea-tooth",
+    "name": {
+      "en": "deep-sea-tooth",
+      "ja": "しんかいのキバ"
+    },
+    "source": "pokeapi"
+  },
+  "delphoxite": {
+    "asset": "マフォクシナイト.webp",
+    "category": "mega-stones",
+    "id": "delphoxite",
+    "name": {
+      "en": "delphoxite",
+      "ja": "マフォクシナイト"
+    },
+    "source": "pokeapi"
+  },
+  "destiny-knot": {
+    "asset": "あかいいと.webp",
+    "category": "held-items",
+    "id": "destiny-knot",
+    "name": {
+      "en": "destiny-knot",
+      "ja": "あかいいと"
+    },
+    "source": "pokeapi"
+  },
+  "diancite": {
+    "asset": "ディアンシナイト.webp",
+    "category": "mega-stones",
+    "id": "diancite",
+    "name": {
+      "en": "diancite",
+      "ja": "ディアンシナイト"
+    },
+    "source": "pokeapi"
+  },
+  "douse-drive": {
+    "asset": null,
+    "category": "species-specific",
+    "id": "douse-drive",
+    "name": {
+      "en": "douse-drive",
+      "ja": "アクアカセット"
+    },
+    "source": "pokeapi"
+  },
+  "draco-plate": {
+    "asset": "りゅうのプレート.webp",
+    "category": "plates",
+    "id": "draco-plate",
+    "name": {
+      "en": "draco-plate",
+      "ja": "りゅうのプレート"
+    },
+    "source": "pokeapi"
+  },
+  "dragalgite": {
+    "asset": "ドラミドナイト.webp",
+    "category": "mega-stones",
+    "id": "dragalgite",
+    "name": {
+      "en": "dragalgite",
+      "ja": "ドラミドナイト"
+    },
+    "source": "pokeapi"
+  },
+  "dragon-fang": {
+    "asset": "りゅうのキバ.webp",
+    "category": "type-enhancement",
+    "id": "dragon-fang",
+    "name": {
+      "en": "dragon-fang",
+      "ja": "りゅうのキバ"
+    },
+    "source": "pokeapi"
+  },
+  "dragon-memory": {
+    "asset": null,
+    "category": "memories",
+    "id": "dragon-memory",
+    "name": {
+      "en": "dragon-memory",
+      "ja": "ドラゴンメモリ"
+    },
+    "source": "pokeapi"
+  },
+  "dragoninite": {
+    "asset": "カイリュナイト.webp",
+    "category": "mega-stones",
+    "id": "dragoninite",
+    "name": {
+      "en": "dragoninite",
+      "ja": "カイリュナイト"
+    },
+    "source": "pokeapi"
+  },
+  "drampanite": {
+    "asset": "ジジーロナイト.webp",
+    "category": "mega-stones",
+    "id": "drampanite",
+    "name": {
+      "en": "drampanite",
+      "ja": "ジジーロナイト"
+    },
+    "source": "pokeapi"
+  },
+  "dread-plate": {
+    "asset": "こわもてプレート.webp",
+    "category": "plates",
+    "id": "dread-plate",
+    "name": {
+      "en": "dread-plate",
+      "ja": "こわもてプレート"
+    },
+    "source": "pokeapi"
+  },
+  "earth-plate": {
+    "asset": "だいちのプレート.webp",
+    "category": "plates",
+    "id": "earth-plate",
+    "name": {
+      "en": "earth-plate",
+      "ja": "だいちのプレート"
+    },
+    "source": "pokeapi"
+  },
+  "eelektrossite": {
+    "asset": "シビルドナイト.webp",
+    "category": "mega-stones",
+    "id": "eelektrossite",
+    "name": {
+      "en": "eelektrossite",
+      "ja": "シビルドナイト"
+    },
+    "source": "pokeapi"
+  },
+  "eject-button": {
+    "asset": "だっしゅつボタン.webp",
+    "category": "held-items",
+    "id": "eject-button",
+    "name": {
+      "en": "eject-button",
+      "ja": "だっしゅつボタン"
+    },
+    "source": "pokeapi"
+  },
+  "eject-pack": {
+    "asset": "だっしゅつパック.webp",
+    "category": "held-items",
+    "id": "eject-pack",
+    "name": {
+      "en": "eject-pack",
+      "ja": "だっしゅつパック"
+    },
+    "source": "pokeapi"
+  },
+  "electric-memory": {
+    "asset": null,
+    "category": "memories",
+    "id": "electric-memory",
+    "name": {
+      "en": "electric-memory",
+      "ja": "エレクトロメモリ"
+    },
+    "source": "pokeapi"
+  },
+  "electric-seed": {
+    "asset": "エレキシード.webp",
+    "category": "held-items",
+    "id": "electric-seed",
+    "name": {
+      "en": "electric-seed",
+      "ja": "エレキシード"
+    },
+    "source": "pokeapi"
+  },
+  "emboarite": {
+    "asset": "エンブオナイト.webp",
+    "category": "mega-stones",
+    "id": "emboarite",
+    "name": {
+      "en": "emboarite",
+      "ja": "エンブオナイト"
+    },
+    "source": "pokeapi"
+  },
+  "enigma-berry": {
+    "asset": "ナゾのみ.webp",
+    "category": "other",
+    "id": "enigma-berry",
+    "name": {
+      "en": "enigma-berry",
+      "ja": "ナゾのみ"
+    },
+    "source": "pokeapi"
+  },
+  "everstone": {
+    "asset": "かわらずのいし.webp",
+    "category": "training",
+    "id": "everstone",
+    "name": {
+      "en": "everstone",
+      "ja": "かわらずのいし"
+    },
+    "source": "pokeapi"
+  },
+  "eviolite": {
+    "asset": "しんかのきせき.webp",
+    "category": "held-items",
+    "id": "eviolite",
+    "name": {
+      "en": "eviolite",
+      "ja": "しんかのきせき"
+    },
+    "source": "pokeapi"
+  },
+  "excadrite": {
+    "asset": "ドリュウズナイト.webp",
+    "category": "mega-stones",
+    "id": "excadrite",
+    "name": {
+      "en": "excadrite",
+      "ja": "ドリュウズナイト"
+    },
+    "source": "pokeapi"
+  },
+  "exp-share": {
+    "asset": null,
+    "category": "training",
+    "id": "exp-share",
+    "name": {
+      "en": "exp-share",
+      "ja": "がくしゅうそうち"
+    },
+    "source": "pokeapi"
+  },
+  "expert-belt": {
+    "asset": "たつじんのおび.webp",
+    "category": "held-items",
+    "id": "expert-belt",
+    "name": {
+      "en": "expert-belt",
+      "ja": "たつじんのおび"
+    },
+    "source": "pokeapi"
+  },
+  "fairy-feather": {
+    "asset": "ようせいのハネ.webp",
+    "category": "held-items",
+    "id": "fairy-feather",
+    "name": {
+      "en": "fairy-feather",
+      "ja": "ようせいのハネ"
+    },
+    "source": "pokeapi"
+  },
+  "fairy-memory": {
+    "asset": null,
+    "category": "memories",
+    "id": "fairy-memory",
+    "name": {
+      "en": "fairy-memory",
+      "ja": "フェアリーメモリ"
+    },
+    "source": "pokeapi"
+  },
+  "falinksite": {
+    "asset": "タイレーツナイト.webp",
+    "category": "mega-stones",
+    "id": "falinksite",
+    "name": {
+      "en": "falinksite",
+      "ja": "タイレーツナイト"
+    },
+    "source": "pokeapi"
+  },
+  "feraligite": {
+    "asset": "オーダイルナイト.webp",
+    "category": "mega-stones",
+    "id": "feraligite",
+    "name": {
+      "en": "feraligite",
+      "ja": "オーダイルナイト"
+    },
+    "source": "pokeapi"
+  },
+  "fighting-memory": {
+    "asset": null,
+    "category": "memories",
+    "id": "fighting-memory",
+    "name": {
+      "en": "fighting-memory",
+      "ja": "ファイトメモリ"
+    },
+    "source": "pokeapi"
+  },
+  "figy-berry": {
+    "asset": "フィラのみ.webp",
+    "category": "picky-healing",
+    "id": "figy-berry",
+    "name": {
+      "en": "figy-berry",
+      "ja": "フィラのみ"
+    },
+    "source": "pokeapi"
+  },
+  "fire-memory": {
+    "asset": null,
+    "category": "memories",
+    "id": "fire-memory",
+    "name": {
+      "en": "fire-memory",
+      "ja": "ファイヤーメモリ"
+    },
+    "source": "pokeapi"
+  },
+  "fist-plate": {
+    "asset": "こぶしのプレート.webp",
+    "category": "plates",
+    "id": "fist-plate",
+    "name": {
+      "en": "fist-plate",
+      "ja": "こぶしのプレート"
+    },
+    "source": "pokeapi"
+  },
+  "flame-orb": {
+    "asset": "かえんだま.webp",
+    "category": "bad-held-items",
+    "id": "flame-orb",
+    "name": {
+      "en": "flame-orb",
+      "ja": "かえんだま"
+    },
+    "source": "pokeapi"
+  },
+  "flame-plate": {
+    "asset": "ひのたまプレート.webp",
+    "category": "plates",
+    "id": "flame-plate",
+    "name": {
+      "en": "flame-plate",
+      "ja": "ひのたまプレート"
+    },
+    "source": "pokeapi"
+  },
+  "float-stone": {
+    "asset": "かるいし.webp",
+    "category": "held-items",
+    "id": "float-stone",
+    "name": {
+      "en": "float-stone",
+      "ja": "かるいし"
+    },
+    "source": "pokeapi"
+  },
+  "floettite": {
+    "asset": "フラエッテナイト.webp",
+    "category": "mega-stones",
+    "id": "floettite",
+    "name": {
+      "en": "floettite",
+      "ja": "フラエッテナイト"
+    },
+    "source": "pokeapi"
+  },
+  "flying-memory": {
+    "asset": null,
+    "category": "memories",
+    "id": "flying-memory",
+    "name": {
+      "en": "flying-memory",
+      "ja": "フライングメモリ"
+    },
+    "source": "pokeapi"
+  },
+  "focus-band": {
+    "asset": "きあいのハチマキ.webp",
+    "category": "held-items",
+    "id": "focus-band",
+    "name": {
+      "en": "focus-band",
+      "ja": "きあいのハチマキ"
+    },
+    "source": "pokeapi"
+  },
+  "focus-sash": {
+    "asset": "きあいのタスキ.webp",
+    "category": "held-items",
+    "id": "focus-sash",
+    "name": {
+      "en": "focus-sash",
+      "ja": "きあいのタスキ"
+    },
+    "source": "pokeapi"
+  },
+  "froslassite": {
+    "asset": "ユキメノコナイト.webp",
+    "category": "mega-stones",
+    "id": "froslassite",
+    "name": {
+      "en": "froslassite",
+      "ja": "ユキメノコナイト"
+    },
+    "source": "pokeapi"
+  },
+  "full-incense": {
+    "asset": null,
+    "category": "bad-held-items",
+    "id": "full-incense",
+    "name": {
+      "en": "full-incense",
+      "ja": "まんぷくおこう"
+    },
+    "source": "pokeapi"
+  },
+  "galladite": {
+    "asset": "エルレイドナイト.webp",
+    "category": "mega-stones",
+    "id": "galladite",
+    "name": {
+      "en": "galladite",
+      "ja": "エルレイドナイト"
+    },
+    "source": "pokeapi"
+  },
+  "ganlon-berry": {
+    "asset": "リュガのみ.webp",
+    "category": "in-a-pinch",
+    "id": "ganlon-berry",
+    "name": {
+      "en": "ganlon-berry",
+      "ja": "リュガのみ"
+    },
+    "source": "pokeapi"
+  },
+  "garchompite": {
+    "asset": "ガブリアスナイト.webp",
+    "category": "mega-stones",
+    "id": "garchompite",
+    "name": {
+      "en": "garchompite",
+      "ja": "ガブリアスナイト"
+    },
+    "source": "pokeapi"
+  },
+  "garchompite-z": {
+    "asset": "ガブリアスナイトZ.webp",
+    "category": "mega-stones",
+    "id": "garchompite-z",
+    "name": {
+      "en": "garchompite-z",
+      "ja": "ガブリアスナイトZ"
+    },
+    "source": "pokeapi"
+  },
+  "gardevoirite": {
+    "asset": "サーナイトナイト.webp",
+    "category": "mega-stones",
+    "id": "gardevoirite",
+    "name": {
+      "en": "gardevoirite",
+      "ja": "サーナイトナイト"
+    },
+    "source": "pokeapi"
+  },
+  "gengarite": {
+    "asset": "ゲンガナイト.webp",
+    "category": "mega-stones",
+    "id": "gengarite",
+    "name": {
+      "en": "gengarite",
+      "ja": "ゲンガナイト"
+    },
+    "source": "pokeapi"
+  },
+  "ghost-memory": {
+    "asset": null,
+    "category": "memories",
+    "id": "ghost-memory",
+    "name": {
+      "en": "ghost-memory",
+      "ja": "ゴーストメモリ"
+    },
+    "source": "pokeapi"
+  },
+  "glalitite": {
+    "asset": "オニゴーリナイト.webp",
+    "category": "mega-stones",
+    "id": "glalitite",
+    "name": {
+      "en": "glalitite",
+      "ja": "オニゴーリナイト"
+    },
+    "source": "pokeapi"
+  },
+  "glimmoranite": {
+    "asset": "キラフロルナイト.webp",
+    "category": "mega-stones",
+    "id": "glimmoranite",
+    "name": {
+      "en": "glimmoranite",
+      "ja": "キラフロルナイト"
+    },
+    "source": "pokeapi"
+  },
+  "golisopite": {
+    "asset": "グソクムシャナイト.webp",
+    "category": "mega-stones",
+    "id": "golisopite",
+    "name": {
+      "en": "golisopite",
+      "ja": "グソクムシャナイト"
+    },
+    "source": "pokeapi"
+  },
+  "golurkite": {
+    "asset": "ゴルーグナイト.webp",
+    "category": "mega-stones",
+    "id": "golurkite",
+    "name": {
+      "en": "golurkite",
+      "ja": "ゴルーグナイト"
+    },
+    "source": "pokeapi"
+  },
+  "grass-memory": {
+    "asset": null,
+    "category": "memories",
+    "id": "grass-memory",
+    "name": {
+      "en": "grass-memory",
+      "ja": "グラスメモリ"
+    },
+    "source": "pokeapi"
+  },
+  "grassy-seed": {
+    "asset": "グラスシード.webp",
+    "category": "held-items",
+    "id": "grassy-seed",
+    "name": {
+      "en": "grassy-seed",
+      "ja": "グラスシード"
+    },
+    "source": "pokeapi"
+  },
+  "greninjite": {
+    "asset": "ゲッコウガナイト.webp",
+    "category": "mega-stones",
+    "id": "greninjite",
+    "name": {
+      "en": "greninjite",
+      "ja": "ゲッコウガナイト"
+    },
+    "source": "pokeapi"
+  },
+  "grip-claw": {
+    "asset": "ねばりのかぎづめ.webp",
+    "category": "held-items",
+    "id": "grip-claw",
+    "name": {
+      "en": "grip-claw",
+      "ja": "ねばりのかぎづめ"
+    },
+    "source": "pokeapi"
+  },
+  "griseous-orb": {
+    "asset": "はっきんだま.webp",
+    "category": "species-specific",
+    "id": "griseous-orb",
+    "name": {
+      "en": "griseous-orb",
+      "ja": "はっきんだま"
+    },
+    "source": "pokeapi"
+  },
+  "ground-memory": {
+    "asset": null,
+    "category": "memories",
+    "id": "ground-memory",
+    "name": {
+      "en": "ground-memory",
+      "ja": "グラウンドメモリ"
+    },
+    "source": "pokeapi"
+  },
+  "gyaradosite": {
+    "asset": "ギャラドスナイト.webp",
+    "category": "mega-stones",
+    "id": "gyaradosite",
+    "name": {
+      "en": "gyaradosite",
+      "ja": "ギャラドスナイト"
+    },
+    "source": "pokeapi"
+  },
+  "haban-berry": {
+    "asset": "ハバンのみ.webp",
+    "category": "type-protection",
+    "id": "haban-berry",
+    "name": {
+      "en": "haban-berry",
+      "ja": "ハバンのみ"
+    },
+    "source": "pokeapi"
+  },
+  "hard-stone": {
+    "asset": "かたいいし.webp",
+    "category": "type-enhancement",
+    "id": "hard-stone",
+    "name": {
+      "en": "hard-stone",
+      "ja": "かたいいし"
+    },
+    "source": "pokeapi"
+  },
+  "hawluchanite": {
+    "asset": "ルチャブルナイト.webp",
+    "category": "mega-stones",
+    "id": "hawluchanite",
+    "name": {
+      "en": "hawluchanite",
+      "ja": "ルチャブルナイト"
+    },
+    "source": "pokeapi"
+  },
+  "hearthflame-mask": {
+    "asset": "かまどのめん.webp",
+    "category": "held-items",
+    "id": "hearthflame-mask",
+    "name": {
+      "en": "hearthflame-mask",
+      "ja": "かまどのめん"
+    },
+    "source": "pokeapi"
+  },
+  "heat-rock": {
+    "asset": "あついいわ.webp",
+    "category": "held-items",
+    "id": "heat-rock",
+    "name": {
+      "en": "heat-rock",
+      "ja": "あついいわ"
+    },
+    "source": "pokeapi"
+  },
+  "heatranite": {
+    "asset": null,
+    "category": "mega-stones",
+    "id": "heatranite",
+    "name": {
+      "en": "heatranite",
+      "ja": "ヒードランナイト"
+    },
+    "source": "pokeapi"
+  },
+  "heavy-duty-boots": {
+    "asset": "あつぞこブーツ.webp",
+    "category": "held-items",
+    "id": "heavy-duty-boots",
+    "name": {
+      "en": "heavy-duty-boots",
+      "ja": "あつぞこブーツ"
+    },
+    "source": "pokeapi"
+  },
+  "heracronite": {
+    "asset": "ヘラクロスナイト.webp",
+    "category": "mega-stones",
+    "id": "heracronite",
+    "name": {
+      "en": "heracronite",
+      "ja": "ヘラクロスナイト"
+    },
+    "source": "pokeapi"
+  },
+  "houndoominite": {
+    "asset": "ヘルガナイト.webp",
+    "category": "mega-stones",
+    "id": "houndoominite",
+    "name": {
+      "en": "houndoominite",
+      "ja": "ヘルガナイト"
+    },
+    "source": "pokeapi"
+  },
+  "iapapa-berry": {
+    "asset": "イアのみ.webp",
+    "category": "picky-healing",
+    "id": "iapapa-berry",
+    "name": {
+      "en": "iapapa-berry",
+      "ja": "イアのみ"
+    },
+    "source": "pokeapi"
+  },
+  "ice-memory": {
+    "asset": null,
+    "category": "memories",
+    "id": "ice-memory",
+    "name": {
+      "en": "ice-memory",
+      "ja": "アイスメモリ"
+    },
+    "source": "pokeapi"
+  },
+  "icicle-plate": {
+    "asset": "つららのプレート.webp",
+    "category": "plates",
+    "id": "icicle-plate",
+    "name": {
+      "en": "icicle-plate",
+      "ja": "つららのプレート"
+    },
+    "source": "pokeapi"
+  },
+  "icy-rock": {
+    "asset": "つめたいいわ.webp",
+    "category": "held-items",
+    "id": "icy-rock",
+    "name": {
+      "en": "icy-rock",
+      "ja": "つめたいいわ"
+    },
+    "source": "pokeapi"
+  },
+  "insect-plate": {
+    "asset": "たまむしプレート.webp",
+    "category": "plates",
+    "id": "insect-plate",
+    "name": {
+      "en": "insect-plate",
+      "ja": "たまむしプレート"
+    },
+    "source": "pokeapi"
+  },
+  "iron-ball": {
+    "asset": "くろいてっきゅう.webp",
+    "category": "bad-held-items",
+    "id": "iron-ball",
+    "name": {
+      "en": "iron-ball",
+      "ja": "くろいてっきゅう"
+    },
+    "source": "pokeapi"
+  },
+  "iron-plate": {
+    "asset": "こうてつプレート.webp",
+    "category": "plates",
+    "id": "iron-plate",
+    "name": {
+      "en": "iron-plate",
+      "ja": "こうてつプレート"
+    },
+    "source": "pokeapi"
+  },
+  "jaboca-berry": {
+    "asset": "ジャポのみ.webp",
+    "category": "other",
+    "id": "jaboca-berry",
+    "name": {
+      "en": "jaboca-berry",
+      "ja": "ジャポのみ"
+    },
+    "source": "pokeapi"
+  },
+  "kangaskhanite": {
+    "asset": "ガルーラナイト.webp",
+    "category": "mega-stones",
+    "id": "kangaskhanite",
+    "name": {
+      "en": "kangaskhanite",
+      "ja": "ガルーラナイト"
+    },
+    "source": "pokeapi"
+  },
+  "kasib-berry": {
+    "asset": "カシブのみ.webp",
+    "category": "type-protection",
+    "id": "kasib-berry",
+    "name": {
+      "en": "kasib-berry",
+      "ja": "カシブのみ"
+    },
+    "source": "pokeapi"
+  },
+  "kebia-berry": {
+    "asset": "ビアーのみ.webp",
+    "category": "type-protection",
+    "id": "kebia-berry",
+    "name": {
+      "en": "kebia-berry",
+      "ja": "ビアーのみ"
+    },
+    "source": "pokeapi"
+  },
+  "kee-berry": {
+    "asset": "アッキのみ.webp",
+    "category": "other",
+    "id": "kee-berry",
+    "name": {
+      "en": "kee-berry",
+      "ja": "アッキのみ"
+    },
+    "source": "pokeapi"
+  },
+  "kings-rock": {
+    "asset": "おうじゃのしるし.webp",
+    "category": "held-items",
+    "id": "kings-rock",
+    "name": {
+      "en": "kings-rock",
+      "ja": "おうじゃのしるし"
+    },
+    "source": "pokeapi"
+  },
+  "lagging-tail": {
+    "asset": "こうこうのしっぽ.webp",
+    "category": "bad-held-items",
+    "id": "lagging-tail",
+    "name": {
+      "en": "lagging-tail",
+      "ja": "こうこうのしっぽ"
+    },
+    "source": "pokeapi"
+  },
+  "lansat-berry": {
+    "asset": "サンのみ.webp",
+    "category": "in-a-pinch",
+    "id": "lansat-berry",
+    "name": {
+      "en": "lansat-berry",
+      "ja": "サンのみ"
+    },
+    "source": "pokeapi"
+  },
+  "latiasite": {
+    "asset": "ラティアスナイト.webp",
+    "category": "mega-stones",
+    "id": "latiasite",
+    "name": {
+      "en": "latiasite",
+      "ja": "ラティアスナイト"
+    },
+    "source": "pokeapi"
+  },
+  "latiosite": {
+    "asset": "ラティオスナイト.webp",
+    "category": "mega-stones",
+    "id": "latiosite",
+    "name": {
+      "en": "latiosite",
+      "ja": "ラティオスナイト"
+    },
+    "source": "pokeapi"
+  },
+  "lax-incense": {
+    "asset": null,
+    "category": "held-items",
+    "id": "lax-incense",
+    "name": {
+      "en": "lax-incense",
+      "ja": "のんきのおこう"
+    },
+    "source": "pokeapi"
+  },
+  "leftovers": {
+    "asset": "たべのこし.webp",
+    "category": "held-items",
+    "id": "leftovers",
+    "name": {
+      "en": "leftovers",
+      "ja": "たべのこし"
+    },
+    "source": "pokeapi"
+  },
+  "legend-plate": {
+    "asset": null,
+    "category": "plates",
+    "id": "legend-plate",
+    "name": {
+      "en": "legend-plate",
+      "ja": "レジェンドプレート"
+    },
+    "source": "pokeapi"
+  },
+  "leppa-berry": {
+    "asset": "ヒメリのみ.webp",
+    "category": "medicine",
+    "id": "leppa-berry",
+    "name": {
+      "en": "leppa-berry",
+      "ja": "ヒメリのみ"
+    },
+    "source": "pokeapi"
+  },
+  "liechi-berry": {
+    "asset": "チイラのみ.webp",
+    "category": "in-a-pinch",
+    "id": "liechi-berry",
+    "name": {
+      "en": "liechi-berry",
+      "ja": "チイラのみ"
+    },
+    "source": "pokeapi"
+  },
+  "life-orb": {
+    "asset": "いのちのたま.webp",
+    "category": "held-items",
+    "id": "life-orb",
+    "name": {
+      "en": "life-orb",
+      "ja": "いのちのたま"
+    },
+    "source": "pokeapi"
+  },
+  "light-ball": {
+    "asset": "でんきだま.webp",
+    "category": "species-specific",
+    "id": "light-ball",
+    "name": {
+      "en": "light-ball",
+      "ja": "でんきだま"
+    },
+    "source": "pokeapi"
+  },
+  "light-clay": {
+    "asset": "ひかりのねんど.webp",
+    "category": "held-items",
+    "id": "light-clay",
+    "name": {
+      "en": "light-clay",
+      "ja": "ひかりのねんど"
+    },
+    "source": "pokeapi"
+  },
+  "loaded-dice": {
+    "asset": "いかさまダイス.webp",
+    "category": "held-items",
+    "id": "loaded-dice",
+    "name": {
+      "en": "loaded-dice",
+      "ja": "いかさまダイス"
+    },
+    "source": "pokeapi"
+  },
+  "lopunnite": {
+    "asset": "ミミロップナイト.webp",
+    "category": "mega-stones",
+    "id": "lopunnite",
+    "name": {
+      "en": "lopunnite",
+      "ja": "ミミロップナイト"
+    },
+    "source": "pokeapi"
+  },
+  "lucarionite": {
+    "asset": "ルカリオナイト.webp",
+    "category": "mega-stones",
+    "id": "lucarionite",
+    "name": {
+      "en": "lucarionite",
+      "ja": "ルカリオナイト"
+    },
+    "source": "pokeapi"
+  },
+  "lucarionite-z": {
+    "asset": "ルカリオナイトZ.webp",
+    "category": "mega-stones",
+    "id": "lucarionite-z",
+    "name": {
+      "en": "lucarionite-z",
+      "ja": "ルカリオナイトZ"
+    },
+    "source": "pokeapi"
+  },
+  "luck-incense": {
+    "asset": null,
+    "category": "training",
+    "id": "luck-incense",
+    "name": {
+      "en": "luck-incense",
+      "ja": "こううんのおこう"
+    },
+    "source": "pokeapi"
+  },
+  "lucky-egg": {
+    "asset": "しあわせタマゴ.webp",
+    "category": "training",
+    "id": "lucky-egg",
+    "name": {
+      "en": "lucky-egg",
+      "ja": "しあわせタマゴ"
+    },
+    "source": "pokeapi"
+  },
+  "lucky-punch": {
+    "asset": null,
+    "category": "species-specific",
+    "id": "lucky-punch",
+    "name": {
+      "en": "lucky-punch",
+      "ja": "ラッキーパンチ"
+    },
+    "source": "pokeapi"
+  },
+  "lum-berry": {
+    "asset": "ラムのみ.webp",
+    "category": "medicine",
+    "id": "lum-berry",
+    "name": {
+      "en": "lum-berry",
+      "ja": "ラムのみ"
+    },
+    "source": "pokeapi"
+  },
+  "luminous-moss": {
+    "asset": null,
+    "category": "held-items",
+    "id": "luminous-moss",
+    "name": {
+      "en": "luminous-moss",
+      "ja": "ひかりごけ"
+    },
+    "source": "pokeapi"
+  },
+  "lustrous-orb": {
+    "asset": "しらたま.webp",
+    "category": "species-specific",
+    "id": "lustrous-orb",
+    "name": {
+      "en": "lustrous-orb",
+      "ja": "しらたま"
+    },
+    "source": "pokeapi"
+  },
+  "magearnite": {
+    "asset": "マギアナイト.webp",
+    "category": "mega-stones",
+    "id": "magearnite",
+    "name": {
+      "en": "magearnite",
+      "ja": "マギアナイト"
+    },
+    "source": "pokeapi"
+  },
+  "magnet": {
+    "asset": "じしゃく.webp",
+    "category": "type-enhancement",
+    "id": "magnet",
+    "name": {
+      "en": "magnet",
+      "ja": "じしゃく"
+    },
+    "source": "pokeapi"
+  },
+  "mago-berry": {
+    "asset": "マゴのみ.webp",
+    "category": "picky-healing",
+    "id": "mago-berry",
+    "name": {
+      "en": "mago-berry",
+      "ja": "マゴのみ"
+    },
+    "source": "pokeapi"
+  },
+  "malamarite": {
+    "asset": "カラマネナイト.webp",
+    "category": "mega-stones",
+    "id": "malamarite",
+    "name": {
+      "en": "malamarite",
+      "ja": "カラマネナイト"
+    },
+    "source": "pokeapi"
+  },
+  "manectite": {
+    "asset": "ライボルトナイト.webp",
+    "category": "mega-stones",
+    "id": "manectite",
+    "name": {
+      "en": "manectite",
+      "ja": "ライボルトナイト"
+    },
+    "source": "pokeapi"
+  },
+  "maranga-berry": {
+    "asset": "タラプのみ.webp",
+    "category": "other",
+    "id": "maranga-berry",
+    "name": {
+      "en": "maranga-berry",
+      "ja": "タラプのみ"
+    },
+    "source": "pokeapi"
+  },
+  "mawilite": {
+    "asset": "クチートナイト.webp",
+    "category": "mega-stones",
+    "id": "mawilite",
+    "name": {
+      "en": "mawilite",
+      "ja": "クチートナイト"
+    },
+    "source": "pokeapi"
+  },
+  "meadow-plate": {
+    "asset": "みどりのプレート.webp",
+    "category": "plates",
+    "id": "meadow-plate",
+    "name": {
+      "en": "meadow-plate",
+      "ja": "みどりのプレート"
+    },
+    "source": "pokeapi"
+  },
+  "medichamite": {
+    "asset": "チャーレムナイト.webp",
+    "category": "mega-stones",
+    "id": "medichamite",
+    "name": {
+      "en": "medichamite",
+      "ja": "チャーレムナイト"
+    },
+    "source": "pokeapi"
+  },
+  "meganiumite": {
+    "asset": "メガニウムナイト.webp",
+    "category": "mega-stones",
+    "id": "meganiumite",
+    "name": {
+      "en": "meganiumite",
+      "ja": "メガニウムナイト"
+    },
+    "source": "pokeapi"
+  },
+  "mental-herb": {
+    "asset": "メンタルハーブ.webp",
+    "category": "held-items",
+    "id": "mental-herb",
+    "name": {
+      "en": "mental-herb",
+      "ja": "メンタルハーブ"
+    },
+    "source": "pokeapi"
+  },
+  "meowsticite": {
+    "asset": "ニャオニクスナイト.webp",
+    "category": "mega-stones",
+    "id": "meowsticite",
+    "name": {
+      "en": "meowsticite",
+      "ja": "ニャオニクスナイト"
+    },
+    "source": "pokeapi"
+  },
+  "metagrossite": {
+    "asset": "メタグロスナイト.webp",
+    "category": "mega-stones",
+    "id": "metagrossite",
+    "name": {
+      "en": "metagrossite",
+      "ja": "メタグロスナイト"
+    },
+    "source": "pokeapi"
+  },
+  "metal-coat": {
+    "asset": "メタルコート.webp",
+    "category": "type-enhancement",
+    "id": "metal-coat",
+    "name": {
+      "en": "metal-coat",
+      "ja": "メタルコート"
+    },
+    "source": "pokeapi"
+  },
+  "metal-powder": {
+    "asset": "メタルパウダー.webp",
+    "category": "species-specific",
+    "id": "metal-powder",
+    "name": {
+      "en": "metal-powder",
+      "ja": "メタルパウダー"
+    },
+    "source": "pokeapi"
+  },
+  "metronome": {
+    "asset": "メトロノーム.webp",
+    "category": "held-items",
+    "id": "metronome",
+    "name": {
+      "en": "metronome",
+      "ja": "メトロノーム"
+    },
+    "source": "pokeapi"
+  },
+  "mewtwonite-x": {
+    "asset": "ミュウツナイトX.webp",
+    "category": "mega-stones",
+    "id": "mewtwonite-x",
+    "name": {
+      "en": "mewtwonite-x",
+      "ja": "ミュウツナイトＸ"
+    },
+    "source": "pokeapi"
+  },
+  "mewtwonite-y": {
+    "asset": "ミュウツナイトY.webp",
+    "category": "mega-stones",
+    "id": "mewtwonite-y",
+    "name": {
+      "en": "mewtwonite-y",
+      "ja": "ミュウツナイトＹ"
+    },
+    "source": "pokeapi"
+  },
+  "micle-berry": {
+    "asset": "ミクルのみ.webp",
+    "category": "in-a-pinch",
+    "id": "micle-berry",
+    "name": {
+      "en": "micle-berry",
+      "ja": "ミクルのみ"
+    },
+    "source": "pokeapi"
+  },
+  "mind-plate": {
+    "asset": "ふしぎのプレート.webp",
+    "category": "plates",
+    "id": "mind-plate",
+    "name": {
+      "en": "mind-plate",
+      "ja": "ふしぎのプレート"
+    },
+    "source": "pokeapi"
+  },
+  "miracle-seed": {
+    "asset": "きせきのタネ.webp",
+    "category": "type-enhancement",
+    "id": "miracle-seed",
+    "name": {
+      "en": "miracle-seed",
+      "ja": "きせきのタネ"
+    },
+    "source": "pokeapi"
+  },
+  "mirror-herb": {
+    "asset": "ものまねハーブ.webp",
+    "category": "held-items",
+    "id": "mirror-herb",
+    "name": {
+      "en": "mirror-herb",
+      "ja": "ものまねハーブ"
+    },
+    "source": "pokeapi"
+  },
+  "misty-seed": {
+    "asset": "ミストシード.webp",
+    "category": "held-items",
+    "id": "misty-seed",
+    "name": {
+      "en": "misty-seed",
+      "ja": "ミストシード"
+    },
+    "source": "pokeapi"
+  },
+  "muscle-band": {
+    "asset": "ちからのハチマキ.webp",
+    "category": "held-items",
+    "id": "muscle-band",
+    "name": {
+      "en": "muscle-band",
+      "ja": "ちからのハチマキ"
+    },
+    "source": "pokeapi"
+  },
+  "mystic-water": {
+    "asset": "しんぴのしずく.webp",
+    "category": "type-enhancement",
+    "id": "mystic-water",
+    "name": {
+      "en": "mystic-water",
+      "ja": "しんぴのしずく"
+    },
+    "source": "pokeapi"
+  },
+  "never-melt-ice": {
+    "asset": "とけないこおり.webp",
+    "category": "type-enhancement",
+    "id": "never-melt-ice",
+    "name": {
+      "en": "never-melt-ice",
+      "ja": "とけないこおり"
+    },
+    "source": "pokeapi"
+  },
+  "occa-berry": {
+    "asset": "オッカのみ.webp",
+    "category": "type-protection",
+    "id": "occa-berry",
+    "name": {
+      "en": "occa-berry",
+      "ja": "オッカのみ"
+    },
+    "source": "pokeapi"
+  },
+  "odd-incense": {
+    "asset": null,
+    "category": "type-enhancement",
+    "id": "odd-incense",
+    "name": {
+      "en": "odd-incense",
+      "ja": "あやしいおこう"
+    },
+    "source": "pokeapi"
+  },
+  "oran-berry": {
+    "asset": "オレンのみ.webp",
+    "category": "medicine",
+    "id": "oran-berry",
+    "name": {
+      "en": "oran-berry",
+      "ja": "オレンのみ"
+    },
+    "source": "pokeapi"
+  },
+  "pass-orb": {
+    "asset": null,
+    "category": "held-items",
+    "id": "pass-orb",
+    "name": {
+      "en": "pass-orb",
+      "ja": "デルダマ"
+    },
+    "source": "pokeapi"
+  },
+  "passho-berry": {
+    "asset": "イトケのみ.webp",
+    "category": "type-protection",
+    "id": "passho-berry",
+    "name": {
+      "en": "passho-berry",
+      "ja": "イトケのみ"
+    },
+    "source": "pokeapi"
+  },
+  "payapa-berry": {
+    "asset": "ウタンのみ.webp",
+    "category": "type-protection",
+    "id": "payapa-berry",
+    "name": {
+      "en": "payapa-berry",
+      "ja": "ウタンのみ"
+    },
+    "source": "pokeapi"
+  },
+  "pecha-berry": {
+    "asset": "モモンのみ.webp",
+    "category": "medicine",
+    "id": "pecha-berry",
+    "name": {
+      "en": "pecha-berry",
+      "ja": "モモンのみ"
+    },
+    "source": "pokeapi"
+  },
+  "persim-berry": {
+    "asset": "キーのみ.webp",
+    "category": "medicine",
+    "id": "persim-berry",
+    "name": {
+      "en": "persim-berry",
+      "ja": "キーのみ"
+    },
+    "source": "pokeapi"
+  },
+  "petaya-berry": {
+    "asset": "ヤタピのみ.webp",
+    "category": "in-a-pinch",
+    "id": "petaya-berry",
+    "name": {
+      "en": "petaya-berry",
+      "ja": "ヤタピのみ"
+    },
+    "source": "pokeapi"
+  },
+  "pidgeotite": {
+    "asset": "ピジョットナイト.webp",
+    "category": "mega-stones",
+    "id": "pidgeotite",
+    "name": {
+      "en": "pidgeotite",
+      "ja": "ピジョットナイト"
+    },
+    "source": "pokeapi"
+  },
+  "pink-nectar": {
+    "asset": null,
+    "category": "species-specific",
+    "id": "pink-nectar",
+    "name": {
+      "en": "pink-nectar",
+      "ja": "うすもものミツ"
+    },
+    "source": "pokeapi"
+  },
+  "pinsirite": {
+    "asset": "カイロスナイト.webp",
+    "category": "mega-stones",
+    "id": "pinsirite",
+    "name": {
+      "en": "pinsirite",
+      "ja": "カイロスナイト"
+    },
+    "source": "pokeapi"
+  },
+  "pixie-plate": {
+    "asset": "せいれいプレート.webp",
+    "category": "plates",
+    "id": "pixie-plate",
+    "name": {
+      "en": "pixie-plate",
+      "ja": "せいれいプレート"
+    },
+    "source": "pokeapi"
+  },
+  "poison-barb": {
+    "asset": "どくバリ.webp",
+    "category": "type-enhancement",
+    "id": "poison-barb",
+    "name": {
+      "en": "poison-barb",
+      "ja": "どくバリ"
+    },
+    "source": "pokeapi"
+  },
+  "poison-memory": {
+    "asset": null,
+    "category": "memories",
+    "id": "poison-memory",
+    "name": {
+      "en": "poison-memory",
+      "ja": "ポイズンメモリ"
+    },
+    "source": "pokeapi"
+  },
+  "power-herb": {
+    "asset": "パワフルハーブ.webp",
+    "category": "held-items",
+    "id": "power-herb",
+    "name": {
+      "en": "power-herb",
+      "ja": "パワフルハーブ"
+    },
+    "source": "pokeapi"
+  },
+  "protective-pads": {
+    "asset": "ぼうごパット.webp",
+    "category": "held-items",
+    "id": "protective-pads",
+    "name": {
+      "en": "protective-pads",
+      "ja": "ぼうごパット"
+    },
+    "source": "pokeapi"
+  },
+  "psychic-memory": {
+    "asset": null,
+    "category": "memories",
+    "id": "psychic-memory",
+    "name": {
+      "en": "psychic-memory",
+      "ja": "サイキックメモリ"
+    },
+    "source": "pokeapi"
+  },
+  "psychic-seed": {
+    "asset": "サイコシード.webp",
+    "category": "held-items",
+    "id": "psychic-seed",
+    "name": {
+      "en": "psychic-seed",
+      "ja": "サイコシード"
+    },
+    "source": "pokeapi"
+  },
+  "punching-glove": {
+    "asset": "パンチグローブ.webp",
+    "category": "held-items",
+    "id": "punching-glove",
+    "name": {
+      "en": "punching-glove",
+      "ja": "パンチグローブ"
+    },
+    "source": "pokeapi"
+  },
+  "pure-incense": {
+    "asset": null,
+    "category": "training",
+    "id": "pure-incense",
+    "name": {
+      "en": "pure-incense",
+      "ja": "きよめのおこう"
+    },
+    "source": "pokeapi"
+  },
+  "purple-nectar": {
+    "asset": null,
+    "category": "species-specific",
+    "id": "purple-nectar",
+    "name": {
+      "en": "purple-nectar",
+      "ja": "むらさきのミツ"
+    },
+    "source": "pokeapi"
+  },
+  "pyroarite": {
+    "asset": "カエンジシナイト.webp",
+    "category": "mega-stones",
+    "id": "pyroarite",
+    "name": {
+      "en": "pyroarite",
+      "ja": "カエンジシナイト"
+    },
+    "source": "pokeapi"
+  },
+  "quick-claw": {
+    "asset": "せんせいのツメ.webp",
+    "category": "held-items",
+    "id": "quick-claw",
+    "name": {
+      "en": "quick-claw",
+      "ja": "せんせいのツメ"
+    },
+    "source": "pokeapi"
+  },
+  "quick-powder": {
+    "asset": "スピードパウダー.webp",
+    "category": "species-specific",
+    "id": "quick-powder",
+    "name": {
+      "en": "quick-powder",
+      "ja": "スピードパウダー"
+    },
+    "source": "pokeapi"
+  },
+  "raichunite-x": {
+    "asset": "ライチュウナイトX.webp",
+    "category": "mega-stones",
+    "id": "raichunite-x",
+    "name": {
+      "en": "raichunite-x",
+      "ja": "ライチュウナイトX"
+    },
+    "source": "pokeapi"
+  },
+  "raichunite-y": {
+    "asset": "ライチュウナイトY.webp",
+    "category": "mega-stones",
+    "id": "raichunite-y",
+    "name": {
+      "en": "raichunite-y",
+      "ja": "ライチュウナイトY"
+    },
+    "source": "pokeapi"
+  },
+  "rawst-berry": {
+    "asset": "チーゴのみ.webp",
+    "category": "medicine",
+    "id": "rawst-berry",
+    "name": {
+      "en": "rawst-berry",
+      "ja": "チーゴのみ"
+    },
+    "source": "pokeapi"
+  },
+  "razor-claw": {
+    "asset": "するどいツメ.webp",
+    "category": "held-items",
+    "id": "razor-claw",
+    "name": {
+      "en": "razor-claw",
+      "ja": "するどいツメ"
+    },
+    "source": "pokeapi"
+  },
+  "razor-fang": {
+    "asset": "するどいキバ.webp",
+    "category": "held-items",
+    "id": "razor-fang",
+    "name": {
+      "en": "razor-fang",
+      "ja": "するどいキバ"
+    },
+    "source": "pokeapi"
+  },
+  "red-card": {
+    "asset": "レッドカード.webp",
+    "category": "held-items",
+    "id": "red-card",
+    "name": {
+      "en": "red-card",
+      "ja": "レッドカード"
+    },
+    "source": "pokeapi"
+  },
+  "red-nectar": {
+    "asset": null,
+    "category": "species-specific",
+    "id": "red-nectar",
+    "name": {
+      "en": "red-nectar",
+      "ja": "くれないのミツ"
+    },
+    "source": "pokeapi"
+  },
+  "rindo-berry": {
+    "asset": "リンドのみ.webp",
+    "category": "type-protection",
+    "id": "rindo-berry",
+    "name": {
+      "en": "rindo-berry",
+      "ja": "リンドのみ"
+    },
+    "source": "pokeapi"
+  },
+  "ring-target": {
+    "asset": "ねらいのまと.webp",
+    "category": "held-items",
+    "id": "ring-target",
+    "name": {
+      "en": "ring-target",
+      "ja": "ねらいのまと"
+    },
+    "source": "pokeapi"
+  },
+  "rock-incense": {
+    "asset": null,
+    "category": "type-enhancement",
+    "id": "rock-incense",
+    "name": {
+      "en": "rock-incense",
+      "ja": "がんせきおこう"
+    },
+    "source": "pokeapi"
+  },
+  "rock-memory": {
+    "asset": null,
+    "category": "memories",
+    "id": "rock-memory",
+    "name": {
+      "en": "rock-memory",
+      "ja": "ロックメモリ"
+    },
+    "source": "pokeapi"
+  },
+  "rocky-helmet": {
+    "asset": "ゴツゴツメット.webp",
+    "category": "held-items",
+    "id": "rocky-helmet",
+    "name": {
+      "en": "rocky-helmet",
+      "ja": "ゴツゴツメット"
+    },
+    "source": "pokeapi"
+  },
+  "room-service": {
+    "asset": "ルームサービス.webp",
+    "category": "held-items",
+    "id": "room-service",
+    "name": {
+      "en": "room-service",
+      "ja": "ルームサービス"
+    },
+    "source": "pokeapi"
+  },
+  "rose-incense": {
+    "asset": null,
+    "category": "type-enhancement",
+    "id": "rose-incense",
+    "name": {
+      "en": "rose-incense",
+      "ja": "おはなのおこう"
+    },
+    "source": "pokeapi"
+  },
+  "roseli-berry": {
+    "asset": "ロゼルのみ.webp",
+    "category": "type-protection",
+    "id": "roseli-berry",
+    "name": {
+      "en": "roseli-berry",
+      "ja": "ロゼルのみ"
+    },
+    "source": "pokeapi"
+  },
+  "rowap-berry": {
+    "asset": "レンブのみ.webp",
+    "category": "other",
+    "id": "rowap-berry",
+    "name": {
+      "en": "rowap-berry",
+      "ja": "レンブのみ"
+    },
+    "source": "pokeapi"
+  },
+  "rusted-shield": {
+    "asset": "くちたたて.webp",
+    "category": "species-specific",
+    "id": "rusted-shield",
+    "name": {
+      "en": "rusted-shield",
+      "ja": "くちたたて"
+    },
+    "source": "pokeapi"
+  },
+  "rusted-sword": {
+    "asset": "くちたけん.webp",
+    "category": "species-specific",
+    "id": "rusted-sword",
+    "name": {
+      "en": "rusted-sword",
+      "ja": "くちたけん"
+    },
+    "source": "pokeapi"
+  },
+  "sablenite": {
+    "asset": "ヤミラミナイト.webp",
+    "category": "mega-stones",
+    "id": "sablenite",
+    "name": {
+      "en": "sablenite",
+      "ja": "ヤミラミナイト"
+    },
+    "source": "pokeapi"
+  },
+  "safety-goggles": {
+    "asset": "ぼうじんゴーグル.webp",
+    "category": "held-items",
+    "id": "safety-goggles",
+    "name": {
+      "en": "safety-goggles",
+      "ja": "ぼうじんゴーグル"
+    },
+    "source": "pokeapi"
+  },
+  "salac-berry": {
+    "asset": "カムラのみ.webp",
+    "category": "in-a-pinch",
+    "id": "salac-berry",
+    "name": {
+      "en": "salac-berry",
+      "ja": "カムラのみ"
+    },
+    "source": "pokeapi"
+  },
+  "salamencite": {
+    "asset": "ボーマンダナイト.webp",
+    "category": "mega-stones",
+    "id": "salamencite",
+    "name": {
+      "en": "salamencite",
+      "ja": "ボーマンダナイト"
+    },
+    "source": "pokeapi"
+  },
+  "sceptilite": {
+    "asset": "ジュカインナイト.webp",
+    "category": "mega-stones",
+    "id": "sceptilite",
+    "name": {
+      "en": "sceptilite",
+      "ja": "ジュカインナイト"
+    },
+    "source": "pokeapi"
+  },
+  "scizorite": {
+    "asset": "ハッサムナイト.webp",
+    "category": "mega-stones",
+    "id": "scizorite",
+    "name": {
+      "en": "scizorite",
+      "ja": "ハッサムナイト"
+    },
+    "source": "pokeapi"
+  },
+  "scolipite": {
+    "asset": "ペンドラナイト.webp",
+    "category": "mega-stones",
+    "id": "scolipite",
+    "name": {
+      "en": "scolipite",
+      "ja": "ペンドラナイト"
+    },
+    "source": "pokeapi"
+  },
+  "scope-lens": {
+    "asset": "ピントレンズ.webp",
+    "category": "held-items",
+    "id": "scope-lens",
+    "name": {
+      "en": "scope-lens",
+      "ja": "ピントレンズ"
+    },
+    "source": "pokeapi"
+  },
+  "scovillainite": {
+    "asset": "スコヴィラナイト.webp",
+    "category": "mega-stones",
+    "id": "scovillainite",
+    "name": {
+      "en": "scovillainite",
+      "ja": "スコヴィラナイト"
+    },
+    "source": "pokeapi"
+  },
+  "scraftinite": {
+    "asset": "ズルズキナイト.webp",
+    "category": "mega-stones",
+    "id": "scraftinite",
+    "name": {
+      "en": "scraftinite",
+      "ja": "ズルズキナイト"
+    },
+    "source": "pokeapi"
+  },
+  "sea-incense": {
+    "asset": null,
+    "category": "type-enhancement",
+    "id": "sea-incense",
+    "name": {
+      "en": "sea-incense",
+      "ja": "うしおのおこう"
+    },
+    "source": "pokeapi"
+  },
+  "sharp-beak": {
+    "asset": "するどいくちばし.webp",
+    "category": "type-enhancement",
+    "id": "sharp-beak",
+    "name": {
+      "en": "sharp-beak",
+      "ja": "するどいくちばし"
+    },
+    "source": "pokeapi"
+  },
+  "sharpedonite": {
+    "asset": "サメハダナイト.webp",
+    "category": "mega-stones",
+    "id": "sharpedonite",
+    "name": {
+      "en": "sharpedonite",
+      "ja": "サメハダナイト"
+    },
+    "source": "pokeapi"
+  },
+  "shed-shell": {
+    "asset": "きれいなぬけがら.webp",
+    "category": "held-items",
+    "id": "shed-shell",
+    "name": {
+      "en": "shed-shell",
+      "ja": "きれいなぬけがら"
+    },
+    "source": "pokeapi"
+  },
+  "shell-bell": {
+    "asset": "かいがらのすず.webp",
+    "category": "held-items",
+    "id": "shell-bell",
+    "name": {
+      "en": "shell-bell",
+      "ja": "かいがらのすず"
+    },
+    "source": "pokeapi"
+  },
+  "shock-drive": {
+    "asset": null,
+    "category": "species-specific",
+    "id": "shock-drive",
+    "name": {
+      "en": "shock-drive",
+      "ja": "イナズマカセット"
+    },
+    "source": "pokeapi"
+  },
+  "shuca-berry": {
+    "asset": "シュカのみ.webp",
+    "category": "type-protection",
+    "id": "shuca-berry",
+    "name": {
+      "en": "shuca-berry",
+      "ja": "シュカのみ"
+    },
+    "source": "pokeapi"
+  },
+  "silk-scarf": {
+    "asset": "シルクのスカーフ.webp",
+    "category": "type-enhancement",
+    "id": "silk-scarf",
+    "name": {
+      "en": "silk-scarf",
+      "ja": "シルクのスカーフ"
+    },
+    "source": "pokeapi"
+  },
+  "silver-powder": {
+    "asset": "ぎんのこな.webp",
+    "category": "type-enhancement",
+    "id": "silver-powder",
+    "name": {
+      "en": "silver-powder",
+      "ja": "ぎんのこな"
+    },
+    "source": "pokeapi"
+  },
+  "sitrus-berry": {
+    "asset": "オボンのみ.webp",
+    "category": "medicine",
+    "id": "sitrus-berry",
+    "name": {
+      "en": "sitrus-berry",
+      "ja": "オボンのみ"
+    },
+    "source": "pokeapi"
+  },
+  "skarmorite": {
+    "asset": "エアームドナイト.webp",
+    "category": "mega-stones",
+    "id": "skarmorite",
+    "name": {
+      "en": "skarmorite",
+      "ja": "エアームドナイト"
+    },
+    "source": "pokeapi"
+  },
+  "sky-plate": {
+    "asset": "あおぞらプレート.webp",
+    "category": "plates",
+    "id": "sky-plate",
+    "name": {
+      "en": "sky-plate",
+      "ja": "あおぞらプレート"
+    },
+    "source": "pokeapi"
+  },
+  "slowbronite": {
+    "asset": "ヤドランナイト.webp",
+    "category": "mega-stones",
+    "id": "slowbronite",
+    "name": {
+      "en": "slowbronite",
+      "ja": "ヤドランナイト"
+    },
+    "source": "pokeapi"
+  },
+  "smoke-ball": {
+    "asset": "けむりだま.webp",
+    "category": "held-items",
+    "id": "smoke-ball",
+    "name": {
+      "en": "smoke-ball",
+      "ja": "けむりだま"
+    },
+    "source": "pokeapi"
+  },
+  "smooth-rock": {
+    "asset": "さらさらいわ.webp",
+    "category": "held-items",
+    "id": "smooth-rock",
+    "name": {
+      "en": "smooth-rock",
+      "ja": "さらさらいわ"
+    },
+    "source": "pokeapi"
+  },
+  "snowball": {
+    "asset": "ゆきだま.webp",
+    "category": "held-items",
+    "id": "snowball",
+    "name": {
+      "en": "snowball",
+      "ja": "ゆきだま"
+    },
+    "source": "pokeapi"
+  },
+  "soft-sand": {
+    "asset": "やわらかいすな.webp",
+    "category": "type-enhancement",
+    "id": "soft-sand",
+    "name": {
+      "en": "soft-sand",
+      "ja": "やわらかいすな"
+    },
+    "source": "pokeapi"
+  },
+  "soothe-bell": {
+    "asset": "やすらぎのすず.webp",
+    "category": "training",
+    "id": "soothe-bell",
+    "name": {
+      "en": "soothe-bell",
+      "ja": "やすらぎのすず"
+    },
+    "source": "pokeapi"
+  },
+  "soul-dew": {
+    "asset": "こころのしずく.webp",
+    "category": "species-specific",
+    "id": "soul-dew",
+    "name": {
+      "en": "soul-dew",
+      "ja": "こころのしずく"
+    },
+    "source": "pokeapi"
+  },
+  "spell-tag": {
+    "asset": "のろいのおふだ.webp",
+    "category": "type-enhancement",
+    "id": "spell-tag",
+    "name": {
+      "en": "spell-tag",
+      "ja": "のろいのおふだ"
+    },
+    "source": "pokeapi"
+  },
+  "splash-plate": {
+    "asset": "しずくプレート.webp",
+    "category": "plates",
+    "id": "splash-plate",
+    "name": {
+      "en": "splash-plate",
+      "ja": "しずくプレート"
+    },
+    "source": "pokeapi"
+  },
+  "spooky-plate": {
+    "asset": "もののけプレート.webp",
+    "category": "plates",
+    "id": "spooky-plate",
+    "name": {
+      "en": "spooky-plate",
+      "ja": "もののけプレート"
+    },
+    "source": "pokeapi"
+  },
+  "staraptite": {
+    "asset": "ムクホークナイト.webp",
+    "category": "mega-stones",
+    "id": "staraptite",
+    "name": {
+      "en": "staraptite",
+      "ja": "ムクホークナイト"
+    },
+    "source": "pokeapi"
+  },
+  "starf-berry": {
+    "asset": "スターのみ.webp",
+    "category": "in-a-pinch",
+    "id": "starf-berry",
+    "name": {
+      "en": "starf-berry",
+      "ja": "スターのみ"
+    },
+    "source": "pokeapi"
+  },
+  "starminite": {
+    "asset": "スターミナイト.webp",
+    "category": "mega-stones",
+    "id": "starminite",
+    "name": {
+      "en": "starminite",
+      "ja": "スターミナイト"
+    },
+    "source": "pokeapi"
+  },
+  "steel-memory": {
+    "asset": null,
+    "category": "memories",
+    "id": "steel-memory",
+    "name": {
+      "en": "steel-memory",
+      "ja": "スチールメモリ"
+    },
+    "source": "pokeapi"
+  },
+  "steelixite": {
+    "asset": "ハガネールナイト.webp",
+    "category": "mega-stones",
+    "id": "steelixite",
+    "name": {
+      "en": "steelixite",
+      "ja": "ハガネールナイト"
+    },
+    "source": "pokeapi"
+  },
+  "stick": {
+    "asset": null,
+    "category": "species-specific",
+    "id": "stick",
+    "name": {
+      "en": "stick",
+      "ja": "ながねぎ"
+    },
+    "source": "pokeapi"
+  },
+  "sticky-barb": {
+    "asset": "くっつきバリ.webp",
+    "category": "bad-held-items",
+    "id": "sticky-barb",
+    "name": {
+      "en": "sticky-barb",
+      "ja": "くっつきバリ"
+    },
+    "source": "pokeapi"
+  },
+  "stone-plate": {
+    "asset": "がんせきプレート.webp",
+    "category": "plates",
+    "id": "stone-plate",
+    "name": {
+      "en": "stone-plate",
+      "ja": "がんせきプレート"
+    },
+    "source": "pokeapi"
+  },
+  "swampertite": {
+    "asset": "ラグラージナイト.webp",
+    "category": "mega-stones",
+    "id": "swampertite",
+    "name": {
+      "en": "swampertite",
+      "ja": "ラグラージナイト"
+    },
+    "source": "pokeapi"
+  },
+  "tanga-berry": {
+    "asset": "タンガのみ.webp",
+    "category": "type-protection",
+    "id": "tanga-berry",
+    "name": {
+      "en": "tanga-berry",
+      "ja": "タンガのみ"
+    },
+    "source": "pokeapi"
+  },
+  "tatsugirinite": {
+    "asset": "シャリタツナイト.webp",
+    "category": "mega-stones",
+    "id": "tatsugirinite",
+    "name": {
+      "en": "tatsugirinite",
+      "ja": "シャリタツナイト"
+    },
+    "source": "pokeapi"
+  },
+  "terrain-extender": {
+    "asset": "グランドコート.webp",
+    "category": "held-items",
+    "id": "terrain-extender",
+    "name": {
+      "en": "terrain-extender",
+      "ja": "グランドコート"
+    },
+    "source": "pokeapi"
+  },
+  "thick-club": {
+    "asset": null,
+    "category": "species-specific",
+    "id": "thick-club",
+    "name": {
+      "en": "thick-club",
+      "ja": "ふといホネ"
+    },
+    "source": "pokeapi"
+  },
+  "throat-spray": {
+    "asset": "のどスプレー.webp",
+    "category": "held-items",
+    "id": "throat-spray",
+    "name": {
+      "en": "throat-spray",
+      "ja": "のどスプレー"
+    },
+    "source": "pokeapi"
+  },
+  "toxic-orb": {
+    "asset": "どくどくだま.webp",
+    "category": "bad-held-items",
+    "id": "toxic-orb",
+    "name": {
+      "en": "toxic-orb",
+      "ja": "どくどくだま"
+    },
+    "source": "pokeapi"
+  },
+  "toxic-plate": {
+    "asset": "もうどくプレート.webp",
+    "category": "plates",
+    "id": "toxic-plate",
+    "name": {
+      "en": "toxic-plate",
+      "ja": "もうどくプレート"
+    },
+    "source": "pokeapi"
+  },
+  "twisted-spoon": {
+    "asset": "まがったスプーン.webp",
+    "category": "type-enhancement",
+    "id": "twisted-spoon",
+    "name": {
+      "en": "twisted-spoon",
+      "ja": "まがったスプーン"
+    },
+    "source": "pokeapi"
+  },
+  "tyranitarite": {
+    "asset": "バンギラスナイト.webp",
+    "category": "mega-stones",
+    "id": "tyranitarite",
+    "name": {
+      "en": "tyranitarite",
+      "ja": "バンギラスナイト"
+    },
+    "source": "pokeapi"
+  },
+  "utility-umbrella": {
+    "asset": "ばんのうがさ.webp",
+    "category": "held-items",
+    "id": "utility-umbrella",
+    "name": {
+      "en": "utility-umbrella",
+      "ja": "ばんのうがさ"
+    },
+    "source": "pokeapi"
+  },
+  "venusaurite": {
+    "asset": "フシギバナイト.webp",
+    "category": "mega-stones",
+    "id": "venusaurite",
+    "name": {
+      "en": "venusaurite",
+      "ja": "フシギバナイト"
+    },
+    "source": "pokeapi"
+  },
+  "victreebelite": {
+    "asset": "ウツボットナイト.webp",
+    "category": "mega-stones",
+    "id": "victreebelite",
+    "name": {
+      "en": "victreebelite",
+      "ja": "ウツボットナイト"
+    },
+    "source": "pokeapi"
+  },
+  "wacan-berry": {
+    "asset": "ソクノのみ.webp",
+    "category": "type-protection",
+    "id": "wacan-berry",
+    "name": {
+      "en": "wacan-berry",
+      "ja": "ソクノのみ"
+    },
+    "source": "pokeapi"
+  },
+  "water-memory": {
+    "asset": null,
+    "category": "memories",
+    "id": "water-memory",
+    "name": {
+      "en": "water-memory",
+      "ja": "ウオーターメモリ"
+    },
+    "source": "pokeapi"
+  },
+  "wave-incense": {
+    "asset": null,
+    "category": "type-enhancement",
+    "id": "wave-incense",
+    "name": {
+      "en": "wave-incense",
+      "ja": "さざなみのおこう"
+    },
+    "source": "pokeapi"
+  },
+  "weakness-policy": {
+    "asset": "じゃくてんほけん.webp",
+    "category": "held-items",
+    "id": "weakness-policy",
+    "name": {
+      "en": "weakness-policy",
+      "ja": "じゃくてんほけん"
+    },
+    "source": "pokeapi"
+  },
+  "wellspring-mask": {
+    "asset": "いどのめん.webp",
+    "category": "held-items",
+    "id": "wellspring-mask",
+    "name": {
+      "en": "wellspring-mask",
+      "ja": "いどのめん"
+    },
+    "source": "pokeapi"
+  },
+  "white-herb": {
+    "asset": "しろいハーブ.webp",
+    "category": "held-items",
+    "id": "white-herb",
+    "name": {
+      "en": "white-herb",
+      "ja": "しろいハーブ"
+    },
+    "source": "pokeapi"
+  },
+  "wide-lens": {
+    "asset": "こうかくレンズ.webp",
+    "category": "held-items",
+    "id": "wide-lens",
+    "name": {
+      "en": "wide-lens",
+      "ja": "こうかくレンズ"
+    },
+    "source": "pokeapi"
+  },
+  "wiki-berry": {
+    "asset": "ウイのみ.webp",
+    "category": "picky-healing",
+    "id": "wiki-berry",
+    "name": {
+      "en": "wiki-berry",
+      "ja": "ウイのみ"
+    },
+    "source": "pokeapi"
+  },
+  "wise-glasses": {
+    "asset": "ものしりメガネ.webp",
+    "category": "held-items",
+    "id": "wise-glasses",
+    "name": {
+      "en": "wise-glasses",
+      "ja": "ものしりメガネ"
+    },
+    "source": "pokeapi"
+  },
+  "yache-berry": {
+    "asset": "ヤチェのみ.webp",
+    "category": "type-protection",
+    "id": "yache-berry",
+    "name": {
+      "en": "yache-berry",
+      "ja": "ヤチェのみ"
+    },
+    "source": "pokeapi"
+  },
+  "yellow-nectar": {
+    "asset": null,
+    "category": "species-specific",
+    "id": "yellow-nectar",
+    "name": {
+      "en": "yellow-nectar",
+      "ja": "やまぶきのミツ"
+    },
+    "source": "pokeapi"
+  },
+  "zap-plate": {
+    "asset": "いかずちプレート.webp",
+    "category": "plates",
+    "id": "zap-plate",
+    "name": {
+      "en": "zap-plate",
+      "ja": "いかずちプレート"
+    },
+    "source": "pokeapi"
+  },
+  "zeraorite": {
+    "asset": "ゼラオラナイト.webp",
+    "category": "mega-stones",
+    "id": "zeraorite",
+    "name": {
+      "en": "zeraorite",
+      "ja": "ゼラオラナイト"
+    },
+    "source": "pokeapi"
+  },
+  "zoom-lens": {
+    "asset": "フォーカスレンズ.webp",
+    "category": "held-items",
+    "id": "zoom-lens",
+    "name": {
+      "en": "zoom-lens",
+      "ja": "フォーカスレンズ"
+    },
+    "source": "pokeapi"
+  },
+  "zygardite": {
+    "asset": "ジガルデナイト.webp",
+    "category": "mega-stones",
+    "id": "zygardite",
+    "name": {
+      "en": "zygardite",
+      "ja": "ジガルデナイト"
+    },
+    "source": "pokeapi"
+  }
+}
