@@ -2724,6 +2724,16 @@ function showPartyDetail(partyId) {
   const partyMenu =
     document.getElementById("partyMenu");
 
+  const exportJsonMenu =
+    document.getElementById("exportJsonMenu");
+
+  exportJsonMenu.addEventListener("click", () => {
+    partyMenu.hidden = true;
+
+    openSelectionTrackerBackupMenu();
+  });
+
+
   partyMenuButton.addEventListener("click", e => {
     e.stopPropagation();
 
@@ -4466,3 +4476,236 @@ function escapeHtml(value) {
 }
 
 loadData();
+
+
+/* =========================================================
+ * Selection Tracker Backup / Restore
+ * ========================================================= */
+
+function exportSelectionTrackerBackup() {
+  const storage = {};
+
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+
+    if (!key) continue;
+
+    storage[key] =
+      localStorage.getItem(key);
+  }
+
+  const backup = {
+    format: "gawhota-selection-tracker-backup",
+    version: 1,
+    exported_at: new Date().toISOString(),
+    storage
+  };
+
+  const blob = new Blob(
+    [JSON.stringify(backup, null, 2)],
+    { type: "application/json;charset=utf-8" }
+  );
+
+  const url =
+    URL.createObjectURL(blob);
+
+  const a =
+    document.createElement("a");
+
+  const date =
+    new Date()
+      .toISOString()
+      .slice(0, 10);
+
+  a.href = url;
+  a.download =
+    `gawhota_selection_backup_${date}.json`;
+
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+
+  URL.revokeObjectURL(url);
+}
+
+
+function importSelectionTrackerBackup(file) {
+  if (!file) return;
+
+  const reader =
+    new FileReader();
+
+  reader.onload = () => {
+    try {
+      const backup =
+        JSON.parse(reader.result);
+
+      if (
+        backup?.format !==
+          "gawhota-selection-tracker-backup" ||
+        !backup.storage ||
+        typeof backup.storage !== "object"
+      ) {
+        throw new Error(
+          "Selection Trackerのバックアップではありません"
+        );
+      }
+
+      const ok =
+        confirm(
+          "現在のSelection Trackerデータをバックアップ内容で復元します。\n\n続行しますか？"
+        );
+
+      if (!ok) return;
+
+      /*
+       * 別オリジンへの移行を目的としているため、
+       * 現在のSelection Tracker保存領域を置き換える。
+       */
+      localStorage.clear();
+
+      Object.entries(
+        backup.storage
+      ).forEach(([key, value]) => {
+        if (typeof value === "string") {
+          localStorage.setItem(
+            key,
+            value
+          );
+        }
+      });
+
+      alert(
+        "バックアップを復元しました。\n画面を再読み込みします。"
+      );
+
+      location.reload();
+
+    } catch (error) {
+      console.error(error);
+
+      alert(
+        "バックアップを読み込めませんでした。\n" +
+        error.message
+      );
+    }
+  };
+
+  reader.readAsText(file);
+}
+
+
+function openSelectionTrackerBackupMenu() {
+  const overlay =
+    document.createElement("div");
+
+  overlay.className =
+    "revealed-editor-overlay";
+
+  overlay.innerHTML = `
+    <div
+      class="revealed-editor-panel"
+      style="
+        width:min(440px,calc(100vw - 40px));
+        padding:20px;
+      "
+    >
+      <h2 style="margin-top:0;">
+        バックアップ
+      </h2>
+
+      <p>
+        構築・対戦記録・プリセットなど、
+        この端末に保存されているSelection Trackerの
+        データを移行できます。
+      </p>
+
+      <button
+        type="button"
+        id="selection-backup-export"
+        style="
+          width:100%;
+          min-height:48px;
+          margin-top:10px;
+        "
+      >
+        バックアップを書き出す
+      </button>
+
+      <button
+        type="button"
+        id="selection-backup-import"
+        style="
+          width:100%;
+          min-height:48px;
+          margin-top:10px;
+        "
+      >
+        バックアップから復元
+      </button>
+
+      <input
+        type="file"
+        id="selection-backup-file"
+        accept=".json,application/json"
+        hidden
+      >
+
+      <button
+        type="button"
+        id="selection-backup-close"
+        style="
+          width:100%;
+          min-height:44px;
+          margin-top:20px;
+        "
+      >
+        閉じる
+      </button>
+    </div>
+  `;
+
+  document.body.appendChild(overlay);
+
+  const fileInput =
+    overlay.querySelector(
+      "#selection-backup-file"
+    );
+
+  overlay
+    .querySelector(
+      "#selection-backup-export"
+    )
+    .addEventListener(
+      "click",
+      exportSelectionTrackerBackup
+    );
+
+  overlay
+    .querySelector(
+      "#selection-backup-import"
+    )
+    .addEventListener(
+      "click",
+      () => fileInput.click()
+    );
+
+  fileInput.addEventListener(
+    "change",
+    () => {
+      importSelectionTrackerBackup(
+        fileInput.files?.[0]
+      );
+    }
+  );
+
+  overlay
+    .querySelector(
+      "#selection-backup-close"
+    )
+    .addEventListener(
+      "click",
+      () => overlay.remove()
+    );
+}
+
