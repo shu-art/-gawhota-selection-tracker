@@ -2717,3 +2717,67 @@ input {
   }
 }
 
+
+
+/* Master autocomplete */
+.master-autocomplete {
+  position: relative;
+  width: 100%;
+}
+
+.master-autocomplete > input {
+  width: 100%;
+}
+
+.master-autocomplete-list {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 10000;
+
+  display: flex;
+  flex-direction: column;
+
+  max-height: 260px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background: #fff;
+  border: 1px solid #d8d8d8;
+  border-radius: 10px;
+
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.14);
+
+  padding: 4px;
+}
+
+.master-autocomplete-list[hidden] {
+  display: none;
+}
+
+.master-autocomplete-option {
+  display: block;
+  width: 100%;
+
+  flex: 0 0 auto;
+
+  text-align: left;
+  white-space: normal;
+
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+
+  padding: 10px 12px;
+  margin: 0;
+
+  cursor: pointer;
+}
+
+.master-autocomplete-option:hover,
+.master-autocomplete-option:focus {
+  background: #f1f1f1;
+}
+

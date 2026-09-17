@@ -585,15 +585,13 @@
   document.addEventListener(
     "click",
     event => {
-      const csvButton =
-        event.target.closest("#exportCsvMenu");
-
-      if (csvButton) {
-        event.preventDefault();
-        exportAllCsv();
-        return;
-      }
-
+      /*
+       * CSV出力はapp.jsの
+       * downloadMatchAnalysisCsv() に一本化。
+       *
+       * export.jsではCSVボタンを監視しない。
+       * JSONバックアップのみ担当する。
+       */
       const jsonButton =
         event.target.closest("#exportJsonMenu");
 

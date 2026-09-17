@@ -4,32 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Gawhota Selection Tracker</title>
-  <link rel="stylesheet" href="style.css?v=1789629877">
-  <link rel="manifest" href="../manifest.json">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="theme-color" content="#f4f4f6">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main id="app"></main>
   <script src="pokemon-picker.js?v=1789385553"></script>
-  <script src="app.js?v=1789629877"></script>
-  <script src="export.js?v=1789629877"></script>
-
-  <script>
-    // Development mode:
-    // Service Worker is intentionally disabled so UI changes
-    // are reflected immediately during development.
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker
-        .getRegistrations()
-        .then(registrations => {
-          registrations.forEach(registration => {
-            registration.unregister();
-          });
-        });
-    }
-  </script>
-
+  <script src="app.js?v=1789385553"></script>
+  <script src="export.js?v=1789385553"></script>
 </body>
 </html>

@@ -30,39 +30,86 @@ function normalizeMasterText(value) {
 }
 
 function findMasterEntry(master, value) {
-  if (!value) return null;
-
-  /*
-   * 将来的に保存値をMaster IDへ移行しても
-   * 同じ関数で読めるようにする。
-   */
-  if (master[value]) {
-    return {
-      id: value,
-      ...master[value]
-    };
+  if (!master || !value) {
+    return null;
   }
 
   const needle =
     normalizeMasterText(value);
 
-  for (const [id, entry] of Object.entries(master)) {
-    const candidates = [
-      id,
-      entry?.name?.en,
-      entry?.name?.ja,
-      entry?.name_en,
-      entry?.name_ja,
-      entry?.display_name
-    ]
-      .filter(Boolean)
-      .map(normalizeMasterText);
+  /*
+   * 現在のabilities.json / moves.jsonは配列。
+   *
+   * [
+   *   {
+   *     id: "rough-skin",
+   *     name: {
+   *       ja: "さめはだ",
+   *       en: "Rough Skin"
+   *     }
+   *   }
+   * ]
+   *
+   * ID / 日本語名 / 英語名のどれからでも検索する。
+   */
+  if (Array.isArray(master)) {
+    return (
+      master.find(entry => {
+        const candidates = [
+          entry?.id,
+          entry?.name?.ja,
+          entry?.name?.en,
+          entry?.name_ja,
+          entry?.name_en,
+          entry?.display_name
+        ]
+          .filter(Boolean)
+          .map(normalizeMasterText);
 
-    if (candidates.includes(needle)) {
+        return candidates.includes(needle);
+      }) ||
+      null
+    );
+  }
+
+  /*
+   * 将来object形式のMasterを使っても
+   * 動くように互換を残す。
+   */
+  if (
+    typeof master === "object"
+  ) {
+    if (master[value]) {
       return {
-        id,
-        ...entry
+        id: value,
+        ...master[value]
       };
+    }
+
+    for (
+      const [id, entry]
+      of Object.entries(master)
+    ) {
+      const candidates = [
+        id,
+        entry?.id,
+        entry?.name?.ja,
+        entry?.name?.en,
+        entry?.name_ja,
+        entry?.name_en,
+        entry?.display_name
+      ]
+        .filter(Boolean)
+        .map(normalizeMasterText);
+
+      if (
+        candidates.includes(needle)
+      ) {
+        return {
+          id,
+          ...entry
+        };
+      }
     }
   }
 
@@ -84,24 +131,53 @@ function getMoveMaster(value) {
 }
 
 function getAbilityDisplayName(value) {
-  const entry =
-    getAbilityMaster(value);
+  const entry = getAbilityMaster(value);
 
   return (
     entry?.name?.ja ||
     entry?.name_ja ||
+    entry?.name?.en ||
+    entry?.name_en ||
     value ||
     ""
   );
 }
 
 function getMoveDisplayName(value) {
+  if (!value) {
+    return "";
+  }
+
+  /*
+   * 旧データや途中の保存形式では、
+   * moveが文字列ではなくMaster objectのことがある。
+   * ここでIDへ正規化してから表示名を取得する。
+   */
+  if (
+    typeof value === "object"
+  ) {
+    return (
+      value?.name?.ja ||
+      value?.name_ja ||
+      value?.display_name ||
+      value?.name?.en ||
+      value?.name_en ||
+      (
+        value?.id
+          ? getMoveDisplayName(value.id)
+          : ""
+      )
+    );
+  }
+
   const entry =
     getMoveMaster(value);
 
   return (
     entry?.name?.ja ||
     entry?.name_ja ||
+    entry?.name?.en ||
+    entry?.name_en ||
     value ||
     ""
   );
@@ -146,11 +222,12 @@ function getNatureMaster(value) {
 }
 
 function getNatureDisplayName(value) {
-  const entry =
-    getNatureMaster(value);
+  const entry = getNatureMaster(value);
 
   return (
+    entry?.name?.ja ||
     entry?.name_ja ||
+    entry?.name?.en ||
     entry?.name_en ||
     value ||
     ""
@@ -179,6 +256,442 @@ function saveParties(parties) {
 function getMatches() {
   return JSON.parse(localStorage.getItem("gawhota_matches") || "[]");
 }
+
+/*
+ * =========================
+ * 対戦分析CSV
+ *
+ * 1行 = 1試合。
+ *
+ * 試合結果・双方の選出・相手6匹に加えて、
+ * その試合を記録した時点の自分6匹の型を
+ * party_snapshotから展開する。
+ * =========================
+ */
+
+function csvCell(value) {
+  const text =
+    value === null ||
+    value === undefined
+      ? ""
+      : String(value);
+
+  return `"${text.replace(/"/g, '""')}"`;
+}
+
+
+function getSnapshotPokemonName(pokemon) {
+  return (
+    pokemon?.display_name ||
+    pokemon?.name_ja ||
+    pokemon?.name ||
+    pokemon?.id ||
+    ""
+  );
+}
+
+
+function getSnapshotItemName(pokemon) {
+  const itemId =
+    pokemon?.item_id;
+
+  if (!itemId) {
+    return "";
+  }
+
+  const item =
+    items?.[itemId];
+
+  return (
+    item?.name?.ja ||
+    item?.name_ja ||
+    item?.display_name ||
+    item?.name?.en ||
+    item?.name_en ||
+    itemId
+  );
+}
+
+
+function getSnapshotAbilityName(pokemon) {
+  const abilityId =
+    pokemon?.ability_id;
+
+  if (!abilityId) {
+    return (
+      pokemon?.ability ||
+      ""
+    );
+  }
+
+  const ability =
+    abilities?.[abilityId];
+
+  return (
+    ability?.name?.ja ||
+    ability?.name_ja ||
+    ability?.display_name ||
+    ability?.name?.en ||
+    ability?.name_en ||
+    pokemon?.ability ||
+    abilityId
+  );
+}
+
+
+function getSnapshotNatureName(pokemon) {
+  const natureId =
+    pokemon?.nature_id;
+
+  if (!natureId) {
+    return (
+      pokemon?.nature ||
+      ""
+    );
+  }
+
+  const nature =
+    natures?.[natureId];
+
+  return (
+    nature?.name?.ja ||
+    nature?.name_ja ||
+    nature?.display_name ||
+    nature?.name?.en ||
+    nature?.name_en ||
+    pokemon?.nature ||
+    natureId
+  );
+}
+
+
+function getSnapshotMoveName(moveId) {
+  if (!moveId) {
+    return "";
+  }
+
+  const move =
+    moves?.[moveId];
+
+  return (
+    move?.name?.ja ||
+    move?.name_ja ||
+    move?.display_name ||
+    move?.name?.en ||
+    move?.name_en ||
+    moveId
+  );
+}
+
+
+function getSelectionPokemonName(value, snapshot) {
+  if (
+    value === null ||
+    value === undefined ||
+    value === ""
+  ) {
+    return "";
+  }
+
+  /*
+   * 選出がslot番号で保存されている場合にも対応。
+   */
+  const numeric =
+    Number(value);
+
+  if (
+    Number.isInteger(numeric) &&
+    snapshot?.pokemon
+  ) {
+    const zeroBased =
+      numeric >= 1
+        ? numeric - 1
+        : numeric;
+
+    const pokemon =
+      snapshot.pokemon[zeroBased];
+
+    if (pokemon) {
+      return getSnapshotPokemonName(
+        pokemon
+      );
+    }
+  }
+
+  /*
+   * すでにポケモン名 / IDで保存されている場合。
+   */
+  if (typeof value === "object") {
+    return (
+      value.display_name ||
+      value.name ||
+      value.id ||
+      ""
+    );
+  }
+
+  return String(value);
+}
+
+
+function createMatchAnalysisCsv(party) {
+  const matches =
+    getMatches()
+      .filter(
+        match =>
+          String(match.party_id) ===
+          String(party.id)
+      )
+      .sort(
+        (a, b) =>
+          String(a.played_at || "")
+            .localeCompare(
+              String(b.played_at || "")
+            )
+      );
+
+  const headers = [
+    "試合ID",
+    "日時",
+    "構築名",
+    "勝敗",
+    "メモ",
+
+    "自分初手1",
+    "自分初手2",
+    "自分後発1",
+    "自分後発2",
+
+    "相手1",
+    "相手2",
+    "相手3",
+    "相手4",
+    "相手5",
+    "相手6",
+
+    "相手初手1",
+    "相手初手2",
+    "相手後発1",
+    "相手後発2"
+  ];
+
+  /*
+   * 自分6匹 ×
+   * ポケモン/持ち物/特性/性格/Lv/
+   * HP-A-B-C-D-S/技4つ
+   */
+  for (let slot = 1; slot <= 6; slot++) {
+    headers.push(
+      `自分${slot}_ポケモン`,
+      `自分${slot}_持ち物`,
+      `自分${slot}_特性`,
+      `自分${slot}_性格`,
+      `自分${slot}_Lv`,
+      `自分${slot}_HP`,
+      `自分${slot}_攻撃`,
+      `自分${slot}_防御`,
+      `自分${slot}_特攻`,
+      `自分${slot}_特防`,
+      `自分${slot}_素早さ`,
+      `自分${slot}_技1`,
+      `自分${slot}_技2`,
+      `自分${slot}_技3`,
+      `自分${slot}_技4`
+    );
+  }
+
+  const rows = [
+    headers
+  ];
+
+  for (const match of matches) {
+    /*
+     * 新方式では試合時点snapshotを最優先。
+     *
+     * snapshotがない古い試合についてだけ
+     * 現在の構築をfallbackとして使う。
+     * これは「当時の型」とは保証できない。
+     */
+    const snapshot =
+      match.party_snapshot || {
+        party_id:
+          party.id,
+
+        party_name:
+          party.name || "",
+
+        pokemon:
+          party.pokemon || []
+      };
+
+    const row = [
+      match.id || "",
+      match.played_at || "",
+      snapshot.party_name ||
+        party.name ||
+        "",
+      match.result || "",
+      match.memo || "",
+
+      getSelectionPokemonName(
+        match.my_lead?.[0],
+        snapshot
+      ),
+      getSelectionPokemonName(
+        match.my_lead?.[1],
+        snapshot
+      ),
+      getSelectionPokemonName(
+        match.my_back?.[0],
+        snapshot
+      ),
+      getSelectionPokemonName(
+        match.my_back?.[1],
+        snapshot
+      )
+    ];
+
+    const opponentTeam =
+      match.opponent_team || [];
+
+    for (let i = 0; i < 6; i++) {
+      const opponent =
+        opponentTeam[i];
+
+      if (
+        opponent &&
+        typeof opponent === "object"
+      ) {
+        row.push(
+          opponent.display_name ||
+          opponent.name ||
+          opponent.id ||
+          ""
+        );
+      } else {
+        row.push(
+          opponent || ""
+        );
+      }
+    }
+
+    row.push(
+      match.opponent_lead?.[0] || "",
+      match.opponent_lead?.[1] || "",
+      match.opponent_back?.[0] || "",
+      match.opponent_back?.[1] || ""
+    );
+
+    const pokemonList =
+      snapshot.pokemon || [];
+
+    for (let i = 0; i < 6; i++) {
+      const pokemon =
+        pokemonList[i] || {};
+
+      const evs =
+        pokemon.evs ||
+        pokemon.stats ||
+        {};
+
+      const moveIds =
+        pokemon.move_ids ||
+        pokemon.moves ||
+        [];
+
+      row.push(
+        getSnapshotPokemonName(
+          pokemon
+        ),
+
+        getSnapshotItemName(
+          pokemon
+        ),
+
+        getSnapshotAbilityName(
+          pokemon
+        ),
+
+        getSnapshotNatureName(
+          pokemon
+        ),
+
+        pokemon.level || 50,
+
+        evs.hp ?? "",
+        evs.atk ?? "",
+        evs.def ?? "",
+        evs.spa ?? "",
+        evs.spd ?? "",
+        evs.spe ?? "",
+
+        getSnapshotMoveName(
+          moveIds[0]
+        ),
+        getSnapshotMoveName(
+          moveIds[1]
+        ),
+        getSnapshotMoveName(
+          moveIds[2]
+        ),
+        getSnapshotMoveName(
+          moveIds[3]
+        )
+      );
+    }
+
+    rows.push(row);
+  }
+
+  return rows
+    .map(
+      row =>
+        row
+          .map(csvCell)
+          .join(",")
+    )
+    .join("\n");
+}
+
+
+function downloadMatchAnalysisCsv(party) {
+  const csv =
+    createMatchAnalysisCsv(party);
+
+  const blob =
+    new Blob(
+      ["\ufeff" + csv],
+      {
+        type:
+          "text/csv;charset=utf-8"
+      }
+    );
+
+  const url =
+    URL.createObjectURL(blob);
+
+  const a =
+    document.createElement("a");
+
+  const date =
+    new Date()
+      .toISOString()
+      .slice(0, 10);
+
+  a.href = url;
+
+  a.download =
+    `gawhota_matches_${date}.csv`;
+
+  document.body.appendChild(a);
+
+  a.click();
+
+  a.remove();
+
+  URL.revokeObjectURL(url);
+}
+
 
 function saveMatches(matches) {
   localStorage.setItem("gawhota_matches", JSON.stringify(matches));
@@ -1924,6 +2437,174 @@ function openDetailItemPicker(
 }
 
 
+
+function masterAutocompleteEntries(master, displayNameGetter) {
+  if (!Array.isArray(master)) {
+    return [];
+  }
+
+  return master
+    .map(entry => ({
+      id: entry?.id || "",
+      label:
+        displayNameGetter(entry?.id) ||
+        entry?.name?.ja ||
+        entry?.name_ja ||
+        entry?.name?.en ||
+        entry?.name_en ||
+        entry?.id ||
+        ""
+    }))
+    .filter(entry => entry.id && entry.label);
+}
+
+
+function attachMasterAutocomplete(
+  input,
+  entries,
+  options = {}
+) {
+  if (!input) return;
+
+  const limit =
+    options.limit || 8;
+
+  const wrapper =
+    document.createElement("div");
+
+  wrapper.className =
+    "master-autocomplete";
+
+  input.parentNode.insertBefore(
+    wrapper,
+    input
+  );
+
+  wrapper.appendChild(input);
+
+  const list =
+    document.createElement("div");
+
+  list.className =
+    "master-autocomplete-list";
+
+  list.hidden = true;
+
+  wrapper.appendChild(list);
+
+
+  const close = () => {
+    list.hidden = true;
+    list.innerHTML = "";
+  };
+
+
+  const render = () => {
+    const query =
+      normalizeMasterText(
+        input.value
+      );
+
+    if (!query) {
+      close();
+      return;
+    }
+
+    const matches =
+      entries
+        .filter(entry => {
+          const label =
+            normalizeMasterText(
+              entry.label
+            );
+
+          const id =
+            normalizeMasterText(
+              entry.id
+            );
+
+          return (
+            label.includes(query) ||
+            id.includes(query)
+          );
+        })
+        .slice(0, limit);
+
+    if (!matches.length) {
+      close();
+      return;
+    }
+
+    list.innerHTML =
+      matches
+        .map((entry, index) => `
+          <button
+            type="button"
+            class="master-autocomplete-option"
+            data-autocomplete-index="${index}">
+            ${escapeHtml(entry.label)}
+          </button>
+        `)
+        .join("");
+
+    list.hidden = false;
+
+    list
+      .querySelectorAll(
+        ".master-autocomplete-option"
+      )
+      .forEach(button => {
+        button.addEventListener(
+          "mousedown",
+          event => {
+            event.preventDefault();
+
+            const index =
+              Number(
+                button.dataset
+                  .autocompleteIndex
+              );
+
+            const selected =
+              matches[index];
+
+            if (!selected) return;
+
+            input.value =
+              selected.label;
+
+            input.dataset.masterId =
+              selected.id;
+
+            close();
+          }
+        );
+      });
+  };
+
+
+  input.addEventListener(
+    "input",
+    () => {
+      delete input.dataset.masterId;
+      render();
+    }
+  );
+
+  input.addEventListener(
+    "focus",
+    render
+  );
+
+  input.addEventListener(
+    "blur",
+    () => {
+      setTimeout(close, 100);
+    }
+  );
+}
+
+
 function openPartyPokemonDetail(p, partyId, slotIndex) {
   const overlay = document.createElement("div");
   overlay.className = "revealed-editor-overlay";
@@ -1957,13 +2638,29 @@ function openPartyPokemonDetail(p, partyId, slotIndex) {
             : []
         );
 
-  const moves =
-    moveSources.map(move =>
-      getMoveDisplayName(move)
-    );
+  const pokemonMoves =
+    moveSources.map(move => {
+      /*
+       * 正本はmove ID。
+       * 旧データでobjectが入っていてもIDへ戻す。
+       */
+      const value =
+        typeof move === "object"
+          ? (
+              move?.id ||
+              move?.move_id ||
+              move?.value ||
+              move?.name?.ja ||
+              move?.name?.en ||
+              ""
+            )
+          : move;
 
-  while (moves.length < 4) {
-    moves.push("");
+      return getMoveDisplayName(value);
+    });
+
+  while (pokemonMoves.length < 4) {
+    pokemonMoves.push("");
   }
 
   const itemName =
@@ -2117,7 +2814,7 @@ function openPartyPokemonDetail(p, partyId, slotIndex) {
         <h3>技</h3>
 
         <div class="party-pokemon-edit-moves">
-          ${moves.slice(0, 4).map((move, index) => `
+          ${pokemonMoves.slice(0, 4).map((move, index) => `
             <input
               type="text"
               class="pokemon-edit-move"
@@ -2133,12 +2830,6 @@ function openPartyPokemonDetail(p, partyId, slotIndex) {
           class="party-pokemon-save-message"
           aria-live="polite">
         </div>
-
-        <button
-          type="button"
-          class="primary-button party-pokemon-direct-save">
-          変更を保存
-        </button>
       </div>
 
 
@@ -2284,11 +2975,26 @@ Adamant Nature
         .filter(Boolean)
         .slice(0, 4);
 
+    const nextMoveIds =
+      nextMoves
+        .map(move =>
+          getMoveId(move)
+        )
+        .filter(Boolean)
+        .slice(0, 4);
+
     return {
       ability:
         overlay
           .querySelector(".pokemon-edit-ability")
           .value.trim() || null,
+
+      ability_id:
+        getAbilityId(
+          overlay
+            .querySelector(".pokemon-edit-ability")
+            .value.trim()
+        ) || null,
 
       nature:
         overlay
@@ -2303,9 +3009,118 @@ Adamant Nature
         ),
 
       evs: nextEvs,
-      moves: nextMoves
+
+      /*
+       * movesは旧データ互換。
+       * move_idsを正本として保存する。
+       */
+      moves: nextMoves,
+      move_ids: nextMoveIds
     };
   };
+
+
+
+  /*
+   * Master検索候補
+   */
+  const abilityInput =
+    overlay.querySelector(
+      ".pokemon-edit-ability"
+    );
+
+  const natureInput =
+    overlay.querySelector(
+      ".pokemon-edit-nature"
+    );
+
+  const moveInputs =
+    [
+      ...overlay.querySelectorAll(
+        ".pokemon-edit-move"
+      )
+    ];
+
+
+  const abilityAutocompleteEntries =
+    masterAutocompleteEntries(
+      abilities,
+      getAbilityDisplayName
+    );
+
+  const natureAutocompleteEntries =
+    masterAutocompleteEntries(
+      natures,
+      getNatureDisplayName
+    );
+
+  console.log(
+    "[autocomplete]",
+    {
+      abilityInput:
+        Boolean(abilityInput),
+
+      natureInput:
+        Boolean(natureInput),
+
+      moveInputs:
+        moveInputs.length,
+
+      abilities:
+        abilityAutocompleteEntries.length,
+
+      natures:
+        natureAutocompleteEntries.length
+    }
+  );
+
+  attachMasterAutocomplete(
+    abilityInput,
+    abilityAutocompleteEntries
+  );
+
+
+  attachMasterAutocomplete(
+    natureInput,
+    natureAutocompleteEntries
+  );
+
+
+  const moveAutocompleteEntries =
+    masterAutocompleteEntries(
+      moves,
+      getMoveDisplayName
+    );
+
+  console.log(
+    "[move autocomplete]",
+    {
+      masterMoves:
+        Array.isArray(moves)
+          ? moves.length
+          : 0,
+
+      entries:
+        moveAutocompleteEntries.length,
+
+      inputs:
+        moveInputs.length,
+
+      protect:
+        moveAutocompleteEntries
+          .filter(entry =>
+            entry.label.includes("まも")
+          )
+          .slice(0, 10)
+    }
+  );
+
+  moveInputs.forEach(input => {
+    attachMasterAutocomplete(
+      input,
+      moveAutocompleteEntries
+    );
+  });
 
 
   const savePokemon = updates => {
@@ -2436,30 +3251,92 @@ Adamant Nature
   };
 
 
-  overlay
-    .querySelector(".party-pokemon-direct-save")
-    .addEventListener("click", () => {
-      const message =
-        overlay.querySelector(
-          ".party-pokemon-save-message"
+  /*
+   * 編集画面の現在値をparty.pokemonへ保存する。
+   * Pokepaste反映・通常編集の共通保存経路。
+   */
+  const saveCurrentEditor = () => {
+    const editorUpdates =
+      readEditor();
+
+    const pendingPokemonId =
+      overlay.dataset.pendingPokemonId ||
+      null;
+
+    const pendingItemId =
+      overlay.dataset.pendingItemId ||
+      null;
+
+    if (pendingPokemonId) {
+      const pendingPokemon =
+        findPokemonFromPaste(
+          pendingPokemonId
         );
 
-      const saved =
-        savePokemon(readEditor());
-
-      if (!saved) {
-        message.textContent =
-          "保存先が見つかりません。";
-        return;
+      if (!pendingPokemon) {
+        return null;
       }
 
-      overlay.remove();
-      openPartyPokemonDetail(
-        saved,
-        partyId,
-        slotIndex
-      );
-    });
+      editorUpdates.id =
+        pendingPokemon.id;
+
+      editorUpdates.species_id =
+        pendingPokemon.species_id;
+
+      editorUpdates.display_name =
+        pendingPokemon.display_name;
+
+      editorUpdates.asset =
+        pendingPokemon.asset;
+    }
+
+    if (pendingItemId) {
+      editorUpdates.item_id =
+        pendingItemId;
+    }
+
+    return savePokemon(
+      editorUpdates
+    );
+  };
+
+
+  /*
+   * 手入力も自動保存。
+   *
+   * changeで保存するので、
+   * 文字入力の1文字ごとではなく
+   * 候補選択・Enter・フォーカス移動などで
+   * 値が確定したタイミングで保存する。
+   */
+  const autoSaveInputs =
+    overlay.querySelectorAll(
+      [
+        ".pokemon-edit-ability",
+        ".pokemon-edit-nature",
+        ".pokemon-edit-level",
+        ".pokemon-edit-stat",
+        ".pokemon-edit-move"
+      ].join(",")
+    );
+
+  autoSaveInputs.forEach(input => {
+    input.addEventListener(
+      "change",
+      () => {
+        const saved =
+          saveCurrentEditor();
+
+        if (saved) {
+          message.textContent =
+            "自動保存しました。";
+        } else {
+          message.textContent =
+            "自動保存に失敗しました。";
+        }
+      }
+    );
+  });
 
 
   const presetSaveButton =
@@ -2711,51 +3588,274 @@ Adamant Nature
           entry.raw || source
       };
 
-      if (entry.item) {
-        const normalizedItem =
-          normalizeLookupText(entry.item);
+      /*
+       * 持ち物も6匹Pokepasteと同じ検索経路へ統一する。
+       * parserの新旧形式に備えてitem_name / itemの両方を許容。
+       */
+      const pasteItemName =
+        entry.item_name ||
+        entry.item ||
+        "";
 
-        const itemEntry =
-          Object.values(items)
-            .find(item => {
-              const candidates = [
-                item.id,
-                item.name,
-                item.name_en,
-                item.name_ja,
-                item.display_name
-              ]
-                .filter(Boolean)
-                .map(normalizeLookupText);
+      if (pasteItemName) {
+        const pasteItemId =
+          findItemFromPaste(
+            pasteItemName
+          );
 
-              return candidates.includes(
-                normalizedItem
-              );
-            });
-
-        if (itemEntry?.id) {
+        if (pasteItemId) {
           updates.item_id =
-            itemEntry.id;
+            pasteItemId;
         }
       }
 
-      const saved =
-        savePokemon(updates);
+      /*
+       * 個別Pokepasteはこの時点では保存しない。
+       * 現在開いている編集フォームへ反映し、
+       * 「変更を保存」で確定する。
+       */
 
-      if (!saved) {
+      const abilityInput =
+        overlay.querySelector(
+          ".pokemon-edit-ability"
+        );
+
+      const natureInput =
+        overlay.querySelector(
+          ".pokemon-edit-nature"
+        );
+
+      const levelInput =
+        overlay.querySelector(
+          ".pokemon-edit-level"
+        );
+
+      if (abilityInput) {
+        abilityInput.value =
+          getAbilityDisplayName(
+            updates.ability_id ||
+            updates.ability
+          );
+      }
+
+      if (natureInput) {
+        natureInput.value =
+          getNatureDisplayName(
+            updates.nature_id ||
+            updates.nature
+          );
+      }
+
+      if (levelInput) {
+        levelInput.value =
+          updates.level || 50;
+      }
+
+      const evKeys = [
+        "hp",
+        "atk",
+        "def",
+        "spa",
+        "spd",
+        "spe"
+      ];
+
+      const evInputs =
+        overlay.querySelectorAll(
+          ".pokemon-edit-stat"
+        );
+
+      evInputs.forEach(input => {
+        const key =
+          input.dataset.stat;
+
+        if (!key) return;
+
+        input.value =
+          updates.evs?.[key] ?? 0;
+
+        input.dispatchEvent(
+          new Event("input", {
+            bubbles: true
+          })
+        );
+
+        input.dispatchEvent(
+          new Event("change", {
+            bubbles: true
+          })
+        );
+      });
+
+      const moveInputs =
+        overlay.querySelectorAll(
+          ".pokemon-edit-move"
+        );
+
+      moveInputs.forEach(
+        (input, index) => {
+          const moveId =
+            updates.move_ids?.[index];
+
+          const fallback =
+            updates.moves?.[index];
+
+          input.value =
+            getMoveDisplayName(
+              moveId || fallback || ""
+            );
+        }
+      );
+
+      /*
+       * 持ち物はヘッダー表示なので、
+       * ここでは保存せずpendingとして保持。
+       * 「変更を保存」時に一緒に確定させる。
+       */
+      /*
+       * ポケモン・持ち物は編集欄ではなく
+       * overlayのpendingとして保持する。
+       * 「変更を保存」で一緒に確定する。
+       */
+      const pastePokemon =
+        findPokemonFromPaste(
+          entry.pokemon_name
+        );
+
+      if (pastePokemon?.id) {
+        overlay.dataset.pendingPokemonId =
+          pastePokemon.id;
+
+        /*
+         * Pokepaste反映時点で
+         * ポケモン名・アイコンも即時更新する。
+         */
+        const pokemonButton =
+          overlay.querySelector(
+            ".party-pokemon-change-button"
+          );
+
+        if (pokemonButton) {
+          const pokemonImg =
+            pokemonButton.querySelector("img");
+
+          const pokemonTitle =
+            pokemonButton.querySelector("h2");
+
+          if (pokemonImg) {
+            pokemonImg.src =
+              imagePath(pastePokemon);
+          }
+
+          if (pokemonTitle) {
+            pokemonTitle.innerHTML =
+              `${escapeHtml(
+                pastePokemon.display_name || ""
+              )}<span class="party-edit-chevron">›</span>`;
+          }
+        }
+      }
+
+      if (updates.item_id) {
+        overlay.dataset.pendingItemId =
+          updates.item_id;
+
+        /*
+         * 持ち物もPokepaste反映時点で
+         * 名前・アイコンを即時更新する。
+         */
+        const itemButton =
+          overlay.querySelector(
+            ".party-pokemon-item-change-button"
+          );
+
+        const itemEntry =
+          items[updates.item_id];
+
+        if (itemButton && itemEntry) {
+          const itemDisplayName =
+            itemEntry.name?.ja ||
+            itemEntry.name_ja ||
+            itemEntry.display_name ||
+            itemEntry.name?.en ||
+            itemEntry.name_en ||
+            updates.item_id;
+
+          const itemImage =
+            itemEntry.asset
+              ? `
+                <img
+                  src="${itemImagePath(itemEntry)}"
+                  alt=""
+                >
+              `
+              : "";
+
+          itemButton.innerHTML = `
+            <div class="party-pokemon-detail-item-line">
+              ${itemImage}
+
+              <span>
+                ${escapeHtml(itemDisplayName)}
+                <span class="party-edit-chevron">›</span>
+              </span>
+            </div>
+          `;
+        }
+      }
+
+      const reflected = {
+        ability: Boolean(abilityInput),
+        nature: Boolean(natureInput),
+        level: Boolean(levelInput),
+        evs: evInputs.length,
+        moves: moveInputs.length
+      };
+
+      console.log(
+        "[single paste reflect]",
+        reflected
+      );
+
+      const reflectionOk =
+        reflected.ability &&
+        reflected.nature &&
+        reflected.level &&
+        reflected.evs === 6 &&
+        reflected.moves === 4;
+
+      if (!reflectionOk) {
         pasteMessage.textContent =
-          "保存先が見つかりません。";
+          "編集欄への反映に失敗しました。";
         return;
       }
 
-      overlay.remove();
-      openPartyPokemonDetail(
-        saved,
-        partyId,
-        slotIndex
-      );
+      const saved =
+        saveCurrentEditor();
+
+      if (!saved) {
+        pasteMessage.textContent =
+          "編集欄には反映しましたが、データ保存に失敗しました。";
+        return;
+      }
+
+      pasteMessage.textContent =
+        "反映しました。";
     });
 
+
+  /*
+   * 個体編集を閉じる時に構築詳細を再描画する。
+   * 保存済みの最新ポケモン・持ち物・アイコンを
+   * ページ更新なしでカードへ反映する。
+   */
+  const closePokemonDetail = () => {
+    overlay.remove();
+
+    if (partyId) {
+      showPartyDetail(partyId);
+    }
+  };
 
   overlay
     .querySelector(
@@ -2763,14 +3863,14 @@ Adamant Nature
     )
     .addEventListener(
       "click",
-      () => overlay.remove()
+      closePokemonDetail
     );
 
   overlay.addEventListener(
     "click",
     event => {
       if (event.target === overlay) {
-        overlay.remove();
+        closePokemonDetail();
       }
     }
   );
@@ -3066,6 +4166,14 @@ function showPartyDetail(partyId) {
           hidden>
 
           <button
+            id="openPartyPokepaste"
+            class="party-menu-item">
+            Pokepasteから更新
+          </button>
+
+          <div class="party-menu-divider"></div>
+
+          <button
             id="exportCsvMenu"
             class="party-menu-item">
             CSVを書き出す
@@ -3149,23 +4257,46 @@ function showPartyDetail(partyId) {
         `).join("")}
       </div>
     
-      <div class="party-pokepaste-panel">
-        <h3>Pokepasteから一括反映</h3>
+      <div
+        id="partyPokepasteOverlay"
+        class="modal-overlay"
+        hidden>
 
-        <textarea
-          id="partyPokepasteInput"
-          rows="12"
-          placeholder="6匹分のPokepasteをここに貼り付け"></textarea>
+        <div
+          class="party-pokepaste-panel"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="partyPokepasteTitle">
 
-        <button
-          type="button"
-          id="applyPartyPokepaste"
-          class="secondary-button">
-          6匹を構築に反映
-        </button>
+          <div class="party-pokepaste-modal-header">
+            <h3 id="partyPokepasteTitle">
+              Pokepasteから更新
+            </h3>
 
-        <div class="form-note">
-          ポケモン・持ち物・特性・性格・Lv・能力ポイント・技をまとめて更新します。
+            <button
+              type="button"
+              id="closePartyPokepaste"
+              class="modal-close"
+              aria-label="閉じる">
+              ×
+            </button>
+          </div>
+
+          <textarea
+            id="partyPokepasteInput"
+            rows="12"
+            placeholder="6匹分のPokepasteをここに貼り付け"></textarea>
+
+          <button
+            type="button"
+            id="applyPartyPokepaste"
+            class="secondary-button">
+            6匹を構築に反映
+          </button>
+
+          <div class="form-note">
+            ポケモン・持ち物・特性・性格・Lv・能力ポイント・技をまとめて更新します。
+          </div>
         </div>
       </div>
 
@@ -3200,6 +4331,76 @@ function showPartyDetail(partyId) {
 
 
   `;
+
+
+  const partyPokepasteOverlay =
+    document.getElementById(
+      "partyPokepasteOverlay"
+    );
+
+  const openPartyPokepaste =
+    document.getElementById(
+      "openPartyPokepaste"
+    );
+
+  const closePartyPokepaste =
+    document.getElementById(
+      "closePartyPokepaste"
+    );
+
+  const closePartyPokepasteModal = () => {
+    if (partyPokepasteOverlay) {
+      partyPokepasteOverlay.hidden = true;
+    }
+  };
+
+  if (openPartyPokepaste) {
+    openPartyPokepaste.addEventListener(
+      "click",
+      () => {
+        const partyMenu =
+          document.getElementById(
+            "partyMenu"
+          );
+
+        if (partyMenu) {
+          partyMenu.hidden = true;
+        }
+
+        if (partyPokepasteOverlay) {
+          partyPokepasteOverlay.hidden =
+            false;
+
+          document
+            .getElementById(
+              "partyPokepasteInput"
+            )
+            ?.focus();
+        }
+      }
+    );
+  }
+
+  if (closePartyPokepaste) {
+    closePartyPokepaste.addEventListener(
+      "click",
+      closePartyPokepasteModal
+    );
+  }
+
+  if (partyPokepasteOverlay) {
+    partyPokepasteOverlay.addEventListener(
+      "click",
+      event => {
+        if (
+          event.target ===
+          partyPokepasteOverlay
+        ) {
+          closePartyPokepasteModal();
+        }
+      }
+    );
+  }
 
 
   const applyPartyPokepasteButton =
@@ -3270,81 +4471,137 @@ function showPartyDetail(partyId) {
         }
 
         /*
-         * parsePokepaste()が返したポケモンを
-         * Master準拠の構築データへ変換。
+         * parsePokepaste()の結果にはpokemon_name /
+         * item_nameが入っている。
+         *
+         * 旧構築編集と同じ変換を使い、
+         * Pokemon / Item Masterから正式な構築データを作る。
          */
-        const nextPokemon =
-          imported.map(entry => ({
-            id:
-              entry.id,
+        const nextPokemon = [];
+        const importErrors = [];
 
-            species_id:
-              entry.species_id,
+        imported
+          .slice(0, 6)
+          .forEach(entry => {
+            const p =
+              findPokemonFromPaste(
+                entry.pokemon_name
+              );
 
-            display_name:
-              entry.display_name,
+            if (!p) {
+              importErrors.push(
+                `ポケモン不明: ${entry.pokemon_name}`
+              );
+              return;
+            }
 
-            form_name:
-              entry.form_name,
+            let itemId = null;
 
-            asset:
-              entry.asset,
+            if (entry.item_name) {
+              itemId =
+                findItemFromPaste(
+                  entry.item_name
+                );
 
-            item_id:
-              entry.item_id || null,
+              if (!itemId) {
+                importErrors.push(
+                  `持ち物不明: ${entry.item_name}`
+                );
+              }
+            }
 
-            ability:
-              entry.ability || null,
+            nextPokemon.push({
+              /*
+               * Pokemon Master
+               */
+              id:
+                p.id,
 
-            ability_id:
-              entry.ability_id ||
-              getAbilityId(
-                entry.ability
-              ) ||
-              null,
+              species_id:
+                p.species_id,
 
-            nature:
-              entry.nature || null,
+              display_name:
+                p.display_name,
 
-            nature_id:
-              entry.nature_id ||
-              getNatureId(
-                entry.nature
-              ) ||
-              null,
+              asset:
+                p.asset,
 
-            level:
-              entry.level || 50,
+              /*
+               * Item Master
+               */
+              item_id:
+                itemId,
 
-            evs: {
-              hp: entry.evs?.hp ?? 0,
-              atk: entry.evs?.atk ?? 0,
-              def: entry.evs?.def ?? 0,
-              spa: entry.evs?.spa ?? 0,
-              spd: entry.evs?.spd ?? 0,
-              spe: entry.evs?.spe ?? 0
-            },
+              /*
+               * 型情報
+               */
+              ability:
+                entry.ability || null,
 
-            moves:
-              Array.isArray(entry.moves)
-                ? entry.moves.slice(0, 4)
-                : [],
+              ability_id:
+                entry.ability_id ||
+                getAbilityId(
+                  entry.ability
+                ) ||
+                null,
 
-            move_ids:
-              Array.isArray(entry.move_ids)
-                ? entry.move_ids.slice(0, 4)
-                : (
-                    Array.isArray(entry.moves)
-                      ? entry.moves
-                          .slice(0, 4)
-                          .map(getMoveId)
-                          .filter(Boolean)
-                      : []
-                  ),
+              nature:
+                entry.nature || null,
 
-            pokepaste_raw:
-              entry.raw || ""
-          }));
+              nature_id:
+                entry.nature_id ||
+                getNatureId(
+                  entry.nature
+                ) ||
+                null,
+
+              level:
+                entry.level || 50,
+
+              evs: {
+                hp:
+                  entry.evs?.hp ?? 0,
+                atk:
+                  entry.evs?.atk ?? 0,
+                def:
+                  entry.evs?.def ?? 0,
+                spa:
+                  entry.evs?.spa ?? 0,
+                spd:
+                  entry.evs?.spd ?? 0,
+                spe:
+                  entry.evs?.spe ?? 0
+              },
+
+              moves:
+                Array.isArray(entry.moves)
+                  ? entry.moves.slice(0, 4)
+                  : [],
+
+              move_ids:
+                Array.isArray(entry.move_ids)
+                  ? entry.move_ids.slice(0, 4)
+                  : (
+                      Array.isArray(entry.moves)
+                        ? entry.moves
+                            .slice(0, 4)
+                            .map(getMoveId)
+                            .filter(Boolean)
+                        : []
+                    ),
+
+              pokepaste_raw:
+                entry.raw || ""
+            });
+          });
+
+        if (!nextPokemon.length) {
+          alert(
+            importErrors.join("\n") ||
+            "反映できるポケモンがありませんでした。"
+          );
+          return;
+        }
 
         parties[partyIndex].pokemon =
           nextPokemon;
@@ -3377,7 +4634,7 @@ function showPartyDetail(partyId) {
     "click",
     () => {
       partyMenu.hidden = true;
-      downloadPartyCsv(party);
+      downloadMatchAnalysisCsv(party);
     }
   );
 
@@ -3421,13 +4678,6 @@ function showPartyDetail(partyId) {
     },
     { once: true }
   );
-
-  document
-    .getElementById("editParty")
-    .addEventListener(
-      "click",
-      () => showPartyEditor(partyId)
-    );
 
   document
     .querySelectorAll(
@@ -5129,6 +6379,35 @@ function saveMatchFromDraft(
   const matches =
     getMatches();
 
+  /*
+   * 新規対戦を記録した瞬間の構築を保存する。
+   *
+   * 後から構築のEV・技・持ち物などを変更しても、
+   * 過去の対戦では当時使っていた型を保持する。
+   */
+  const currentParty =
+    getParties().find(
+      party =>
+        String(party.id) ===
+        String(partyId)
+    );
+
+  const partySnapshot =
+    currentParty
+      ? JSON.parse(
+          JSON.stringify({
+            party_id:
+              currentParty.id,
+
+            party_name:
+              currentParty.name || "",
+
+            pokemon:
+              currentParty.pokemon || []
+          })
+        )
+      : null;
+
   const matchData = {
     party_id: partyId,
 
@@ -5185,6 +6464,9 @@ function saveMatchFromDraft(
 
       played_at:
         new Date().toISOString(),
+
+      party_snapshot:
+        partySnapshot,
 
       ...matchData
     });
