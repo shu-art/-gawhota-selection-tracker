@@ -2,6 +2,7 @@ let pokemon = [];
 let items = {};
 let abilities = {};
 let moves = {};
+let natures = [];
 let selected = [];
 
 const app = document.getElementById("app");
@@ -120,6 +121,49 @@ function getMoveId(value) {
   );
 }
 
+
+function getNatureMaster(value) {
+  if (!value) return null;
+
+  const needle =
+    normalizeMasterText(value);
+
+  return (
+    natures.find(entry => {
+      const candidates = [
+        entry?.id,
+        entry?.name_en,
+        entry?.name_ja,
+        entry?.display_name
+      ]
+        .filter(Boolean)
+        .map(normalizeMasterText);
+
+      return candidates.includes(needle);
+    }) ||
+    null
+  );
+}
+
+function getNatureDisplayName(value) {
+  const entry =
+    getNatureMaster(value);
+
+  return (
+    entry?.name_ja ||
+    entry?.name_en ||
+    value ||
+    ""
+  );
+}
+
+function getNatureId(value) {
+  return (
+    getNatureMaster(value)?.id ||
+    ""
+  );
+}
+
 /* =========================
    Storage
 ========================= */
@@ -166,12 +210,14 @@ async function loadData() {
     pokemonRes,
     itemsRes,
     abilitiesRes,
-    movesRes
+    movesRes,
+    naturesRes
   ] = await Promise.all([
     fetch("../data/pokemon.json"),
     fetch("../data/items.json"),
     fetch("../data/abilities.json"),
-    fetch("../data/moves.json")
+    fetch("../data/moves.json"),
+    fetch("../data/natures.json")
   ]);
 
   pokemon =
@@ -185,6 +231,9 @@ async function loadData() {
 
   moves =
     await movesRes.json();
+
+  natures =
+    await naturesRes.json();
 
   showPartyList();
 }
@@ -756,11 +805,26 @@ function parsePokepaste(text) {
       }
     });
 
+    /*
+     * Pokepaste原文も互換用として残す。
+     * Master ID側を今後の正本として扱う。
+     */
+
     entry.ability =
       detail.ability;
 
+    entry.ability_id =
+      getAbilityId(
+        detail.ability
+      );
+
     entry.nature =
       detail.nature;
+
+    entry.nature_id =
+      getNatureId(
+        detail.nature
+      );
 
     entry.level =
       detail.level;
@@ -768,11 +832,21 @@ function parsePokepaste(text) {
     entry.evs =
       detail.evs;
 
-    entry.ivs =
-      detail.ivs;
+    /*
+     * Championsでは個体値を使用しないため、
+     * IVsはPokepaste解析には対応するが
+     * 構築データの正本にはしない。
+     */
 
     entry.moves =
       detail.moves;
+
+    entry.move_ids =
+      detail.moves
+        .map(move =>
+          getMoveId(move)
+        )
+        .filter(Boolean);
   });
 
   return parsed;
@@ -898,10 +972,33 @@ async function applyPokepasteToParty() {
          * 表示だけでなく、将来の実数値計算や
          * 選出分析にも利用できる形で保持する。
          */
-        ability: entry.ability || null,
-        nature: entry.nature || null,
-        level: entry.level || 50,
+        /*
+         * 旧形式も互換用として保持する。
+         * Master ID側を正本として扱う。
+         */
+        ability:
+          entry.ability || null,
 
+        ability_id:
+          entry.ability_id ||
+          getAbilityId(entry.ability) ||
+          null,
+
+        nature:
+          entry.nature || null,
+
+        nature_id:
+          entry.nature_id ||
+          getNatureId(entry.nature) ||
+          null,
+
+        level:
+          entry.level || 50,
+
+        /*
+         * Pokémon Championsの能力ポイント。
+         * 個体値は存在しないので保存しない。
+         */
         evs: {
           hp: entry.evs?.hp ?? 0,
           atk: entry.evs?.atk ?? 0,
@@ -911,19 +1008,22 @@ async function applyPokepasteToParty() {
           spe: entry.evs?.spe ?? 0
         },
 
-        ivs: {
-          hp: entry.ivs?.hp ?? 31,
-          atk: entry.ivs?.atk ?? 31,
-          def: entry.ivs?.def ?? 31,
-          spa: entry.ivs?.spa ?? 31,
-          spd: entry.ivs?.spd ?? 31,
-          spe: entry.ivs?.spe ?? 31
-        },
-
         moves:
           Array.isArray(entry.moves)
             ? entry.moves.slice(0, 4)
             : [],
+
+        move_ids:
+          Array.isArray(entry.move_ids)
+            ? entry.move_ids.slice(0, 4)
+            : (
+                Array.isArray(entry.moves)
+                  ? entry.moves
+                      .slice(0, 4)
+                      .map(getMoveId)
+                      .filter(Boolean)
+                  : []
+              ),
 
         /*
          * 解析方法を後から変更しても復元できるよう
@@ -1843,9 +1943,24 @@ function openPartyPokemonDetail(p, partyId, slotIndex) {
   ];
 
   const evs = p.evs || {};
-  const moves = Array.isArray(p.moves)
-    ? [...p.moves]
-    : [];
+  /*
+   * 技はMaster IDを正本として表示。
+   * 旧データのmovesにも対応する。
+   */
+  const moveSources =
+    Array.isArray(p.move_ids) &&
+    p.move_ids.length
+      ? [...p.move_ids]
+      : (
+          Array.isArray(p.moves)
+            ? [...p.moves]
+            : []
+        );
+
+  const moves =
+    moveSources.map(move =>
+      getMoveDisplayName(move)
+    );
 
   while (moves.length < 4) {
     moves.push("");
@@ -1944,7 +2059,13 @@ function openPartyPokemonDetail(p, partyId, slotIndex) {
           <input
             class="pokemon-edit-ability"
             type="text"
-            value="${escapeHtml(p.ability || "")}">
+            value="${escapeHtml(
+              getAbilityDisplayName(
+                p.ability_id ||
+                p.ability ||
+                ""
+              )
+            )}">
         </label>
 
         <label>
@@ -1952,7 +2073,13 @@ function openPartyPokemonDetail(p, partyId, slotIndex) {
           <input
             class="pokemon-edit-nature"
             type="text"
-            value="${escapeHtml(p.nature || "")}">
+            value="${escapeHtml(
+              getNatureDisplayName(
+                p.nature_id ||
+                p.nature ||
+                ""
+              )
+            )}">
         </label>
 
         <label>
@@ -2201,10 +2328,106 @@ Adamant Nature
       return null;
     }
 
-    parties[partyIndex].pokemon[slotIndex] = {
-      ...parties[partyIndex].pokemon[slotIndex],
+    /*
+     * ここを個体データ保存の最終関門にする。
+     *
+     * 手入力 / Pokepaste / プリセットの
+     * どこから来てもMaster IDへ正規化する。
+     */
+
+    const current =
+      parties[partyIndex].pokemon[slotIndex];
+
+    const next = {
+      ...current,
       ...updates
     };
+
+
+    /* ---------- 特性 ---------- */
+
+    const abilitySource =
+      updates.ability_id ||
+      updates.ability ||
+      next.ability_id ||
+      next.ability;
+
+    const normalizedAbilityId =
+      getAbilityId(abilitySource);
+
+    if (normalizedAbilityId) {
+      next.ability_id =
+        normalizedAbilityId;
+    }
+
+
+    /* ---------- 性格 ---------- */
+
+    const natureSource =
+      updates.nature_id ||
+      updates.nature ||
+      next.nature_id ||
+      next.nature;
+
+    const normalizedNatureId =
+      getNatureId(natureSource);
+
+    if (normalizedNatureId) {
+      next.nature_id =
+        normalizedNatureId;
+    }
+
+
+    /* ---------- 技 ---------- */
+
+    let moveSources = [];
+
+    if (
+      Array.isArray(updates.move_ids) &&
+      updates.move_ids.length
+    ) {
+      moveSources =
+        updates.move_ids.slice(0, 4);
+
+    } else if (
+      Array.isArray(updates.moves)
+    ) {
+      moveSources =
+        updates.moves.slice(0, 4);
+
+    } else if (
+      Array.isArray(next.move_ids) &&
+      next.move_ids.length
+    ) {
+      moveSources =
+        next.move_ids.slice(0, 4);
+
+    } else if (
+      Array.isArray(next.moves)
+    ) {
+      moveSources =
+        next.moves.slice(0, 4);
+    }
+
+    next.move_ids =
+      moveSources
+        .map(move =>
+          getMoveId(move)
+        )
+        .filter(Boolean)
+        .slice(0, 4);
+
+
+    /*
+     * Pokémon Championsには個体値がない。
+     * 過去データに残っていても、
+     * この個体を保存した時点で除去する。
+     */
+    delete next.ivs;
+
+
+    parties[partyIndex].pokemon[slotIndex] =
+      next;
 
     saveParties(parties);
 

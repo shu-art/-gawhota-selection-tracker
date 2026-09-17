@@ -1,0 +1,177 @@
+[
+  {
+    "id": "hardy",
+    "name_en": "Hardy",
+    "name_ja": "がんばりや",
+    "up": null,
+    "down": null
+  },
+  {
+    "id": "lonely",
+    "name_en": "Lonely",
+    "name_ja": "さみしがり",
+    "up": "atk",
+    "down": "def"
+  },
+  {
+    "id": "brave",
+    "name_en": "Brave",
+    "name_ja": "ゆうかん",
+    "up": "atk",
+    "down": "spe"
+  },
+  {
+    "id": "adamant",
+    "name_en": "Adamant",
+    "name_ja": "いじっぱり",
+    "up": "atk",
+    "down": "spa"
+  },
+  {
+    "id": "naughty",
+    "name_en": "Naughty",
+    "name_ja": "やんちゃ",
+    "up": "atk",
+    "down": "spd"
+  },
+  {
+    "id": "bold",
+    "name_en": "Bold",
+    "name_ja": "ずぶとい",
+    "up": "def",
+    "down": "atk"
+  },
+  {
+    "id": "docile",
+    "name_en": "Docile",
+    "name_ja": "すなお",
+    "up": null,
+    "down": null
+  },
+  {
+    "id": "relaxed",
+    "name_en": "Relaxed",
+    "name_ja": "のんき",
+    "up": "def",
+    "down": "spe"
+  },
+  {
+    "id": "impish",
+    "name_en": "Impish",
+    "name_ja": "わんぱく",
+    "up": "def",
+    "down": "spa"
+  },
+  {
+    "id": "lax",
+    "name_en": "Lax",
+    "name_ja": "のうてんき",
+    "up": "def",
+    "down": "spd"
+  },
+  {
+    "id": "timid",
+    "name_en": "Timid",
+    "name_ja": "おくびょう",
+    "up": "spe",
+    "down": "atk"
+  },
+  {
+    "id": "hasty",
+    "name_en": "Hasty",
+    "name_ja": "せっかち",
+    "up": "spe",
+    "down": "def"
+  },
+  {
+    "id": "serious",
+    "name_en": "Serious",
+    "name_ja": "まじめ",
+    "up": null,
+    "down": null
+  },
+  {
+    "id": "jolly",
+    "name_en": "Jolly",
+    "name_ja": "ようき",
+    "up": "spe",
+    "down": "spa"
+  },
+  {
+    "id": "naive",
+    "name_en": "Naive",
+    "name_ja": "むじゃき",
+    "up": "spe",
+    "down": "spd"
+  },
+  {
+    "id": "modest",
+    "name_en": "Modest",
+    "name_ja": "ひかえめ",
+    "up": "spa",
+    "down": "atk"
+  },
+  {
+    "id": "mild",
+    "name_en": "Mild",
+    "name_ja": "おっとり",
+    "up": "spa",
+    "down": "def"
+  },
+  {
+    "id": "quiet",
+    "name_en": "Quiet",
+    "name_ja": "れいせい",
+    "up": "spa",
+    "down": "spe"
+  },
+  {
+    "id": "bashful",
+    "name_en": "Bashful",
+    "name_ja": "てれや",
+    "up": null,
+    "down": null
+  },
+  {
+    "id": "rash",
+    "name_en": "Rash",
+    "name_ja": "うっかりや",
+    "up": "spa",
+    "down": "spd"
+  },
+  {
+    "id": "calm",
+    "name_en": "Calm",
+    "name_ja": "おだやか",
+    "up": "spd",
+    "down": "atk"
+  },
+  {
+    "id": "gentle",
+    "name_en": "Gentle",
+    "name_ja": "おとなしい",
+    "up": "spd",
+    "down": "def"
+  },
+  {
+    "id": "sassy",
+    "name_en": "Sassy",
+    "name_ja": "なまいき",
+    "up": "spd",
+    "down": "spe"
+  },
+  {
+    "id": "careful",
+    "name_en": "Careful",
+    "name_ja": "しんちょう",
+    "up": "spd",
+    "down": "spa"
+  },
+  {
+    "id": "quirky",
+    "name_en": "Quirky",
+    "name_ja": "きまぐれ",
+    "up": null,
+    "down": null
+  }
+]
