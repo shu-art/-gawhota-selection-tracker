@@ -2658,11 +2658,25 @@ Adamant Nature
       const entry = parsed[0];
 
       const updates = {
+        /*
+         * 原文は互換・確認用として保持。
+         * Master IDを現在値の正本として保存する。
+         */
         ability:
           entry.ability || null,
 
+        ability_id:
+          entry.ability_id ||
+          getAbilityId(entry.ability) ||
+          null,
+
         nature:
           entry.nature || null,
+
+        nature_id:
+          entry.nature_id ||
+          getNatureId(entry.nature) ||
+          null,
 
         level:
           entry.level || 50,
@@ -2680,6 +2694,18 @@ Adamant Nature
           Array.isArray(entry.moves)
             ? entry.moves.slice(0, 4)
             : [],
+
+        move_ids:
+          Array.isArray(entry.move_ids)
+            ? entry.move_ids.slice(0, 4)
+            : (
+                Array.isArray(entry.moves)
+                  ? entry.moves
+                      .slice(0, 4)
+                      .map(getMoveId)
+                      .filter(Boolean)
+                  : []
+              ),
 
         pokepaste_raw:
           entry.raw || source
@@ -2748,6 +2774,229 @@ Adamant Nature
       }
     }
   );
+}
+
+
+
+function csvEscape(value) {
+  const text =
+    String(value ?? "");
+
+  if (
+    text.includes(",") ||
+    text.includes('"') ||
+    text.includes("\n")
+  ) {
+    return (
+      '"' +
+      text.replace(/"/g, '""') +
+      '"'
+    );
+  }
+
+  return text;
+}
+
+
+function getPokemonDisplayNameForCsv(p) {
+  if (!p) return "";
+
+  /*
+   * party.pokemonには通常name/display_nameが
+   * 入っているため、それを優先。
+   */
+  if (p.display_name) {
+    return p.display_name;
+  }
+
+  if (p.name_ja) {
+    return p.name_ja;
+  }
+
+  if (p.name) {
+    return p.name;
+  }
+
+  /*
+   * IDしか無い場合はpokemon Masterから探す。
+   */
+  const id =
+    p.id ||
+    p.pokemon_id ||
+    p.species_id;
+
+  if (!id) return "";
+
+  const master =
+    pokemon.find(entry =>
+      entry?.id === id ||
+      entry?.pokemon_id === id
+    );
+
+  return (
+    master?.display_name ||
+    master?.name_ja ||
+    master?.name ||
+    id
+  );
+}
+
+
+function getItemDisplayNameForCsv(p) {
+  if (!p?.item_id) {
+    return "";
+  }
+
+  const entry =
+    items[p.item_id] ||
+    Object.values(items)
+      .find(item =>
+        item?.id === p.item_id
+      );
+
+  return (
+    entry?.name_ja ||
+    entry?.display_name ||
+    entry?.name ||
+    p.item_id
+  );
+}
+
+
+function createPartyCsv(party) {
+  const headers = [
+    "ポケモン",
+    "持ち物",
+    "特性",
+    "性格",
+    "Lv",
+    "HP",
+    "攻撃",
+    "防御",
+    "特攻",
+    "特防",
+    "素早さ",
+    "技1",
+    "技2",
+    "技3",
+    "技4"
+  ];
+
+  const rows = [
+    headers
+  ];
+
+  (
+    Array.isArray(party?.pokemon)
+      ? party.pokemon
+      : []
+  ).forEach(p => {
+    const moveSources =
+      Array.isArray(p.move_ids) &&
+      p.move_ids.length
+        ? p.move_ids
+        : (
+            Array.isArray(p.moves)
+              ? p.moves
+              : []
+          );
+
+    const moveNames =
+      moveSources
+        .slice(0, 4)
+        .map(move =>
+          getMoveDisplayName(move)
+        );
+
+    while (moveNames.length < 4) {
+      moveNames.push("");
+    }
+
+    rows.push([
+      getPokemonDisplayNameForCsv(p),
+
+      getItemDisplayNameForCsv(p),
+
+      getAbilityDisplayName(
+        p.ability_id ||
+        p.ability ||
+        ""
+      ),
+
+      getNatureDisplayName(
+        p.nature_id ||
+        p.nature ||
+        ""
+      ),
+
+      p.level ?? 50,
+
+      p.evs?.hp ?? 0,
+      p.evs?.atk ?? 0,
+      p.evs?.def ?? 0,
+      p.evs?.spa ?? 0,
+      p.evs?.spd ?? 0,
+      p.evs?.spe ?? 0,
+
+      ...moveNames
+    ]);
+  });
+
+  /*
+   * Excel / Numbersで日本語を扱いやすいよう
+   * UTF-8 BOM付き。
+   */
+  return (
+    "\uFEFF" +
+    rows
+      .map(row =>
+        row
+          .map(csvEscape)
+          .join(",")
+      )
+      .join("\r\n")
+  );
+}
+
+
+function downloadPartyCsv(party) {
+  const csv =
+    createPartyCsv(party);
+
+  const blob =
+    new Blob(
+      [csv],
+      {
+        type:
+          "text/csv;charset=utf-8"
+      }
+    );
+
+  const url =
+    URL.createObjectURL(blob);
+
+  const a =
+    document.createElement("a");
+
+  const safeName =
+    String(
+      party?.name ||
+      "party"
+    )
+      .replace(
+        /[\\/:*?"<>|]/g,
+        "_"
+      );
+
+  a.href = url;
+  a.download =
+    `${safeName}.csv`;
+
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+
+  URL.revokeObjectURL(url);
 }
 
 
@@ -2946,6 +3195,17 @@ function showPartyDetail(partyId) {
 
   const partyMenu =
     document.getElementById("partyMenu");
+
+  const exportCsvMenu =
+    document.getElementById("exportCsvMenu");
+
+  exportCsvMenu.addEventListener(
+    "click",
+    () => {
+      partyMenu.hidden = true;
+      downloadPartyCsv(party);
+    }
+  );
 
   const exportJsonMenu =
     document.getElementById("exportJsonMenu");
