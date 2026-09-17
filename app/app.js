@@ -3041,12 +3041,6 @@ function showPartyDetail(partyId) {
       </button>
 
       <div class="party-toolbar-actions">
-        <button
-        id="editParty"
-        class="secondary-button">
-        構築を編集
-      </button>
-
       <button
           id="addMatch"
           class="primary-button">
@@ -3154,7 +3148,28 @@ function showPartyDetail(partyId) {
           </div>
         `).join("")}
       </div>
-    </section>
+    
+      <div class="party-pokepaste-panel">
+        <h3>Pokepasteから一括反映</h3>
+
+        <textarea
+          id="partyPokepasteInput"
+          rows="12"
+          placeholder="6匹分のPokepasteをここに貼り付け"></textarea>
+
+        <button
+          type="button"
+          id="applyPartyPokepaste"
+          class="secondary-button">
+          6匹を構築に反映
+        </button>
+
+        <div class="form-note">
+          ポケモン・持ち物・特性・性格・Lv・能力ポイント・技をまとめて更新します。
+        </div>
+      </div>
+
+</section>
 
     <section class="section">
 
@@ -3185,6 +3200,165 @@ function showPartyDetail(partyId) {
 
 
   `;
+
+
+  const applyPartyPokepasteButton =
+    document.getElementById(
+      "applyPartyPokepaste"
+    );
+
+  const partyPokepasteInput =
+    document.getElementById(
+      "partyPokepasteInput"
+    );
+
+  applyPartyPokepasteButton
+    .addEventListener(
+      "click",
+      () => {
+        const source =
+          partyPokepasteInput.value.trim();
+
+        if (!source) {
+          alert(
+            "Pokepasteを貼り付けてください。"
+          );
+          return;
+        }
+
+        let imported;
+
+        try {
+          imported =
+            parsePokepaste(source);
+        } catch (error) {
+          console.error(error);
+
+          alert(
+            "Pokepasteを解析できませんでした。"
+          );
+          return;
+        }
+
+        if (
+          !Array.isArray(imported) ||
+          imported.length === 0
+        ) {
+          alert(
+            "ポケモンを読み取れませんでした。"
+          );
+          return;
+        }
+
+        if (imported.length > 6) {
+          alert(
+            "7匹以上読み取られました。6匹分のPokepasteを貼り付けてください。"
+          );
+          return;
+        }
+
+        const parties =
+          getParties();
+
+        const partyIndex =
+          parties.findIndex(
+            p => p.id === partyId
+          );
+
+        if (partyIndex === -1) {
+          return;
+        }
+
+        /*
+         * parsePokepaste()が返したポケモンを
+         * Master準拠の構築データへ変換。
+         */
+        const nextPokemon =
+          imported.map(entry => ({
+            id:
+              entry.id,
+
+            species_id:
+              entry.species_id,
+
+            display_name:
+              entry.display_name,
+
+            form_name:
+              entry.form_name,
+
+            asset:
+              entry.asset,
+
+            item_id:
+              entry.item_id || null,
+
+            ability:
+              entry.ability || null,
+
+            ability_id:
+              entry.ability_id ||
+              getAbilityId(
+                entry.ability
+              ) ||
+              null,
+
+            nature:
+              entry.nature || null,
+
+            nature_id:
+              entry.nature_id ||
+              getNatureId(
+                entry.nature
+              ) ||
+              null,
+
+            level:
+              entry.level || 50,
+
+            evs: {
+              hp: entry.evs?.hp ?? 0,
+              atk: entry.evs?.atk ?? 0,
+              def: entry.evs?.def ?? 0,
+              spa: entry.evs?.spa ?? 0,
+              spd: entry.evs?.spd ?? 0,
+              spe: entry.evs?.spe ?? 0
+            },
+
+            moves:
+              Array.isArray(entry.moves)
+                ? entry.moves.slice(0, 4)
+                : [],
+
+            move_ids:
+              Array.isArray(entry.move_ids)
+                ? entry.move_ids.slice(0, 4)
+                : (
+                    Array.isArray(entry.moves)
+                      ? entry.moves
+                          .slice(0, 4)
+                          .map(getMoveId)
+                          .filter(Boolean)
+                      : []
+                  ),
+
+            pokepaste_raw:
+              entry.raw || ""
+          }));
+
+        parties[partyIndex].pokemon =
+          nextPokemon;
+
+        saveParties(parties);
+
+        /*
+         * 保存後、この詳細ページを再描画。
+         * 使用ポケモン6枠も即更新される。
+         */
+        showPartyDetail(partyId);
+      }
+    );
+
 
   document
     .getElementById("back")
