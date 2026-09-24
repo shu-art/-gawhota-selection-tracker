@@ -4758,13 +4758,16 @@ function showPartyDetail(partyId) {
 }
 
 function renderMatchRow(match) {
-  const party =
-    getParties().find(
-      p => p.id === match.party_id
-    );
-
+  /*
+   * 保存済み試合の自分6匹は、
+   * 現在の構築ではなく
+   * 対戦保存時のsnapshotを正本とする。
+   *
+   * Pokepasteで現在構築を変更しても、
+   * 過去試合には影響しない。
+   */
   const myTeam =
-    party?.pokemon || [];
+    match.party_snapshot?.pokemon || [];
 
   const opponentTeam =
     match.opponent_team || [];
@@ -5045,6 +5048,15 @@ function showMatchEditor(partyId, matchId = null) {
       editing_match_id:
         match.id,
 
+      /*
+       * 保存済み試合では、その試合を保存した瞬間の
+       * 構築を固定して使用する。
+       *
+       * 現在の構築を変更しても過去試合には影響させない。
+       */
+      party_snapshot:
+        match.party_snapshot || null,
+
       updated_at:
         new Date().toISOString()
     };
@@ -5076,6 +5088,22 @@ function showMatchEditor(partyId, matchId = null) {
 
     saveDraft(partyId, draft);
   }
+
+  /*
+   * 対戦画面で使用する自分6匹。
+   *
+   * 新規試合:
+   *   現在の構築を使用。
+   *
+   * 保存済み試合:
+   *   保存時のparty_snapshotを使用。
+   */
+  const battlePartyPokemon =
+    draft.editing_match_id &&
+    draft.party_snapshot?.pokemon
+      ? draft.party_snapshot.pokemon
+      : party.pokemon;
+
 
   function openRevealedInfoEditor(p) {
     const current =
@@ -5683,7 +5711,7 @@ app.innerHTML = `
 
     renderBattleTeam(
       "myTeamSelection",
-      party.pokemon,
+      battlePartyPokemon,
       draft.my_selection,
       "my"
     );
