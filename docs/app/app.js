@@ -1021,10 +1021,26 @@ function getPartyItemName(itemId) {
 }
 
 function findPokemonFromPaste(name) {
-  const target =
+  let target =
     toShowdownId(name);
 
   if (!target) return null;
+
+  /*
+   * Showdown / Pokepaste とMaster Databaseで
+   * フォーム名の表記が異なるものをここで正規化する。
+   *
+   * アプリ各所に個別対応を散らさず、
+   * Pokepaste → Master ID の名前解決をここへ集約する。
+   */
+  const showdownPokemonAliases = {
+    indeedeef: "indeedeefemale",
+    indeedeem: "indeedeemale"
+  };
+
+  target =
+    showdownPokemonAliases[target] ||
+    target;
 
   /*
    * Pokepasteではフォーム情報を失わないことが重要。
