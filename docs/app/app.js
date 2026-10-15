@@ -246,15 +246,32 @@ function getNatureId(value) {
 ========================= */
 
 function getParties() {
-  return JSON.parse(localStorage.getItem("gawhota_parties") || "[]");
+  return JSON.parse(
+    localStorage.getItem("gawhota_parties") || "[]"
+  );
 }
 
 function saveParties(parties) {
-  localStorage.setItem("gawhota_parties", JSON.stringify(parties));
+  localStorage.setItem(
+    "gawhota_parties",
+    JSON.stringify(parties)
+  );
+
+  if (window.GAWHOTA_CLOUD_READY) {
+    window.GAWHOTA_SYNC_PARTIES?.(parties)
+      .catch(error =>
+        console.error(
+          "Party cloud sync failed:",
+          error
+        )
+      );
+  }
 }
 
 function getMatches() {
-  return JSON.parse(localStorage.getItem("gawhota_matches") || "[]");
+  return JSON.parse(
+    localStorage.getItem("gawhota_matches") || "[]"
+  );
 }
 
 /*
@@ -694,7 +711,20 @@ function downloadMatchAnalysisCsv(party) {
 
 
 function saveMatches(matches) {
-  localStorage.setItem("gawhota_matches", JSON.stringify(matches));
+  localStorage.setItem(
+    "gawhota_matches",
+    JSON.stringify(matches)
+  );
+
+  if (window.GAWHOTA_CLOUD_READY) {
+    window.GAWHOTA_SYNC_MATCHES?.(matches)
+      .catch(error =>
+        console.error(
+          "Match cloud sync failed:",
+          error
+        )
+      );
+  }
 }
 
 function draftKey(partyId) {
@@ -6537,7 +6567,331 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
-loadData();
+
+/* =========================================================
+ * Gawhota Cloud Sync
+ * Supabase = 正本
+ * LocalStorage = 即時キャッシュ
+ * ========================================================= */
+
+function gawhotaCloudClient() {
+  return window.GAWHOTA_SUPABASE_CLIENT;
+}
+
+function gawhotaWorkspaceId() {
+  return window.GAWHOTA_WORKSPACE_ID;
+}
+
+async function gawhotaCurrentUserId() {
+  const client = gawhotaCloudClient();
+
+  const {
+    data: { user },
+    error
+  } = await client.auth.getUser();
+
+  if (error) throw error;
+  if (!user) throw new Error("ユーザー情報がありません");
+
+  return user.id;
+}
+
+async function gawhotaSyncParties(parties) {
+  const client = gawhotaCloudClient();
+  const workspaceId = gawhotaWorkspaceId();
+
+  if (!client || !workspaceId) return;
+
+  const userId =
+    await gawhotaCurrentUserId();
+
+  const localIds =
+    parties.map(p => String(p.id));
+
+  if (parties.length) {
+    const rows = parties.map(party => ({
+      id: String(party.id),
+      user_id: userId,
+      workspace_id: workspaceId,
+      name: party.name || "新しい構築",
+      pokemon: party.pokemon || [],
+      version:
+        Number.isFinite(Number(party.version))
+          ? Number(party.version)
+          : 1,
+      data: party,
+      updated_at:
+        new Date().toISOString()
+    }));
+
+    const { error } =
+      await client
+        .from("parties")
+        .upsert(rows, {
+          onConflict: "id"
+        });
+
+    if (error) throw error;
+  }
+
+  const {
+    data: remoteRows,
+    error: readError
+  } = await client
+    .from("parties")
+    .select("id")
+    .eq("workspace_id", workspaceId);
+
+  if (readError) throw readError;
+
+  const deleteIds =
+    (remoteRows || [])
+      .map(row => String(row.id))
+      .filter(id => !localIds.includes(id));
+
+  if (deleteIds.length) {
+    const { error } =
+      await client
+        .from("parties")
+        .delete()
+        .eq("workspace_id", workspaceId)
+        .in("id", deleteIds);
+
+    if (error) throw error;
+  }
+}
+
+async function gawhotaSyncMatches(matches) {
+  const client = gawhotaCloudClient();
+  const workspaceId = gawhotaWorkspaceId();
+
+  if (!client || !workspaceId) return;
+
+  const userId =
+    await gawhotaCurrentUserId();
+
+  const localIds =
+    matches.map(m => String(m.id));
+
+  if (matches.length) {
+    const rows = matches.map(match => ({
+      id: String(match.id),
+      user_id: userId,
+      workspace_id: workspaceId,
+      party_id:
+        match.party_id == null
+          ? null
+          : String(match.party_id),
+      result: match.result ?? null,
+      memo: match.memo ?? null,
+      opponent_team:
+        match.opponent_team || [],
+      my_lead:
+        match.my_lead || [],
+      my_back:
+        match.my_back || [],
+      opponent_lead:
+        match.opponent_lead || [],
+      opponent_back:
+        match.opponent_back || [],
+      party_snapshot:
+        match.party_snapshot || null,
+      played_at:
+        match.played_at ||
+        new Date().toISOString(),
+      data: match,
+      updated_at:
+        new Date().toISOString()
+    }));
+
+    const { error } =
+      await client
+        .from("matches")
+        .upsert(rows, {
+          onConflict: "id"
+        });
+
+    if (error) throw error;
+  }
+
+  const {
+    data: remoteRows,
+    error: readError
+  } = await client
+    .from("matches")
+    .select("id")
+    .eq("workspace_id", workspaceId);
+
+  if (readError) throw readError;
+
+  const deleteIds =
+    (remoteRows || [])
+      .map(row => String(row.id))
+      .filter(id => !localIds.includes(id));
+
+  if (deleteIds.length) {
+    const { error } =
+      await client
+        .from("matches")
+        .delete()
+        .eq("workspace_id", workspaceId)
+        .in("id", deleteIds);
+
+    if (error) throw error;
+  }
+}
+
+window.GAWHOTA_SYNC_PARTIES =
+  gawhotaSyncParties;
+
+window.GAWHOTA_SYNC_MATCHES =
+  gawhotaSyncMatches;
+
+async function gawhotaInitialCloudSync() {
+  const client = gawhotaCloudClient();
+  const workspaceId = gawhotaWorkspaceId();
+
+  if (!client || !workspaceId) {
+    throw new Error(
+      "クラウドworkspaceがありません"
+    );
+  }
+
+  const localParties = getParties();
+  const localMatches = getMatches();
+
+  const [
+    partiesResult,
+    matchesResult
+  ] = await Promise.all([
+    client
+      .from("parties")
+      .select("data")
+      .eq("workspace_id", workspaceId),
+
+    client
+      .from("matches")
+      .select("data")
+      .eq("workspace_id", workspaceId)
+      .order("played_at", {
+        ascending: true
+      })
+  ]);
+
+  if (partiesResult.error) {
+    throw partiesResult.error;
+  }
+
+  if (matchesResult.error) {
+    throw matchesResult.error;
+  }
+
+  const remoteParties =
+    (partiesResult.data || [])
+      .map(row => row.data)
+      .filter(Boolean);
+
+  const remoteMatches =
+    (matchesResult.data || [])
+      .map(row => row.data)
+      .filter(Boolean);
+
+  const cloudIsEmpty =
+    remoteParties.length === 0 &&
+    remoteMatches.length === 0;
+
+  const localHasData =
+    localParties.length > 0 ||
+    localMatches.length > 0;
+
+  /*
+   * 初回Mac:
+   * クラウドが空でローカルに「コア＋3戦」がある
+   * → ローカルをクラウドへ移行
+   */
+  if (cloudIsEmpty && localHasData) {
+    await gawhotaSyncParties(localParties);
+    await gawhotaSyncMatches(localMatches);
+
+    console.log(
+      "Gawhota Cloud: local → cloud 初回移行完了"
+    );
+
+    return;
+  }
+
+  /*
+   * 通常起動 / iPhone / iPad:
+   * Supabaseを正本としてLocalStorageを更新
+   */
+  localStorage.setItem(
+    "gawhota_parties",
+    JSON.stringify(remoteParties)
+  );
+
+  localStorage.setItem(
+    "gawhota_matches",
+    JSON.stringify(remoteMatches)
+  );
+
+  console.log(
+    "Gawhota Cloud: cloud → local 同期完了"
+  );
+}
+
+window.GAWHOTA_SHOW_PAIRING_CODE =
+  async function () {
+    if (
+      typeof window.GAWHOTA_GET_PAIRING_CODE
+      !== "function"
+    ) {
+      alert("連携コードを取得できません");
+      return;
+    }
+
+    try {
+      const code =
+        await window.GAWHOTA_GET_PAIRING_CODE();
+
+      prompt(
+        "iPhone / iPad の「この端末を連携」に入力してください。",
+        code || ""
+      );
+    } catch (error) {
+      console.error(error);
+      alert(
+        "連携コードの取得に失敗しました"
+      );
+    }
+  };
+
+
+window.GAWHOTA_START_TRACKER = async function () {
+  /*
+   * 保存操作が初回同期中にクラウドへ飛ばないよう、
+   * READYは最後に立てる。
+   */
+  window.GAWHOTA_CLOUD_READY = false;
+
+  await loadData();
+
+  try {
+    await gawhotaInitialCloudSync();
+    window.GAWHOTA_CLOUD_READY = true;
+  } catch (error) {
+    /*
+     * 通信障害でもLocalStorage版として起動できる。
+     */
+    console.error(
+      "Initial cloud sync failed:",
+      error
+    );
+
+    window.GAWHOTA_CLOUD_READY = true;
+  }
+
+  showPartyList();
+};
 
 
 /* =========================================================
