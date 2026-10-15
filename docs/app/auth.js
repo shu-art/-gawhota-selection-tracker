@@ -292,20 +292,13 @@
       }
 
       /*
-       * 既存データがある端末＝今回のMac。
-       * ここだけ自動で最初のworkspaceを作る。
-       */
-      if (hasExistingTrackerData()) {
-        workspaceId =
-          await createWorkspace();
-
-        await startTracker(workspaceId);
-        return;
-      }
-
-      /*
-       * 新しいiPhone / iPadでは
-       * 勝手に別workspaceを作らない。
+       * workspace未設定の端末では、
+       * 古いLocalStorageが残っていても自動作成しない。
+       *
+       * Macはすでにworkspace_idを保存済みなので
+       * ここには来ない。
+       *
+       * iPhone / iPadは必ず連携画面を表示する。
        */
       renderPairingScreen();
 
